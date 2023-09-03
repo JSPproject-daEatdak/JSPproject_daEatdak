@@ -22,8 +22,9 @@ public class GoodsListDeleteOkController implements Execute {
 		Result result = new Result();
 		
 		
-		System.out.println("dddd");
-		System.out.println();
+			
+		
+		System.out.println("삭제성공!");
 		
 		return result;
 	}

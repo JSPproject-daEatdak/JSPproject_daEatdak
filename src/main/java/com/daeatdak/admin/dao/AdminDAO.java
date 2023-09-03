@@ -32,8 +32,10 @@ public class AdminDAO  {
 	}
 	
 	
-	  public void goodsDelete(int goodsNumber) {
-	  sqlSession.delete("admin,goodsListDelete", goodsNumber); }
+	  public void goodsDelete(int goodsNum) {
+	  sqlSession.delete("admin.goodsListDelete", goodsNum); 
+	  
+	  }
 	 
 
 }

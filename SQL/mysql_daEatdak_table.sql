@@ -1,19 +1,18 @@
-CREATE database jsp_daEatdak;
-drop database jsp_daEatdak;
+
 
 use jsp_daEatdak;
 
 CREATE TABLE address (
 	address_num	int	unsigned auto_increment primary key,
-	address	varchar(100)	NOT NULL,
-	road_address	varchar(100)	NOT NULL,
-	detail_address	varchar(100)	NOT NULL
+	address	varchar(100)	null,
+	road_address	varchar(100)	NULL,
+	detail_address	varchar(100)	NULL
 );
 
 -- phone num varchar로 변경
 CREATE TABLE users (
 	user_num	int	unsigned auto_increment primary key,
-	address_num	int unsigned NULL,
+	address_num	int unsigned not NULL,
 	user_email	varchar(255)	NOT NULL,
 	user_name	varchar(50)	NOT NULL,
 	user_password	varchar(50)	NOT NULL,
@@ -48,12 +47,12 @@ CREATE TABLE goods (
 CREATE TABLE image (
 	image_num int auto_increment primary key,
     goods_num INT unsigned NOT NULL,
-    goods_img BLOB NOT NULL,
-    goods_detail_img1 BLOB NOT NULL,
-    goods_detail_img2 BLOB,
-    goods_detail_img3 BLOB,
-    goods_detail_img4 BLOB,
-    goods_detail_img5 BLOB,
+    goods_img varchar(255) NOT NULL,
+    goods_detail_img1 varchar(255) NOT NULL,
+    goods_detail_img2 varchar(255),
+    goods_detail_img3 varchar(255),
+    goods_detail_img4 varchar(255),
+    goods_detail_img5 varchar(255),
     foreign key (goods_num) references goods (goods_num)
 );
 

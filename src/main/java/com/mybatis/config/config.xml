@@ -7,7 +7,11 @@
 	
 	<!-- DTO 추가 -->
    <typeAliases>
+
       <typeAlias type="com.daeatdak.login.dto.UserDTO" alias = "UserDTO"/>
+      <typeAlias type="com.daeatdak.goods.dto.GoodsDTO" alias = "GoodsDTO"/>
+      <typeAlias type="com.daeatdak.goods.dto.GoodsImageDTO" alias = "GoodsImageDTO"/>
+
    </typeAliases>
 
 
@@ -25,7 +29,10 @@
    
    <!-- Mapper 추가 -->
    <mappers>
+
          <mapper resource = "com/mybatis/mapper/UserMapper.xml"></mapper>
+
+         <mapper resource = "com/mybatis/mapper/GoodsMapper.xml"></mapper>
    </mappers>
    
 </configuration>

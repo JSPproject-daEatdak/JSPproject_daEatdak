@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="goods">
+  <select id ="selectCategory" resultType ="GoodsDTO" parameterType="_int">
+  		select * from goods where category_num = #{categoryNum}
+  </select>
+  <select id ="selectImage" resultType="GoodsImageDTO" parameterType="_int">
+  		select * from image
+  </select>
+    <select id ="selectImageByGoodsNum" resultType="GoodsImageDTO" parameterType="_int">
+  		select * from image where goods_num = #{goodsNum}
+  </select>
+  <select id ="selectGoodsNum" resultType="GoodsDTO" parameterType="_int">
+  		select * from goods where goods_num = #{goodsNum}
+  </select>
+</mapper>

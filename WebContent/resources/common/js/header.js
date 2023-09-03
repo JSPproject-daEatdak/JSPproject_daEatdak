@@ -34,3 +34,5 @@ $(window).scroll(function () {
     
   });
   
+ //카테고리 스크립트
+  

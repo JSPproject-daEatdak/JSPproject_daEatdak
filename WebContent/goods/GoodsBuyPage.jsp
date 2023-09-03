@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,19 +29,23 @@
                     <div class="product-info-top">
                         <div class="product-info-top-left">
                             <figure class="product-img">
-                                <img src="${pageContext.request.contextPath}/resources/goods/img/chicken01.png">
+                                <img src="${pageContext.request.contextPath}/${goodsImages.getGoodsImg()}">
                             </figure>
                         </div>
                         <div class="product-info-top-right">
                             <div class="product-name">
                                 <div class="title">
-                                    <h1>[다잇닭]</h1>
-                                    <h1>닭가슴살 스테이크 갈릭맛 100g</h1>
+                                <c:choose>
+                                	<c:when test="${goodsList.getCategoryNum()==1 }"><h1>[다잇닭]</h1></c:when>
+                                	<c:when test="${goodsList.getCategoryNum()==2 }"><h1>[다잇돈]</h1></c:when>
+                                	<c:when test="${goodsList.getCategoryNum()==3 }"><h1>[다잇소]</h1></c:when>
+                                	<c:when test="${goodsList.getCategoryNum()==4 }"><h1>[다잇닷]</h1></c:when>
+                                </c:choose>
+                                    <h1>${goodsList.getGoodsName()}</h1>
                                 </div>
-                                <p>저염식 최고의 식단에 적극 추천~~</p>
                                 <div class="price">
                                     <span>판매가</span>
-                                    <span>17,900원</span>
+                                    <span>${goodsList.getGoodsPrice()}원</span>
                                 </div>
                             </div>    
                             <div class="product-name-detil">
@@ -124,9 +129,20 @@
                         <p>상품정보</p>
                     
                         <div class="product_deteil_info">
-                            <img src="${pageContext.request.contextPath}/resources/goods/img/product_info.jpg">
-                            <img src="${pageContext.request.contextPath}/resources/goods/img/product_info2.jpg">
-                           
+                            	<img src="${pageContext.request.contextPath}/${goodsImages.getGoodsDetailImg1()}">
+                            <c:if test ="${not empty goodsImages.getGoodsDetailImg2() }">
+                            	<img src="${pageContext.request.contextPath}/${goodsImages.getGoodsDetailImg2()}">
+                            </c:if>
+                            <c:if test ="${not empty goodsImages.getGoodsDetailImg3() }">
+                            	<img src="${pageContext.request.contextPath}/${goodsImages.getGoodsDetailImg3()}">
+                            </c:if>
+                            <c:if test ="${not empty goodsImages.getGoodsDetailImg4() }">
+                            	<img src="${pageContext.request.contextPath}/${goodsImages.getGoodsDetailImg4()}">
+                            </c:if>
+                            <c:if test ="${not empty goodsImages.getGoodsDetailImg5() }">
+                            	<img src="${pageContext.request.contextPath}/${goodsImages.getGoodsDetailImg5()}">
+                            </c:if>
+
                         </div>
                     </div>
                     <div class="deteil_more">

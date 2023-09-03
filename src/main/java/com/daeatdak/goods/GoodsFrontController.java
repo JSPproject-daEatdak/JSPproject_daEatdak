@@ -33,15 +33,15 @@ public class GoodsFrontController extends HttpServlet {
 
 	   protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		      String target = request.getRequestURI().substring(request.getContextPath().length());
-		      System.out.println(target);
 		      Result result = null;
-		      
-
+		     
 		      switch(target) {
-		      case "/member/join.me":
+		      case "/goods/goodsList.go":
+		    	  new GoodsListController().execute(request, response);
 		         break;
 		         
-		      case "/member/joinOk.me":
+		      case "/goods/goodsBuy.go":
+		    	  new GoodsBuyController().execute(request, response);
 		         break;
 		         
 		      case "/member/login.me":
@@ -50,6 +50,7 @@ public class GoodsFrontController extends HttpServlet {
 		      case "/member/loginOk.me":
 		         break;
 		      }
+		      
 		      
 		      if(result != null) {
 		    	  if(result.isRedirect()) {

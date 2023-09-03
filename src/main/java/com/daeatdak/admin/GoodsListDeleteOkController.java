@@ -10,6 +10,7 @@ import com.daeatdak.Execute;
 import com.daeatdak.Result;
 import com.daeatdak.admin.dao.AdminDAO;
 import com.daeatdak.admin.dto.AdminDTO;
+import com.daeatdak.admin.vo.GoodsInfoListVO;
 
 public class GoodsListDeleteOkController implements Execute {
 
@@ -20,13 +21,23 @@ public class GoodsListDeleteOkController implements Execute {
 		AdminDTO adminDTO = new AdminDTO();
 		AdminDAO adminDAO = new AdminDAO();
 		Result result = new Result();
+		GoodsInfoListVO goodsInfoListVO = new GoodsInfoListVO();
 		
 		
-			
 		
-		System.out.println("삭제성공!");
 		
-		return result;
+		
+		request.setAttribute("goodsNum", goodsInfoListVO.getGoodsNum());		
+		System.out.println("삭제하기!");
+
+		int goodsNum = Integer.parseInt(request.getParameter("goodsNum"));
+		
+		adminDAO.goodsDelete(goodsNum);
+		
+
+		
+		
+		return null;
 	}
 	
 }

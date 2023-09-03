@@ -52,6 +52,15 @@ public class AdminFrontController extends HttpServlet {
 		Result result = null;
 
 		switch (target) {
+		
+		case "/admin/userInfoList.ad":
+			new UserInfoListOkController().execute(request, response);
+			System.out.println("회원리스트");
+			request.getRequestDispatcher("/admin/adminMemberInfo.jsp").forward(request, response);
+
+			break;
+		
+		
 		case "/admin/goodsRegist.ad":
 			request.getRequestDispatcher("/admin/adminProductRegist.jsp").forward(request, response);
 			break;
@@ -71,6 +80,8 @@ public class AdminFrontController extends HttpServlet {
 
 		case "/admin/goodsListDelete.ad":
 			new GoodsListDeleteOkController().execute(request, response);
+			System.out.println("삭제성공!");
+
 			break;
 			
 			

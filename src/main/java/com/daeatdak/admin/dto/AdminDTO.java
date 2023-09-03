@@ -14,11 +14,11 @@ public class AdminDTO {
 		;
 	}
 
-	public int getGoodsNumber() {
+	public int getGoodsNum() {
 		return goodsNum;
 	}
 
-	public void setGoodsNumber(int goodsNum) {
+	public void setGoodsNum(int goodsNum) {
 		this.goodsNum = goodsNum;
 	}
 
@@ -72,7 +72,7 @@ public class AdminDTO {
 
 	@Override
 	public String toString() {
-		return "AdminDTO [goodsNumber=" + goodsNum + ", goodsName=" + goodsName + ", goodsQuantity=" + goodsQuantity
+		return "AdminDTO [goodsNum=" + goodsNum + ", goodsName=" + goodsName + ", goodsQuantity=" + goodsQuantity
 				+ ", goodsCategory=" + goodsCategory + ", goodsPrice=" + goodsPrice + ", saleCount=" + saleCount
 				+ ", imageNum=" + imageNum + "]";
 	}

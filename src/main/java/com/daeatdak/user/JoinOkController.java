@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.daeatdak.Execute;
 import com.daeatdak.Result;
+import com.daeatdak.user.dao.AddressDAO;
 import com.daeatdak.user.dao.UserDAO;
+import com.daeatdak.user.dto.AddressDTO;
 import com.daeatdak.user.dto.UserDTO;
 
 public class JoinOkController implements Execute {
@@ -19,23 +21,36 @@ public class JoinOkController implements Execute {
 
 		UserDTO userDTO = new UserDTO();
 		UserDAO userDAO = new UserDAO();
+		AddressDTO addressDTO = new AddressDTO();
+		AddressDAO addressDAO = new AddressDAO();
 		Result result =new Result();
-		
+		int userAddress = 0;
+		int users=0;
 		
 		userDTO.setUserEmail(request.getParameter("userEmail"));
 		userDTO.setUserName(request.getParameter("userName"));
 		userDTO.setUserPassword(request.getParameter("userPassword"));
 		userDTO.setUserPhone(request.getParameter("userPhone"));
-		userDTO.setUserAddress(request.getParameter("userAddress"));
-		userDTO.setUserDetailAddress(request.getParameter("userDetailAddress"));
-		
-		System.out.println(userDTO);
-		
 		userDAO.join(userDTO);
+		users = userDAO.getSequence();
+		System.out.println(userDTO);
+
+		
+		addressDTO.setAddress(request.getParameter("userAddress") + request.getParameter("userDetailAddress"));
+		addressDTO.setRoadAddress(request.getParameter("userAddress"));
+		addressDTO.setDetailAddress(request.getParameter("userDetailAddress"));
+		addressDTO.setUserNum(users);
+		addressDAO.insert(addressDTO);
+		System.out.println("주소값 입력" + addressDTO);
+		
+		
+		
+
+		
 		
 		
 		result.setRedirect(true);
-		result.setPath("/user/login.jsp");
+		result.setPath(request.getContextPath());
 		
 		return result;
 	}

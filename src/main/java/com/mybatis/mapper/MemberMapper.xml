@@ -4,13 +4,21 @@
 	
 
    <select id = "join" parameterType="UserDTO">
-         insert into tbl_user(user_email, user_name, user_password, user_phone, user_address, user_detail_address)
-         value(#{userEmail}, #{userName}, #{userPassword}, #{userPhone}, #{userAddress}, #{userDetailAddress})
+         insert into users( user_email, user_name, user_password, user_phone)
+         value( #{userEmail}, #{userName}, #{userPassword}, #{userPhone})
    </select>
+   
+   <select id="joinAddress" parameterType="UserDTO">
+   
+   		insert into address(address, road_address, detail_address, user_num)
+   		value (#{address}, #{roadAddress}, #{detailAddress}, #{userNum})
+   
+   </select>
+   
    
 	<select id="userInfoSearch" resultType="UserDTO">
 		
-		select * from tbl_user
+		select * from users
 	
 	</select>
 	
@@ -25,7 +33,7 @@
  	<select id="getUserEmailByName" parameterType="UserDTO" resultType="String">
  	
  			select user_email
- 			from tbl_user
+ 			from users
  			where user_name = #{userName} and user_phone = #{userPhone}
  	
  	</select>
@@ -33,11 +41,21 @@
  	<select id="getUserPasswordByEmail" parameterType="UserDTO" resultType="String">
  	
  			select user_password
- 			from tbl_user
+ 			from users
  			where user_name = #{userName} and user_phone = #{userPhone} and user_email = #{userEmail}
  	
  	</select>
  	
-   
+ 	
+ 	<select id="getSequence" resultType="_int">
+		select LAST_INSERT_ID()
+	</select>
+	
+	<select id="userInfoList" resultType="UserVO">
+		select u.user_num, u.user_name, u.user_email, u.user_phone, a.address, a.detail_address 
+		from users u
+		join address a on u.user_num = a.user_num
+  
+   </select>
      
 </mapper>

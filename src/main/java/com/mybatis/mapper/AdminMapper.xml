@@ -37,7 +37,7 @@
 	 </select>
 	 
 	 <delete id="GoodsListDelete" parameterType="_int">
-	 	DELTE goods_num
+	 	DELETE
 	 	from goods
 	 	where goods_num = #{goodsNum}
 	 

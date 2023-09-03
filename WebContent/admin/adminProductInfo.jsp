@@ -19,15 +19,15 @@
 	integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
 	crossorigin="anonymous"></script>
 
-<script>
+<script >
 
-/*   function fnDelete(goodsNum){
-	if(confirm("정말 삭제하시겠습니까?")) {
-		location.href="goodsListDelete.ad?goodsNum=${goodInfo.goodsNum()}"};
-		//Get 방식으로 정보를 넘길때 띄어쓰기 안하게 주의할 것
-	}
+function deleteBtn(goodsNum){
+	 	if(confirm("정말 삭제하시겠습니까?")) {
+			location.href="goodsListDelete.ad?goodsNum=" + goodsNum;
+	
 }  
-} */
+};
+
 
 </script>
 </head>
@@ -45,7 +45,6 @@
 				<hr style="width: 90%;">
 				<div class="table-div">
 					<div class="totalProdList">
-						<form action="">
 						<ul class="proUl">
 					
 							<c:choose>
@@ -77,9 +76,13 @@
 												</div>
 												&nbsp;
 												<div style="width: 50%">
-													<span><button class="btnUpd" onclick="location.href='/admin/goodsListDelete.ad?goodsNumb=${goodsInfo.getGoodsNum()}'" >삭제</button></span> <span><button
-															class="btnUpd"
-															>수정</button></span>
+													<span>
+														<button class="btnUpd" type="button" onclick="deleteBtn(${goodsInfo.getGoodsNum()})" >삭제</button>
+													</span> 
+													
+													<span>
+														<button class="btnUpd">수정</button>
+													</span>
 															
 															
 												</div>
@@ -100,7 +103,6 @@
 
 	
 						</ul>
-						</form>
 
 					</div>
 

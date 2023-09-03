@@ -41,6 +41,24 @@ public class LoginController implements Execute {
 		result = userDAO.login(userDTO);
 		System.out.println("result : " + result);
 		
+		int addressNum = result.getAddressNum();
+		String userEmail = result.getUserEmail();
+		String userName = result.getUserName();
+		String userPassword = result.getUserPassword();
+		String userPhone = result.getUserPhone();
+		int userRoll = result.getUserRoll();
+
+		System.out.println("몇 번");
+		
+//		session.setAttribute("addressNum", addressNum);
+		session.setAttribute("userEmail", userEmail);
+		session.setAttribute("userName", userName);
+		session.setAttribute("userPassword", userPassword);
+		session.setAttribute("userPhone", userPhone);
+		session.setAttribute("userRoll", userRoll);
+		session.setAttribute("result", result);
+
+		
 //		int userNum;
 		
 		if(result == null) {
@@ -56,26 +74,7 @@ public class LoginController implements Execute {
 				e.printStackTrace();
 			}
 		}else {
-			
-			
-			int addressNum = result.getAddressNum();
-			String userEmail = result.getUserEmail();
-			String userName = result.getUserName();
-			String userPassword = result.getUserPassword();
-			String userPhone = result.getUserPhone();
-			int userRoll = result.getUserRoll();			
-
-			System.out.println("몇 번");
-			
-			session.setAttribute("addressNum", addressNum);
-			session.setAttribute("userEmail", userEmail);
-			session.setAttribute("userName", userName);
-			session.setAttribute("userPassword", userPassword);
-			session.setAttribute("userPhone", userPhone);
-			session.setAttribute("userRoll", userRoll);
-			session.setAttribute("result", result);
-
-			
+						
 			request.setAttribute("userRoll", userRoll);			
 			System.out.println("널이아닐경우");
 			try {

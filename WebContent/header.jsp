@@ -41,33 +41,39 @@
 					</div>
 
 					<c:if test="${userRoll != '0' && userRoll != '1' }">
-					<div class="user-container">
-						<ul>
-							<form action="/index.jsp" method="get">
-								<li>
-									<a href="${pageContext.request.contextPath}/member/login.jsp">
-										<span class="material-symbols-outlined"> lock </span>
-										<h6>로그인</h6>
-								</a></li>
-							</form>
-							<li><a
-								href="${pageContext.request.contextPath}/member/signupSelect.jsp">
-									<span class="material-symbols-outlined"> person_add </span>
-									<h6>회원가입</h6>
-							</a></li>
-							<li><a
-								href="${pageContext.request.contextPath}/board/boardList.jsp">
-									<span class="material-symbols-outlined"> support_agent </span>
-									<h6>문의하기</h6>
-							</a></li>
-							<li><a
-								href="${pageContext.request.contextPath}/goods/GoodsContainCart.jsp">
+						<div class="user-container">
+							<ul>
+								<form action="/index.jsp" method="get">
+									<%
+									String userName = (String) session.getAttribute("userName");
+									%>
 
-									<span class="material-symbols-outlined"> shopping_cart </span>
-									<h6>장바구니</h6>
-							</a></li>
-						</ul>
-					</div>
+									<li><h6><%=userName%></h6> <a
+										href="${pageContext.request.contextPath}/member/login.jsp">
+											<span class="material-symbols-outlined"> lock </span>
+											<h6>로그인</h6>
+									</a></li>
+								</form>
+								<li><a
+									href="${pageContext.request.contextPath}/member/signupSelect.jsp">
+										<span class="material-symbols-outlined"> person_add </span>
+										<h6>회원가입</h6>
+								</a></li>
+								<li><a
+									href="${pageContext.request.contextPath}/board/boardList.jsp">
+										<span class="material-symbols-outlined"> support_agent
+									</span>
+										<h6>문의하기</h6>
+								</a></li>
+								<li><a
+									href="${pageContext.request.contextPath}/goods/GoodsContainCart.jsp">
+
+										<span class="material-symbols-outlined"> shopping_cart
+									</span>
+										<h6>장바구니</h6>
+								</a></li>
+							</ul>
+						</div>
 					</c:if>
 
 
@@ -89,8 +95,7 @@
 										// 									if (userDTO == null) { //세션이 없을때 ...(로그인이 안되었을때)
 										%>
 
-										<li><h6><%=userName%></h6>
-											<a
+										<li><h6><%=userName%></h6> <a
 											href="${pageContext.request.contextPath}/member/logoutOK.me">
 												<span class="material-symbols-outlined"> lock_open </span>
 												<h6>
@@ -124,8 +129,7 @@
 							<div class="user-container">
 								<ul>
 									<form action="/logout.jsp" method="get">
-										<li><h6><%="관리자!"%></h6>
-											<a
+										<li><h6><%="관리자!"%></h6> <a
 											href="${pageContext.request.contextPath}/member/logoutOK.me">
 												<span class="material-symbols-outlined"> lock_open </span>
 												<h6>로그아웃</h6>

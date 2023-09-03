@@ -31,7 +31,7 @@
             <div class="user-container">
                 <ul>
                     <li>
-                        <a href="/login/html/login.html">
+                        <a href="${pageContext.request.contextPath}/member/login.jsp">
                             <span class="material-symbols-outlined">
 							lock_open
 							</span>
@@ -39,7 +39,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/login/html/signupselet.html">
+                        <a href="#">
                             <span class="material-symbols-outlined">
 							person
 							</span>
@@ -47,7 +47,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/QnAboard/html/board_list.html">
+                        <a href="${pageContext.request.contextPath}/board/boardList.jsp">
                             <span class="material-symbols-outlined">
                                 support_agent
                             </span>
@@ -55,7 +55,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/product/html/product_cart_choice.html">
+                        <a href="${pageContext.request.contextPath}/goods/GoodsContainCart.jsp">
                             <span class="material-symbols-outlined">
                                 shopping_cart
                             </span>

@@ -13,7 +13,7 @@
 	<!-- 회원 -->
   <servlet>
   	<servlet-name>Member</servlet-name>
-  	<servlet-class>com.daeatdak.member.MemberFrontController</servlet-class>
+  	 <servlet-class>com.daeatdak.member.MemberFrontController</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>Member</servlet-name>
@@ -40,7 +40,7 @@
   	<url-pattern>*.go</url-pattern>
   </servlet-mapping>
   
-  	<!-- 관리자 -->
+  	<!-- 관리자 
   <servlet>
   	<servlet-name>Admin</servlet-name>
   	<servlet-class>com.daeatdak.admin.AdminFrontController</servlet-class>
@@ -48,9 +48,9 @@
   <servlet-mapping>
   	<servlet-name>Admin</servlet-name>
   	<url-pattern>*.ad</url-pattern>
-  </servlet-mapping>
+  </servlet-mapping>-->
   
-    <!-- 메인 -->
+    <!-- 메인 
   <servlet>
   	<servlet-name>Common</servlet-name>
   	<servlet-class>com.daeatdak.common.CommonFrontController</servlet-class>
@@ -58,8 +58,18 @@
   <servlet-mapping>
   	<servlet-name>Common</servlet-name>
   	<url-pattern>*.co</url-pattern>
+  </servlet-mapping>-->
+
+<!--   
+   <servlet>
+  	<servlet-name>Login</servlet-name>
+  	<servlet-class>com.daeatdak.Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Login</servlet-name>
+  	<url-pattern>*.lo</url-pattern>
   </servlet-mapping>
-  
+   -->
 </web-app>
 
 

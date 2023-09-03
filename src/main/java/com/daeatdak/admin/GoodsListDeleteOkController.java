@@ -21,8 +21,9 @@ public class GoodsListDeleteOkController implements Execute {
 		AdminDAO adminDAO = new AdminDAO();
 		Result result = new Result();
 		
-		System.out.println("dddd");
 		
+		System.out.println("dddd");
+		System.out.println();
 		
 		return result;
 	}

@@ -44,9 +44,9 @@
                     <form id="findpw_form" name="findpw_form" action="" method="post" >
                         <div class="input-group">
                         <div class="input-text">
-                            <input type="text" placeholder="아이디 입력" maxlength="100" >
-                            <input type="text" placeholder="이름 입력" maxlength="100" >
                             <input type="text" placeholder="이메일 입력" maxlength="100" >
+                            <input type="text" placeholder="이름 입력" maxlength="100" >
+                            <input type="text" placeholder="휴대폰 번호 입력" maxlength="100" >
                         </div>                           
                         </div>
                         <div class="button-submit">

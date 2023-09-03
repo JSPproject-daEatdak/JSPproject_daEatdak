@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,41 +38,34 @@
             </div>
             <div class="board-view">
               <!-- 게시글 제목 -->
-              <div class="title">글의 제목이 들어갈 부분</div>
+              <div class="title"><c:out value="${board.getBoardName()}"></c:out></div>
               <!-- 게시글 정보 -->
               <div class="info">
                 <!-- dl 리스트 사용해서 게시글 정보 나열 -->
                 <dl>
                   <dt>번호</dt>
-                  <dd>1</dd>
+                  <dd><c:out value="${board.getBoardNum()}"></c:out></dd>
                 </dl>
                 <dl>
                   <dt>글쓴이</dt>
-                  <dd>김성찬</dd>
+                  <dd><c:out value="${board.getUserName()}"></c:out></dd>
                 </dl>
                 <dl>
                   <dt>작성일</dt>
-                  <dd>2023-08-18</dd>
+                  <dd><c:out value="${board.getBoardDate()}"></c:out></dd>
                 </dl>
                 <dl>
                   <dt>조회수</dt>
-                  <dd>1056</dd>
+                  <dd><c:out value="${board.getBoardCount()}"></c:out></dd>
                 </dl>
               </div>
               <!-- 게시글 작성내용 -->
               <div class="board-content">
-                글 내용이 들어갑니다<br>
-                글 내용이 들어갑니다<br>
-                글 내용이 들어갑니다<br>
-                글 내용이 들어갑니다<br>
-                글 내용이 들어갑니다<br>
-                글 내용이 들어갑니다<br>
-                글 내용이 들어갑니다<br>
-                글 내용이 들어갑니다
+             	<c:out value="${board.getBoardContent()}"></c:out>
               </div>
               <!-- 게시글 버튼 컨테이너 -->
               <div class="bt-container">
-                <a href="${pageContext.request.contextPath}/board/boardList.jsp" class="board-home">글 목록</a>
+                <a href="${pageContext.request.contextPath}/board/boardListOk.bo" class="board-home">글 목록</a>
                 <a href="${pageContext.request.contextPath}/board/boardPasswordCheckConfig.jsp" class="board-fix">수정</a>
                 <a href="${pageContext.request.contextPath}/board/boardPasswordCheckDel.jsp" class="board-delete">삭제</a>
               </div>

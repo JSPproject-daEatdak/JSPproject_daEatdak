@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+<!-- 글쓰기 데이터에 입려하는 쿼리문 -->
+	<insert id="write" parameterType="BoardDTO">
+		insert into board (board_name,board_password,board_lock,board_content)
+		value(#{boardName},#{boardPassword},#{boardLock},#{boardContent})
+	</insert>
+	<!-- 게시판 리스트에 목록 -->
+	<select id="selectAll" resultType="BoardVO"><!-- 테이블과 일치하지 않는 값이 등러가기 때문에 VO로 받는다 -->
+		select u.user_num,b.board_num,b.board_name,u.user_name,b.board_date,b.board_count,b.board_password,b.board_lock
+		from board b join users u
+		on u.user_num =b.user_num
+		order by b.board_num desc
+	</select>
+	<!-- 조회수를 증가시는 쿼리문 -->
+	<select id="select" parameterType="_int" resultType="BoardVO">
+		select u.user_num,b.board_num, b.board_name,u.user_name,b.board_date,b.board_count, b.board_content,b.board_password
+		from board b join users u
+		on b.board_num = #{boardNum} and u.user_num=b.user_num	
+	</select>
+	
+	<update id="updateViewCount" parameterType="_int">
+		update board set board_count = board_count +1
+		where board_num =#{boardNum}
+	</update>
+	<!-- 비밀번호 확인을 위한 쿼리문-->
+	<select id="selectPassword" parameterType="_int" resultType="BoardVO"><!-- 테이블과 일치하지 않는 값이 등러가기 때문에 VO로 받는다 -->
+		select u.user_num,b.board_num, b.board_name,u.user_name,b.board_date,b.board_count, b.board_content,b.board_password
+		,b.board_lock
+		from users u join board b
+		on b.board_num = #{boardNum} and u.user_num=b.user_num	
+	</select>
+	
+	<!-- 비밀번호 확인 후 게시판으로 이동  -->
+	<select id="privateContent" parameterType="_int" resultType="BoardVO">
+		select u.user_num,b.board_num, b.board_name,u.user_name,b.board_date,b.board_count, b.board_content,b.board_password
+		,b.board_lock
+		from board b join users u
+		on b.board_num = #{boardNum} and u.user_num=b.user_num	
+	</select>
+</mapper>

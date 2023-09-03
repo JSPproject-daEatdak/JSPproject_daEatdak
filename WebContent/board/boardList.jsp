@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,104 +42,63 @@
               <div class="title">제목</div>
               <div class="writer">글쓴이</div>
               <div class="date">작성일</div>
-              <div class="count">조회수</div>
+              <div class="count_list">조회수</div>
             </div>
             <div class="board-list">
               <!-- 항목별 제목 top으로 구분 -->
-
-              <div class="post">
-                <div class="num">12</div>
-                <div class="title"><a href ="${pageContext.request.contextPath}/board/boardView.jsp">코딩 너무 재밌다</a></div>
-                <div class="witer">김성찬</div>
-                <div class="date">2023-08-18</div>
-                <div class="count">1056</div>
-              </div>
-
-              <div class="post">
-                <div class="num">11</div>
-                <div class="title"><a href ="${pageContext.request.contextPath}/board/boardView.jsp">코딩 너무 재밌다</a></div>
-                <div class="witer">김성찬</div>
-                <div class="date">2023-08-18</div>
-                <div class="count">1056</div>
-              </div>
-              <div class="post">
-                <div class="num">10</div>
-                <div class="title"><a href ="${pageContext.request.contextPath}/board/boardView.jsp">코딩 너무 힘들다</a></div>
-                <div class="witer">김성찬</div>
-                <div class="date">2023-08-18</div>
-                <div class="count">1056</div>
-              </div>
-
-              <div class="post">
-                <div class="num">9</div>
-                <div class="title"><a href ="${pageContext.request.contextPath}/board/boardView.jspl">코딩 너무 재밌다</a></div>
-                <div class="witer">김성찬</div>
-                <div class="date">2023-08-18</div>
-                <div class="count">1056</div>
-              </div>
-              <div class="post">
-                <div class="num">8</div>
-                <div class="title"><a href ="${pageContext.request.contextPath}/board/boardView.jsp">코딩 너무 재밌다</a></div>
-                <div class="witer">김성찬</div>
-                <div class="date">2023-08-18</div>
-                <div class="count">1056</div>
-              </div>
-
-              <div class="post">
-                <div class="num">7</div>
-                <div class="title"><a href ="${pageContext.request.contextPath}/board/boardView.jsp">코딩 너무 재밌다</a></div>
-                <div class="witer">김성찬</div>
-                <div class="date">2023-08-18</div>
-                <div class="count">1056</div>
-              </div>
-              
-
-              <div class="post">
-                <div class="num">6</div>
-                <div class="title"><a href ="${pageContext.request.contextPath}/board/boardView.jsp">코딩 너무 재밌다</a></div>
-                <div class="witer">김성찬</div>
-                <div class="date">2023-08-18</div>
-                <div class="count">1056</div>
-              </div>
-
-              <div class="post">
-                <div class="num">5</div>
-                <div class="title"><a href ="${pageContext.request.contextPath}/board/boardView.jsp">코딩 너무 재밌다</a></div>
-                <div class="witer">김성찬</div>
-                <div class="date">2023-08-18</div>
-                <div class="count">1056</div>
-              </div>
-              <div class="post">
-                <div class="num">4</div>
-                <div class="title"><a href ="${pageContext.request.contextPath}/board/boardView.jsp">코딩 너무 힘들다</a></div>
-                <div class="witer">김성찬</div>
-                <div class="date">2023-08-18</div>
-                <div class="count">1056</div>
-              </div>
-
-              <div class="post">
-                <div class="num">3</div>
-                <div class="title"><a href ="${pageContext.request.contextPath}/board/boardView.jsp">코딩 너무 재밌다</a></div>
-                <div class="witer">김성찬</div>
-                <div class="date">2023-08-18</div>
-                <div class="count">1056</div>
-              </div>
-              <div class="post">
-                <div class="num">2</div>
-                <div class="title"><a href ="${pageContext.request.contextPath}/board/boardView.jsp">코딩 너무 재밌다</a></div>
-                <div class="witer">김성찬</div>
-                <div class="date">2023-08-18</div>
-                <div class="count">1056</div>
-              </div>
-
-              <div class="post">
-                <div class="num">1</div>
-                <div class="title"><a href ="${pageContext.request.contextPath}/board/boardView.jsp">코딩 너무 재밌다</a></div>
-                <div class="witer">김성찬</div>
-                <div class="date">2023-08-18</div>
-                <div class="count">1056</div>
-              </div>
-
+            	<c:choose>
+              		<c:when test="${not empty boardList}">
+	              		<c:forEach var="board" items="${boardList}">
+	              			<c:choose>
+	              			 <c:when test="${board.getBoardLock()==0 && empty board.getBoardPassword()}"> 
+			              			<div class="post">
+			              				<div class="num">
+			              					<c:out value="${board.getBoardNum()}"></c:out>
+			              				</div>
+			              				<div class="title">
+			              					<a href="${pageContext.request.contextPath}/board/boardViewOk.bo?boardNum=${board.getBoardNum()}">
+			              						<c:out value="${board.getBoardName()}"></c:out>
+			              					</a>
+			              				</div>
+			              				<div class="witer">
+			              					<c:out value="${board.getUserName()}"></c:out>
+			              				</div>
+			              				<div class="date">
+			              					<c:out value="${board.getBoardDate()}"></c:out>
+			              				</div>
+			              				<div class="count">
+			              					<c:out value="${board.getBoardCount()}"></c:out>
+			              				</div>
+		              				</div>
+		              		</c:when>
+		              		<c:when test="${not empty board.getBoardPassword() && board.getBoardLock()==1}">
+		              				<div class="post">
+			              				<div class="num">
+			              					<c:out value="${board.getBoardNum()}"></c:out>
+			              				</div>
+			              				<div class="title">
+			              					<a href="${pageContext.request.contextPath}/board/boardPasswordCheckConfig.bo?boardNum=${board.getBoardNum()}">
+			              						비공개 글 입니다.
+			              					</a>
+			              				</div>
+			              				<div class="witer">
+			              					<c:out value="${board.getUserName()}"></c:out>
+			              				</div>
+			              				<div class="date">
+			              					<c:out value="${board.getBoardDate()}"></c:out>
+			              				</div>
+			              				<div class="count">
+			              					<c:out value="${board.getBoardCount()}"></c:out>
+			              				</div>
+			              			</div>
+		              			</c:when>	
+	              			</c:choose>			
+	              		</c:forEach>
+              		</c:when>			
+              		<c:otherwise>
+              			<div class="post"><div class="post_nonetitle" style="margin-left: 250px;">게시글이 없습니다.</div></div>
+              		</c:otherwise>
+            	</c:choose>
             </div>
             <div class="board-list-bottom">
                <div class="board-search-container">
@@ -165,7 +125,7 @@
                   <a href="#" class="bt last">>></a> -->
                 </div>
                 <div class="bt-container">
-                    <a href="${pageContext.request.contextPath}/board/boardWrite.jsp" class="board-write">등록</a>
+                    <a href="${pageContext.request.contextPath}/board/boardWrite.bo" class="board-write">등록</a>
                 </div>
           </div>
         </div>

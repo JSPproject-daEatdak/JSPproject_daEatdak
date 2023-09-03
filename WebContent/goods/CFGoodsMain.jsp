@@ -33,7 +33,7 @@
                         <li class="list-info">
                             <div class="list">
                                 <figure class="img">
-                                    <a href="/product/html/product_buy_page/productBuypage_beverage.html">
+                                    <a href="${pageContext.request.contextPath}/goods/view/GoodsBuyPage.jsp">
                                         <img class="beverage" src="${pageContext.request.contextPath}/resources/goods/img/beverage01.png">
                                     </a>
                                 </figure>

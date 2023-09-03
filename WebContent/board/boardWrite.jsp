@@ -28,6 +28,7 @@
     	<%@ include file ="/header.jsp" %>
     </div>
 	    <main>
+	
       <div class="board-container">
         <div class="board-main">
             <!-- 문의게시판 title -->
@@ -35,25 +36,29 @@
                <div class="title-text">문의 작성</div>
                <p class="title-text-sub">불편하셨던 부분을 상세히 적어주세요</p>
             </div>
-            <div class="write-title">
-              <input class="content-title" type="text" placeholder="제목을 입력하세요" maxlength="50">
-              <input class="content-password" type="password" placeholder="비밀번호" maxlength="4">
-              <div class="checkbox">
-                <p>비공개 여부</p><input type="checkbox">
-              </div>
-            </div>
-            <div class="board-write">
-              <div class="write-content">
-                <textarea></textarea>
-              </div>
-              <div class="write-bottom">
-                <a href="${pageContext.request.contextPath}/board/boardList.jsp" class="write-btn list">목록으로</a>
-
-                <a href="${pageContext.request.contextPath}/board/boardList.jsp" class="write-btn write">글 등록</a>
-              </div>
-            </div>
+            <form action="boardWriteOk.bo" method="post"> 
+	            <div class="write-title"> 
+	              <input class="content-title" type="text" placeholder="제목을 입력하세요" maxlength="50" name="boardName">
+	              <input class="content-password" type="password" placeholder="비밀번호" maxlength="4" name="boardPassword">
+	              <div class="checkbox">
+	                <p>비공개 여부</p><input type="checkbox" name="boardLock">
+	              </div>
+	            </div>
+	            <div class="board-write">
+	              <div class="write-content">
+	                <textarea name="boardContent"></textarea>
+	              </div>
+	              <div class="write-bottom">
+	                <a href="${pageContext.request.contextPath}/board/boardList.jsp" class="write-btn list">목록으로</a>
+				
+	                <button class="write-btn write" type="submit">글 등록</button>
+	                
+	              </div>
+	            </div>
+             </form>
         </div>
       </div>
+     
     </main>
     </div>
     <div class="footer">

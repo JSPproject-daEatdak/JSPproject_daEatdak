@@ -26,7 +26,7 @@
 <div class="side-banner-container">
     <!-- 사이드 배너 영역 -->
     <div class="side-banner">
-    	<%@ include file="/slideBanner.jsp" %>  <!--상대경로로 각 페이지마다 맞게 작성 ex) ./slideBanner.jsp or ../ ...-->
+       <%@ include file="/slideBanner.jsp" %>  <!--상대경로로 각 페이지마다 맞게 작성 ex) ./slideBanner.jsp or ../ ...-->
     </div>
 </div>
 
@@ -35,16 +35,16 @@
 <!--해당 관련 css - min-height값은 추후에 완성본에서 조정할 예정이니 일단 넣을 것 -->
 <div class="header-main-container">
 
-		<!--헤더영역-->
+      <!--헤더영역-->
     <div class="header">
-			<%@ include file="/header.jsp" %>  <!--상대경로로 각 페이지마다 맞게 작성-->
-		</div>
+         <%@ include file="/header.jsp" %>  <!--상대경로로 각 페이지마다 맞게 작성-->
+      </div>
 
-		<div class='main'>
-				<main>
-					<!--개인 페이지 작업영역-->
-					
-					<div class="signup-container">
+      <div class='main'>
+            <main>
+               <!--개인 페이지 작업영역-->
+               
+               <div class="signup-container">
                 <div class="signup-area">
                     <div class="signup-greeting">
                         <strong class="txt">회원가입을 진행해주세요!</strong>
@@ -70,25 +70,25 @@
                     </form>                   
                 </div>
             </div>
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-				</main>
-		</div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+            </main>
+      </div>
 
 </div> <!--header-main-container 닫기-->
 
 
 <!--푸터 영역-->
 <div class="footer">
-    	<%@ include file="/footer.jsp" %>  <!--상대경로로 각 페이지마다 맞게 작성-->
+       <%@ include file="/footer.jsp" %>  <!--상대경로로 각 페이지마다 맞게 작성-->
 </div>
 
 </body>

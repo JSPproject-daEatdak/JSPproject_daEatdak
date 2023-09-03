@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,9 +48,9 @@
                     <!-- 매인 배너 섹션 -->
                     <div class="banner-section">
                         <ul>
-                            <li><img src="./resources/common/img/mainbanner3.jpg" alt="매인베너" /></li>
-                            <li><img src="./resources/common/img/mainBanner1.jpg" alt="매인베너" /></li>
-                            <li><img src="./resources/common/img/mainbanner2.jpg" alt="매인베너" /></li>
+                            <li><img src="${pageContext.request.contextPath}/resources/common/img/mainbanner3.jpg" alt="매인베너" /></li>
+                            <li><img src="${pageContext.request.contextPath}/resources/common/img/mainBanner1.jpg" alt="매인베너" /></li>
+                            <li><img src="${pageContext.request.contextPath}/resources/common/img/mainbanner2.jpg" alt="매인베너" /></li>
                         </ul>
                        
                     </div>
@@ -81,325 +82,90 @@
                         <!-- 카테고리별 상품들 -->
                         <div class="goods-contents">
                             <div class="panel" id="panel1">
-                                <ul>
-                                    <li><a href="http://127.0.0.1:5501/common/html/index.html#">
-                                        <div class="goods-zoom-container">
-                                        <img src="./resources/common/img/닭고기/chicken.jpg" alt="닭메뉴1"/>
-                                        </div>
-                                            <h5>다잇닭</h5>
-                                            <h6>훈제 닭가슴살 100g</h6>
-                                            <p>17,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/닭고기/닭가슴살 볼 깻잎맛.jpg" alt="닭메뉴2"/>
-                                            </div>
-                                            <h5>다잇닭</h5>
-                                            <h6>닭가슴살 볼 깻잎맛 100g</h6>
-                                            <p>19,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/닭고기/닭가슴살 볼 치즈맛.jpg" alt="닭메뉴3"/>
-                                            </div>
-                                            <h5>다잇닭</h5>
-                                            <h6>닭가슴살 볼 치즈맛 100g</h6>
-                                            <p>19,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/닭고기/닭가슴살 크림머스타드.jpg" alt="닭메뉴4"/>
-                                            </div>
-                                            <h5>다잇닭</h5>
-                                            <h6>소스 통 닭가슴살 크림맛 100g</h6>
-                                            <p>21,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/닭고기/닭가슴살 짬뽕.jpg" alt="닭메뉴5"/>
-                                            </div>                                            
-                                            <h5>다잇닭</h5>
-                                            <h6>소스 통 닭가슴살 짬뽕 100g</h6>
-                                            <p>21,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/닭고기/닭가슴살 오븐구이 퀸즈.jpg" alt="닭메뉴6"/>
-                                            </div>                                            
-                                            <h5>다잇닭</h5>
-                                            <h6>닭가슴살 오븐구이 화이트퀸즈</h6>
-                                            <p>15,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/닭고기/닭가슴살 오븐구이 칠리.jpg" alt="닭메뉴7"/>
-                                            </div>                                           
-                                            <h5>다잇닭</h5>
-                                            <h6>닭가슴살 오븐구이 화이트칠리</h6>
-                                            <p>15,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/닭고기/닭가슴살 한끼볼 혼합.jpg" alt="닭메뉴8"/>
-                                            </div>
-                                            <h5>다잇닭</h5>
-                                            <h6>닭가슴살 한끼볼 혼합 100g</h6>
-                                            <p>23,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/닭고기/닭가슴살 블랙소이.jpg" alt="닭메뉴9"/>
-                                            </div>  
-                                            <h5>다잇닭</h5>
-                                            <h6>소스통 닭가슴살 블랙소이</h6>
-                                            <p>17,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/닭고기/닭가슴살 큐브 고추맛.jpg" alt="닭메뉴10"/>
-                                            </div>                                            
-                                            <h5>다잇닭</h5>
-                                            <h6>닭가슴살 큐브 고추맛 100g</h6>
-                                            <p>23,900원</p>
-                                        </a>
-                                    </li>
-                                </ul>
+                               
+                                    <c:choose>
+        <c:when test="${not empty category1}">
+            <ul>
+                <c:forEach items="${category1}" var="goods" varStatus="loop">
+                    <c:if test="${loop.index < 10}">          
+                        <li>
+                            <a href="#">
+                                <div class="zoom-container">
+                                    <img src="${pageContext.request.contextPath}/resources/goods/img/chicken01.png" alt="신상품1"/>
+                                </div>
+                                <h5>다잇닭<h5>
+                                <h6>${goods.getGoodsName()}</h6>
+                                <p>${goods.goodsPrice}원</p>
+                            </a>
+                        </li>
+                    </c:if>
+                </c:forEach>
+            </ul>
+        </c:when>
+        </c:choose>
+                               
                                 <div class="move-to-menu-button-section">
                                     <a href="${pageContext.request.contextPath}/goods/ChickenGoodsMain.jsp">
                                         <h6>닭고기 전체보기</h6>
                                     </a>
                                 </div>
                             </div>
+                            
+                            
+                            
                             <div class="panel" id="panel2">
-                                <ul>
-                                    <li><a href="http://127.0.0.1:5501/common/html/index.html#">
-                                        <div class="goods-zoom-container">
-                                        	<img src="./resources/common/img/돼지고기/저지방 한돈 소시지 하바네로.jpg" alt="돼지고기1"/>
-                                        </div>
-                                            <h5>다잇돈</h5>
-                                           
-                                        </a>
-                                        
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/돼지고기/저지방 한돈 소세지 피자 100g.jpg" alt="돼지고기2"/>
-                                            </div>
-                                            <h5>다잇돈</h5>
-                                            <h6>저지방 한돈 소세지 피자 100g</h6>
-                                            <p>19,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/돼지고기/오리엔탈 소이소스 소시지 120g.png" alt="돼지고기3"/>
-                                            </div>
-                                            <h5>다잇돈</h5>
-                                            <h6>오리엔탈 소이소스 소시지 </h6>
-                                            <p>26,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/돼지고기/멕시칸 핫칠리 소시지 120g.png" alt="돼지고기4"/>
-                                            </div>
-                                            <h5>다잇돈</h5>
-                                            <h6>멕시칸 핫칠리 소시지</h6>
-                                            <p>24,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/돼지고기/코리안 그린 칠리 소시지 120g.png" alt="돼지고기5"/>
-                                            </div>                                            
-                                            <h5>다잇돈</h5>
-                                            <h6>코리안 그린 칠리 소시지</h6>
-                                            <p>22,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/돼지고기/토마토 소스 치즈함박 130g.jpg" alt="돼지고기6"/>
-                                            </div>                                            
-                                            <h5>다잇돈</h5>
-                                            <h6>토마토 소스 치즈함박 스테이크</h6>
-                                            <p>15,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/돼지고기/육즙 품은 합박스테이크.jpg" alt="돼지고기7"/>
-                                            </div>                                           
-                                            <h5>다잇돈</h5>
-                                            <h6>육즙 품은 함박 스테이크</h6>
-                                            <p>15,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/돼지고기/저먼 스탠다드 소시지 120g.png" alt="돼지고기8"/>
-                                            </div>
-                                            <h5>다잇돈</h5>
-                                            <h6>저먼 스탠다드 소시지</h6>
-                                            <p>23,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/돼지고기/소시지 4종 20팩 퍼펙트 세트.jpg" alt="돼지고기9"/>
-                                            </div>  
-                                            <h5>다잇돈</h5>
-                                            <h6>소시지 4종 퍼펙트 세트</h6>
-                                            <p>17,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/돼지고기/육즙 품은 직화 함박스테이크 오리지널.jpg" alt="돼지고기10"/>
-                                            </div>                                            
-                                            <h5>다잇돈</h5>
-                                            <h6>육즙 풉은 직화 함박스테이크
-                                            </h6>
-                                            <p>23,900원</p>
-                                        </a>
-                                    </li>
-                                </ul>
+                                <c:choose>
+        <c:when test="${not empty category2}">
+            <ul>
+                <c:forEach items="${category2}" var="goods" varStatus="loop">
+                    <c:if test="${loop.index < 10}">          
+                        <li>
+                            <a href="#">
+                                <div class="zoom-container">
+                                    <img src="${pageContext.request.contextPath}/resources/goods/img/pig01.png" alt="신상품1"/>
+                                </div>
+                                <h5>다잇닭<h5>
+                                <h6>${goods.getGoodsName()}</h6>
+                                <p>${goods.goodsPrice}원</p>
+                            </a>
+                        </li>
+                    </c:if>
+                </c:forEach>
+            </ul>
+        </c:when>
+        </c:choose>
                                 <div class="move-to-menu-button-section">
                                     <a href="${pageContext.request.contextPath}/goods/PigGoodsMain.jsp">
                                         <h6>돼지고기 전체보기</h6>
                                     </a>
                                 </div>
                             </div>
+                            
+                            
+                            
+                            
+                            
                             <div class="panel" id="panel3">
-                                <ul>
-                                    <li><a href="http://127.0.0.1:5501/common/html/index.html#">
-                                        <div class="goods-zoom-container">
-                                        <img src="./resources/common/img/소고기/미트볼 고추 100g.jpg" alt="소고기1"/>
-                                        </div>
-                                            <h5>다잇소</h5>
-                                            <h6>미트볼 고추맛 100g</h6>
-                                            <p>16,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/소고기/미트볼 오리지널 100g.jpg" alt="소고기2"/>
-                                            </div>
-                                            <h5>다잇소</h5>
-                                            <h6>미트볼 오리지널 100g</h6>
-                                            <p>16,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/소고기/미트볼 혼합 100g.jpg" alt="소고기3"/>
-                                            </div>
-                                            <h5>다잇소</h5>
-                                            <h6>미트볼 혼합 100g </h6>
-                                            <p>17,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/소고기/소고기 스테이크 청양고추.jpg" alt="소고기4"/>
-                                            </div>
-                                            <h5>다잇소</h5>
-                                            <h6>소고기 스테이크 청양고추</h6>
-                                            <p>24,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/소고기/소고기볼 오리지널 100g.jpg" alt="소고기5"/>
-                                            </div>                                            
-                                            <h5>다잇소</h5>
-                                            <h6>소고기볼 오리지널 100g</h6>
-                                            <p>22,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/소고기/소고기볼 청양고추 100g.jpg" alt="소고기6"/>
-                                            </div>                                            
-                                            <h5>다잇소</h5>
-                                            <h6>소고기볼 오리지널 청양고추</h6>
-                                            <p>15,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/소고기/미트볼 고추 100g.jpg" alt="소고기7"/>
-                                            </div>                                           
-                                            <h5>다잇소</h5>
-                                            <h6>미트볼 고추맛 100g</h6>
-                                            <p>15,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/소고기/meat.jpg" alt="소고기8"/>
-                                            </div>
-                                            <h5>다잇소</h5>
-                                            <h6>미트볼 소이소스맛 </h6>
-                                            <p>23,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/소고기/저지방 홍두깨살 200g.jpg" alt="소고기9"/>
-                                            </div>  
-                                            <h5>다잇소</h5>
-                                            <h6>저자빙 홍두깨살 200g</h6>
-                                            <p>17,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/소고기/저지방 소고기 설도 100g.jpg" alt="소고기10"/>
-                                            </div>                                            
-                                            <h5>다잇소</h5>
-                                            <h6>저자빙 소고기 설도 100g
-                                            </h6>
-                                            <p>23,900원</p>
-                                        </a>
-                                    </li>
-                                </ul>
+                                <c:choose>
+        <c:when test="${not empty category3}">
+            <ul>
+                <c:forEach items="${category3}" var="goods" varStatus="loop">
+                    <c:if test="${loop.index < 10}">          
+                        <li>
+                            <a href="#">
+                                <div class="zoom-container">
+                                    <img src="${pageContext.request.contextPath}/resources/goods/img/cow01.png" alt="신상품1"/>
+                                </div>
+                                <h5>다잇닭<h5>
+                                <h6>${goods.getGoodsName()}</h6>
+                                <p>${goods.goodsPrice}원</p>
+                            </a>
+                        </li>
+                    </c:if>
+                </c:forEach>
+            </ul>
+        </c:when>
+        </c:choose>
                                 <div class="move-to-menu-button-section">
                                     <a href="${pageContext.request.contextPath}/goods/CowGoodsMain.jsp">
                                         <h6>소고기 전체보기</h6>
@@ -407,108 +173,26 @@
                                 </div>
                             </div>
                             <div class="panel" id="panel4">
-                                <ul>
-                                    <li><a href="http://127.0.0.1:5501/common/html/index.html#">
-                                        <div class="goods-zoom-container">
-                                        <img src="./resources/common/img/간편식/한끼 쉐이크 견과 300g.jpg" alt="간편식1"/>
-                                        </div>
-                                            <h5>다잇닷</h5>
-                                            <h6>한끼 쉐이크 견과 300g</h6>
-                                            <p>15,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/간편식/한끼 쉐이크 망고 300g.jpg" alt="간편식2"/>
-                                            </div>
-                                            <h5>다잇닷</h5>
-                                            <h6>한끼 쉐이크 망고 300g</h6>
-                                            <p>15,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/간편식/스파클링 애플(0kcal).jpg" alt="간편식3"/>
-                                            </div>
-                                            <h5>다잇닷</h5>
-                                            <h6>스파클링 애플(0kcal) </h6>
-                                            <p>17,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/간편식/스파클링 파인애플(0kcal).jpg" alt="간편식4"/>
-                                            </div>
-                                            <h5>다잇닷</h5>
-                                            <h6>스파클링 파인애플(0kcal)</h6>
-                                            <p>24,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/간편식/타브카 에너지 드링크 혼합.jpg" alt="간편식5"/>
-                                            </div>                                            
-                                            <h5>다잇닷</h5>
-                                            <h6>타브카 에너지 드링크 혼합</h6>
-                                            <p>22,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/간편식/마늘소시지볶음밥 오리니절.jpg" alt="간편식6"/>
-                                            </div>                                            
-                                            <h5>다잇닷</h5>
-                                            <h6>마늘소시지볶음밥 오리지널</h6>
-                                            <p>15,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/간편식/연근우엉밥&스팀닭가슴살 깻잎맛.jpg" alt="간편식7"/>
-                                            </div>                                           
-                                            <h5>다잇닷</h5>
-                                            <h6>연근우엉밥&닭가슴살 깻잎맛</h6>
-                                            <p>15,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/간편식/연근우엉밥&스팀닭가슴살 마늘맛.jpg" alt="간편식8"/>
-                                            </div>
-                                            <h5>다잇닷</h5>
-                                            <h6>연근우엉밥&닭가슴살 마늘맛</h6>
-                                            <p>23,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/간편식/제주톳보리밥.jpg" alt="간편식9"/>
-                                            </div>  
-                                            <h5>다잇닷</h5>
-                                            <h6>제주 톳 보리밥</h6>
-                                            <p>25,900원</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="http://127.0.0.1:5501/common/html/index.html#">
-                                            <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/간편식/스파클링 캔 오랜지(0kcal).jpg" alt="간편식10"/>
-                                            </div>                                            
-                                            <h5>다잇닷</h5>
-                                            <h6>스파클링 캔 오랜지(0kcal)
-                                            </h6>
-                                            <p>23,900원</p>
-                                        </a>
-                                    </li>
-                                </ul>
+                                <c:choose>
+        <c:when test="${not empty category4}">
+            <ul>
+                <c:forEach items="${category4}" var="goods" varStatus="loop">
+                    <c:if test="${loop.index < 10}">          
+                        <li>
+                            <a href="#">
+                                <div class="zoom-container">
+                                    <img src="${pageContext.request.contextPath}/resources/goods/img/beverage01.png" alt="신상품1"/>
+                                </div>
+                                <h5>다잇닭<h5>
+                                <h6>${goods.getGoodsName()}</h6>
+                                <p>${goods.goodsPrice}원</p>
+                            </a>
+                        </li>
+                    </c:if>
+                </c:forEach>
+            </ul>
+        </c:when>
+        </c:choose>
                                 <div class="move-to-menu-button-section">
                                     <a href="${pageContext.request.contextPath}/goods/CFGoodsMain.jsp">
                                         <h6>간편식 전체보기</h6>
@@ -530,94 +214,31 @@
 
                 <!-- 신상품 -->
                 <div class="recently-goods-contents">
-                    <ul>
+    <c:choose>
+        <c:when test="${not empty goodsList}">
+            <ul>
+                <c:forEach items="${goodsList}" var="goods" varStatus="loop">
+                    <c:if test="${loop.index < 10}">          
                         <li>
                             <a href="#">
                                 <div class="zoom-container">
-                                    <img src="./resources/common/img/닭고기/chicken2.jpg" alt="신상품1"/>
+                                    <img src="${pageContext.request.contextPath}/resources/goods/img/beverage01.png" alt="신상품1"/>
                                 </div>
-                                <p><span>다잇닭</span> 훈제 닭가슴살 100g</p>
-                                <p>17,900원</p>
+                                <p><span>다잇닭</span>${goods.getGoodsName()}</p>
+                                <p>${goods.goodsPrice}원</p>
                             </a>
                         </li>
-                        <li>
-                            <a href="#">
-                                <div class="zoom-container">
-                                <img src="./resources/common/img/돼지고기/pork2.jpg" alt="신상품2"/></div>
-                                <p><span>다잇소</span> 훈제 닭가슴살 100g</p>
-                                <p>17,900원</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="zoom-container">
-                                <img src="./resources/common/img/돼지고기/pork.jpg" alt="신상품3"/></div>
-                                <p><span>다잇소</span> 훈제 닭가슴살 100g</p>
-                                <p>17,900원</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="zoom-container">
-                                <img src="./resources/common/img/소고기/meat.jpg" alt="신상품4"/></div>
-                                <p><span>다잇소</span> 훈제 닭가슴살 100g</p>
-                                <p>17,900원</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="zoom-container">
-                                <img src="./resources/common/img/소고기/meat2.jpg" alt="신상품5"/></div>
-                                <p><span>다잇소</span> 훈제 닭가슴살 100g</p>
-                                <p>17,900원</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="zoom-container">
-                                <img src="./resources/common/img/닭고기/chicken3.jpg" alt="신상품6"/></div>
-                                <p><span>다잇닭</span> 훈제 닭가슴살 100g</p>
-                                <p>17,900원</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="zoom-container">
-                                <img src="./resources/common/img/소고기/meat4.jpg" alt="신상품7"/></div>
-                                <p><span>다잇돈</span> 훈제 닭가슴살 100g</p>
-                                <p>17,900원</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="zoom-container">
-                                <img src="./resources/common/img/닭고기/chicken.jpg" alt="신상품8"/></div>
-
-                                <p><span>다잇닭</span> 훈제 닭가슴살 100g</p>
-                                <p>17,900원</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="zoom-container">
-                                <img src="./resources/common/img/돼지고기/pork3.jpg" alt="신상품9"/>
-                                </div>
-                                <p><span>다잇돈</span> 훈제 닭가슴살 100g</p>
-                                <p>17,900원</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="zoom-container">
-                                <img src="./resources/common/img/소고기/meat3.jpg" alt="신상품10"/>
-                                </div>
-                                <p><span>다잇돈</span> 훈제 닭가슴살 100g</p>
-                                <p>17,900원</p>
-                            </a>
-                        </li>
-                    </ul>
-                  
-                </div>
+                    </c:if>
+                </c:forEach>
+            </ul>
+        </c:when>
+        <c:otherwise>
+            <li>
+                <p>판매량이 높은 상품이 없습니다.</p>
+            </li>
+        </c:otherwise>
+    </c:choose>
+</div>
                   <!-- 화살표-좌우슬라이드 -->
                 </div>
                 <button class="recently-section-button recently-left-button"><span class="material-symbols-outlined">
@@ -636,7 +257,7 @@
                 <h3><span>다잇닭</span>을 더 재미있게 즐길 수 있는 방법! </h3>
                 <div class="media-taps">
                     <div class="media-tap">
-                        <video src="./resources/common/img/media1.mp4" controls muted>
+                        <video src="${pageContext.request.contextPath}/resources/common/img/media1.mp4" controls muted>
                         </video>
                     </div>
 
@@ -647,7 +268,7 @@
                             <dt>이것들을 준비해주세요!</dt>
                             <dd>
                                 <div class="media-img-container">
-                                    <img src="./resources/common/img/닭고기/chicken.jpg" alt="재료1"/>
+                                    <img src="${pageContext.request.contextPath}/resources/common/img/닭고기/chicken.jpg" alt="재료1"/>
                                 </div>
                                 <div class="material-detail">
                                     <p>다잇닭</p>
@@ -675,4 +296,43 @@
     
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // 페이지 로드 시 서버에서 데이터를 가져와서 출력
+        $.ajax({
+            url: "getTopSellingGoods", // 실제로 데이터를 가져올 서버 URL을 입력해야 합니다.
+            method: "GET",
+            dataType: "json",
+            success: function (data) {
+                var $topSellingGoodsList = $("#topSellingGoodsList");
+                
+                // 가져온 데이터를 동적으로 리스트에 추가
+                $.each(data, function (index, goods) {
+                    $topSellingGoodsList.append(
+                    		'<ul>' +
+                        '<li>' +
+                        '<a href="#">' +
+                        '<div class="zoom-container">' +
+                        '<!-- 이미지 없음 -->' +
+                        '</div>' +
+                        '<p><span>다있닭</span> ' + goods.goods_name + '</p>' +
+                        '<p>' + goods.goods_price + '원</p>' +
+                        '</a>' +
+                        '</li>' +
+                        '</ul>'
+                        
+                    );
+                    content.trigger( "create") ;
+                });
+            }
+        });
+    });
+    
+    
+    
+    
+    
+</script>
+
 </html>

@@ -21,7 +21,7 @@
 
             <!-- 로고-->
             <div class="header-logo-container">
-                <a href='${pageContext.request.contextPath}/index.jsp' method="get">
+                <a href='${pageContext.request.contextPath}/common/MainFullMenu.co' method="get">
                     <h4>다잇닭</h4>
                 
                  <p>daEatdak</p> </a>

@@ -1,16 +1,18 @@
 package com.daeatdak.board;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.daeatdak.Result;
+
 /**
  * Servlet implementation class example
  */
-@WebServlet("/example")
+//@WebServlet("/example")
 public class BoardFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -27,7 +29,9 @@ public class BoardFrontController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		doProcess(request,response);
 	}
 
 	/**
@@ -35,7 +39,53 @@ public class BoardFrontController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+//		doGet(request, response);
+		
+		doProcess(request,response);
 	}
 
+	
+	public void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String target=request.getRequestURI().substring(request.getContextPath().length());
+//		request.getRequestURI().substring(request.getContextPath().length());
+		System.out.println("jsp_daEatdak 컨트롤러 실행!");
+		System.out.println(target);
+		switch(target) {
+		
+		case "/board/boardListOk.bo" :
+			System.out.println("리스트 성공!");
+			new BoardListOkController().execute(request, response);
+			break;
+		case "/board/boardWrite.bo" :
+			System.out.println("글쓰기로 이동");
+			request.getRequestDispatcher("/board/boardWrite.jsp").forward(request, response);
+			break;
+			
+		case "/board/boardWriteOk.bo":	
+			System.out.println("글쓰기 성공!");
+			new BoardWriteOkController().execute(request, response);
+			break;
+			
+		case "/board/boardViewOk.bo" :
+			System.out.println("조회수 증가 메소드 실행 완료!");
+			System.out.println("게시글 세보정보 페이지로 이동!");
+			new BoardViewOkController().execute(request, response);
+			break;
+			
+		case "/board/boardPasswordCheckConfig.bo" :
+			System.out.println("비공개글 확인 페이지로 이동완료!");
+			new BoardPasswordCheck().execute(request, response);
+			break;
+		
+	
+		case "/board/boardPasswordCheckConfigOk.bo" :
+			System.out.println("비밀번호 체크 시작");
+			new BoardPasswoardOkCheck().execute(request, response);
+			break;
+		}
+	
+		
+	}
+	
 }

@@ -101,7 +101,7 @@ a{
     margin-left: 55px;
 }
 
-.top .count{
+.top .count_list{
     margin-left: 90px;
 }
 
@@ -111,6 +111,11 @@ a{
     height: 40px;
     font-size: 14px;
 }
+.post .post_nonetitle{
+  
+    margin-left: 250px;
+
+}
 
 .post .num{
     width: 10%;
@@ -118,6 +123,7 @@ a{
 
 .post .title{
     width: 50%;
+    cursor: pointer;
 }
 
 .post .writer{

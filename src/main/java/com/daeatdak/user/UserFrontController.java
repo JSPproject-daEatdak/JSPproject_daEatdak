@@ -67,7 +67,9 @@ public class UserFrontController extends HttpServlet {
 
 		case "/user/joinOk.me":
 			System.out.println("joinOk");
-			result = new JoinOkController().execute(request, response);
+			new JoinOkController().execute(request, response);
+			request.getRequestDispatcher("/user/login.me").forward(request, response);
+
 			break;
 
 		case "/user/checkIdOk.me":

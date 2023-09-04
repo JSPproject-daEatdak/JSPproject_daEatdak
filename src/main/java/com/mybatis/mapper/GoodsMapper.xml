@@ -13,4 +13,7 @@
   <select id ="selectGoodsNum" resultType="GoodsDTO" parameterType="_int">
   		select * from goods where goods_num = #{goodsNum}
   </select>
+  <select id="selectPurchase" resultType="GoodsDTO">
+  		select * from goods where category_num = 1;
+  </select>
 </mapper>

@@ -1,23 +1,23 @@
-package com.daeatdak.login.dao;
+package com.daeatdak.myPage.dao;
 
 import org.apache.ibatis.session.SqlSession;
 
 import com.daeatdak.login.dto.UserDTO;
 import com.mybatis.config.MyBatisConfig;
 
-public class UserDAO {
+public class myPageDAO {
 
+	
 	public SqlSession sqlSession;
 	
-	public UserDAO() {
+	public myPageDAO() {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
-	public UserDTO login(UserDTO userDTO) {
-		System.out.println("왔는지 보자");
+	public UserDTO revise(UserDTO userDTO) {
+		System.out.println("요긴 안 와?");
 		
-		UserDTO user = sqlSession.selectOne("user.login", userDTO);
-		
-		return user;
+		sqlSession.update("user.revise", userDTO);
+		return null;
 	}
 }

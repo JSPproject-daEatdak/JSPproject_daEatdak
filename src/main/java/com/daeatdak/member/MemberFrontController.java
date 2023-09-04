@@ -3,13 +3,11 @@ package com.daeatdak.member;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.daeatdak.Result;
-import com.daeatdak.login.controller.LoginController;
 
 public class MemberFrontController extends HttpServlet {
 
@@ -31,9 +29,6 @@ public class MemberFrontController extends HttpServlet {
 	   
 	   protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		   
-		   
-		   
-		   
 	      System.out.println(request.getContextPath());      
 	      System.out.println(request.getRequestURI());
 	      
@@ -47,10 +42,11 @@ public class MemberFrontController extends HttpServlet {
 	      	break;
 	      
 	      case "/member/loginOK.me":
-	         System.out.println("loginOk!!");
+	         System.out.println("loginOk!!!");
 	         new LoginController().execute(request, response);
-	         request.getRequestDispatcher("/index.jsp").forward(request, response);
-	         break;
+//	         request.getRequestDispatcher("index.jsp").forward(request, response);
+//	         request.getRequestDispatcher("/member/login.jsp").forward(request, response);
+		     break;
 	      
 	      case "/member/logoutOK.me" :
 	    	  System.out.println("테스트");	    	  

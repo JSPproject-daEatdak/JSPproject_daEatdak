@@ -100,7 +100,7 @@ function productDel() {
 
   $(".upla").click(function() {
       var up = confirm("등록 하시겠습니까?");
-      link = "admin_productInfo.html"
+      link = "adminProductInfo.jsp"
       if(up) {
           alert("등록되었습니다.")
           location.href = link;

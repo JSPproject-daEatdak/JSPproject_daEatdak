@@ -56,27 +56,27 @@
 
 						<form id="login_form" name="login_form"
 							action="${pageContext.request.contextPath}/member/loginOK.me"
-							onsubmit='return aclick();' method="post">
+							 method="post">
 
 							<div class="input-group">
 								<div class="input-text">
 									<input type="text" id="userName" name="userName"
-										placeholder="유저명!!" maxlength="100"> <label
+										placeholder="유저명" maxlength="100"> <label
 										class="nameNull" style="display: none;">유저명을 입력하세요.</label> <input
 										type="password" id="userPassword" name="userPassword"
 										placeholder="비밀번호" maxlength="100"> <label
 										class="pwNull" style="display: none">패스워드를 입력하세요.</label>
+
 									<c:choose>
 										<c:when test="${loginOk == false}">
 											<label class="loginX" style="color: red;">아이디 혹은
 												비밀번호가 틀렸습니다.</label>
 										</c:when>
 										<c:otherwise>
-											<label class="loginX" style="display: none">아이디 혹은
-												비밀번호가 틀렸습니다.</label>
+<!-- 											<label class="loginX" style="display: none">아이디 혹은 -->
+<!-- 												비밀번호가 틀렸습니다.</label> -->
 										</c:otherwise>
 									</c:choose>
-									
 								</div>
 							</div>
 							<div class="button-login">

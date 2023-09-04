@@ -31,5 +31,15 @@ public class GoodsDAO {
 	   public GoodsDTO selectGoodsNum(int goodsNum){
 		   return sqlSession.selectOne("goods.selectGoodsNum", goodsNum);
 	   }
+//	   public List<goodsDTO> selectPurchase(int categoryNum) {
+//		   System.out.println("3차 확인");
+//		   return sqlSession.selectList("goods.selectPurchase",categoryNum);
+//	   }
+	   
+	   public List<GoodsDTO> selectPurchase(int categoryNum){
+		   System.out.println("3차 확인");
+		      return sqlSession.selectList("goods.selectPurchase", categoryNum);
+		   }
+
 	   
 }

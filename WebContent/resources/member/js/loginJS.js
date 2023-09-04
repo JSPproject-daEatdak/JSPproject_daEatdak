@@ -20,21 +20,6 @@ function loginName() {
 		} 
 		$(".loginX").css("color", "red");
 		
-		/*if(name != "User1") {
-			alert("test");
-			$('.loginX').css("display", "block");
-			$('.loginX').css("color", "red");
-			return false;
-			
-		} else if(password != "password1") {
-			alert("test2");
-			$('.loginX').css("display", "block");
-			$('.loginX').css("color", "red");
-			return false;
-		} else {
-			$('.loginX').css("display", "none");			
-		}*/
-		
 		return true;
 	})
   }

@@ -16,19 +16,28 @@ public class FindUserPasswordController implements Execute {
 	@Override
 	public Result execute(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServerException {
-
-		UserDAO userDAO = new UserDAO();
 		UserDTO userDTO = new UserDTO();
-		Result result = new Result();
+		UserDAO userDAO = new UserDAO();
+
+//		request.setAttribute("findUserEmail", userDAO.findUserEmailByName(userDTO));
+		String userEmail = request.getParameter("userEmail");
+		String userName = request.getParameter("userName");
+		String userPhone = request.getParameter("userPhone");
+
+		System.out.println(userEmail);
+		System.out.println(userName);
+		System.out.println(userPhone);
+		userDTO.setUserEmail(userEmail);
+		userDTO.setUserName(userName);
+		userDTO.setUserPhone(userPhone);
 		
-		userDAO.findUserEmailByName(userDTO);
+		userDTO=userDAO.findUserPasswordByEmail(userDTO);
+
+		request.setAttribute("userName", userName);
+		request.setAttribute("userPassword", userDTO.getUserPassword());
 		
-		result.setRedirect(true);
-		result.setPath(request.getContextPath());
-		
-		return result;
+		return null;
+
 	}
 
-	
-	
 }

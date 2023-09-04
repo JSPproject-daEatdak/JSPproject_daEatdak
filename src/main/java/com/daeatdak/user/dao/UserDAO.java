@@ -32,18 +32,18 @@ public class UserDAO {
 		
 		
 		//아이디찾기
-		public List<UserDAO> findUserEmailByName(UserDTO userDTO) {
+		public UserDTO findUserEmailByName(UserDTO userDTO) {
 		
-			return 	sqlSession.selectList("user.getUserEmailByName");
-
+			 userDTO =sqlSession.selectOne("user.getUserEmailByName", userDTO);
+			 return userDTO;
 		}
 		
 		
 		//비밀번호 찾기
-		public String findUserPasswordByEmail(UserDTO userDTO) {
+		public UserDTO findUserPasswordByEmail(UserDTO userDTO) {
 			
-			String userPassword = (String)sqlSession.selectOne("user.getUserPasswordByEmail", userDTO);
-			return userPassword;
+			userDTO=sqlSession.selectOne("user.getUserPasswordByEmail", userDTO);
+			return userDTO;
 		}
 		
 		public int getSequence() {

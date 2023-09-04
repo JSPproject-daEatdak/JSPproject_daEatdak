@@ -23,7 +23,7 @@
 	
 	<select id="checkId" parameterType="String" resultType="_int">
  		
- 			select count(user_number) from tbl_user
+ 			select count(user_num) from users
  			where user_Email = #{userEmail}
  		
  		</select>
@@ -37,11 +37,11 @@
  	
  	</select>
  	
- 	<select id="getUserPasswordByEmail" parameterType="UserDTO" resultType="String">
+ 	<select id="getUserPasswordByEmail" parameterType="UserDTO" resultType="UserDTO">
  	
  			select user_password
  			from users
- 			where user_name = #{userName} and user_phone = #{userPhone} and user_email = #{userEmail}
+ 			where user_email = #{userEmail} and user_name = #{userName} and user_phone = #{userPhone} 
  	
  	</select>
  	

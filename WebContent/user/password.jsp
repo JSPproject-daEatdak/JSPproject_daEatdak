@@ -44,13 +44,13 @@
             <div class="userInfo-container">
                             <div class="userInfo-section">
             
-                <h2><span>다잇닭</span> 회원 이메일 찾기 </h2>
+                <h2><span>다잇닭</span> 회원 비밀번호 찾기 </h2>
                 <div class="find-user-Info">
                     <dl>
 
                         <dt><h3><%=request.getAttribute("userName")%>님 환영합니다.</h3></dt>
                         <dd>검색된 정보를 보여드릴게요!</dd>
-                        <dd><%=request.getAttribute("userName")%>님 이메일 : <span><%=request.getAttribute("userEmail")%></span> </dd>
+                        <dd><%=request.getAttribute("userName")%>님 비밀번호 : <span><%=request.getAttribute("userPassword")%></span> </dd>
                     </dl>
                 </div>
                 <div class="user-info-result-btn">

@@ -43,8 +43,8 @@
 	 
 	 </delete>
 	 
- 	  <select id = "GoodsRegistInfo" parameterType="_int" resultType="adminDTO">
-         select c.category_num,g.goods_name,  g.goods_price,  g.goods_quantity
+ 	  <select id = "GoodsRegistInfo" parameterType="_int" resultType="AdminDTO">
+         select c.category_num, g.goods_name,  g.goods_price,  g.goods_quantity
          from goods g
          join category c on g.category_num = c.category_num
 		 where goods_num = #{goodsNum}   

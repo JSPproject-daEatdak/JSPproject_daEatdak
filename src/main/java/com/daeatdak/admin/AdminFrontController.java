@@ -79,6 +79,8 @@ public class AdminFrontController extends HttpServlet {
 
 		case "/admin/goodsListDelete.ad":
 			new GoodsListDeleteOkController().execute(request, response);
+			request.getRequestDispatcher("/admin/adminProductInfo.jsp").forward(request, response);
+
 			System.out.println("삭제성공!");
 			break;
 

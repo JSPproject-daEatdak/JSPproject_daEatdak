@@ -22,9 +22,9 @@ public class GoodsInfoRegistController implements Execute {
 		
 		AdminDAO adminDAO = new AdminDAO();
 		AdminDTO adminDTO = new AdminDTO();
-		int goodsNumber = Integer.valueOf(  request.getParameter("goodsNum"));
+		int goodsNumber = Integer.valueOf(request.getParameter("goodsNum"));
 		
-		System.out.println(goodsNumber + "수정하기 페이지");
+		System.out.println(goodsNumber + "번 물품 수정하기 페이지");
 		
 	
 		adminDAO.goodsInfoRegist(goodsNumber);

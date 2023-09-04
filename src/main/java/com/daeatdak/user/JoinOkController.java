@@ -31,12 +31,10 @@ public class JoinOkController implements Execute {
 		userDTO.setUserName(request.getParameter("userName"));
 		userDTO.setUserPassword(request.getParameter("userPassword"));
 		userDTO.setUserPhone(request.getParameter("userPhone"));
-<<<<<<< HEAD
-=======
+
 		
 		System.out.println(userDTO);
 		
->>>>>>> f8ba144bed774b723e53755351b9e0e428cdb811
 		userDAO.join(userDTO);
 		users = userDAO.getSequence();
 		System.out.println(userDTO);

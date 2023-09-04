@@ -54,10 +54,10 @@ public class UserDAO {
 		public List<UserVO> userInfoList() {
 			
 			return sqlSession.selectList("user.userInfoList");
-			
+		}
 		public UserDTO login(UserDTO userDTO) {
 			UserDTO user = sqlSession.selectOne("user.login",userDTO);
 			return user;
 		}
 }
-}
+

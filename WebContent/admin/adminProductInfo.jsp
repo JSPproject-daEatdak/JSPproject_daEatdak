@@ -77,11 +77,11 @@ function deleteBtn(goodsNum){
 												&nbsp;
 												<div style="width: 50%">
 													<span>
-														<button class="btnUpd" type="button" onclick="deleteBtn(${goodsInfo.getGoodsNum()})" >삭제</button>
+														<button class="btnUpd" type="button" onclick="location.href='/admin/goodsListDelete.ad?goodsNum='+${goodsInfo.getGoodsNum()}" >삭제</button>
 													</span> 
 													
 													<span>
-														<button class="btnUpd">수정</button>
+														<button class="btnUpd" type="button" onclick="location.href='/admin/goodsModify.ad?goodsNum='+${goodsInfo.getGoodsNum()}">수정</button>
 													</span>
 															
 															

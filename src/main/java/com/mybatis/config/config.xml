@@ -10,8 +10,11 @@
 	<typeAliases>
 		<typeAlias type="com.daeatdak.user.dto.UserDTO"
 			alias="UserDTO" />
+<<<<<<< HEAD
 			<typeAlias type="com.daeatdak.user.vo.UserVO"
 			alias="FileDTO" />
+=======
+>>>>>>> user/join
 		<typeAlias type="com.daeatdak.admin.dto.AdminDTO"
 			alias="AdminDTO" />
 		<typeAlias type="com.daeatdak.admin.dto.FileDTO"
@@ -26,6 +29,10 @@
 			alias="BoardDTO" />
 		<typeAlias type="com.daeatdak.board.vo.BoardVO"
 			alias="BoardVO" />
+<<<<<<< HEAD
+=======
+		<typeAlias type="com.daeatdak.user.vo.UserVO" alias="UserVO" />
+>>>>>>> user/join
 		<typeAlias type="com.daeatdak.common.dto.CommonDTO"
 			alias="CommonDTO" />
 		<typeAlias type="com.daeatdak.goods.dto.CartDTO"
@@ -55,8 +62,16 @@
 		<mapper resource="com/mybatis/mapper/AdminMapper.xml"></mapper>
 		<mapper resource="com/mybatis/mapper/FileMapper.xml"></mapper>
 		<mapper resource="com/mybatis/mapper/GoodsMapper.xml"></mapper>
+<<<<<<< HEAD
 		<mapper resource="com/mybatis/mapper/BoardMapper.xml"></mapper>
 		<mapper resource="com/mybatis/mapper/CommonMapper.xml"></mapper>
 	</mappers>
 
 </configuration>
+=======
+ 		<mapper resource="com/mybatis/mapper/BoardMapper.xml"></mapper>
+		<mapper resource="com/mybatis/mapper/CommonMapper.xml"></mapper>
+		
+	</mappers>
+</configuration>
+>>>>>>> user/join

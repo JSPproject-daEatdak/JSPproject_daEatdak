@@ -67,7 +67,9 @@ public class UserFrontController extends HttpServlet {
 
 		case "/user/joinOk.me":
 			System.out.println("joinOk");
-			result = new JoinOkController().execute(request, response);
+			new JoinOkController().execute(request, response);
+			request.getRequestDispatcher("/user/login.me").forward(request, response);
+
 			break;
 
 		case "/user/checkIdOk.me":
@@ -84,7 +86,6 @@ public class UserFrontController extends HttpServlet {
 			
 		case "/user/findUserEmailOk.me":
 			new FindUserEmailController().execute(request,response); 
-			request.getRequestDispatcher("/user/email.jsp").forward(request, response);
 			System.out.println("이메일 찾기 성공!");
 
 			break;
@@ -96,7 +97,6 @@ public class UserFrontController extends HttpServlet {
 			
 		case "/user/findUserPasswordOk.me":
 			new FindUserPasswordController().execute(request,response); 
-			request.getRequestDispatcher("/user/password.jsp").forward(request, response);
 			System.out.println("비밀번호 찾기 성공!");	
 			break;
 			
@@ -122,8 +122,11 @@ public class UserFrontController extends HttpServlet {
 			new LogoutController().execute(request,response);
 			
 		}
+		
+		
 		if (result != null) {
 			if (result.isRedirect()) {
+				System.out.println(result.getPath());
 				response.sendRedirect(result.getPath());
 			} else {
 				request.getRequestDispatcher(result.getPath()).forward(request, response);

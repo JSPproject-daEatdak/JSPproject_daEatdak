@@ -6,9 +6,6 @@ import java.rmi.ServerException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.websocket.SendResult;
-
-import org.apache.ibatis.exceptions.TooManyResultsException;
 
 import com.daeatdak.Execute;
 import com.daeatdak.Result;
@@ -22,9 +19,9 @@ public class FindUserEmailController implements Execute {
 			throws IOException, ServerException, ServletException {
 		UserDTO userDTO = new UserDTO();
 		UserDAO userDAO = new UserDAO();
+		Result result = new Result();
 //		request.setAttribute("findUserEmail", userDAO.findUserEmailByName(userDTO));
-
-		String userName = request.getParameter("userName");
+			String userName = request.getParameter("userName");
 			String userPhone = request.getParameter("userPhone");
 
 			System.out.println(userName);
@@ -33,13 +30,18 @@ public class FindUserEmailController implements Execute {
 			userDTO.setUserPhone(userPhone);
 
 			userDTO = userDAO.findUserEmailByName(userDTO);
+			
+			if(userDTO == null) {
+				response.sendRedirect("/user/findUserEmail.me");
+			}else {
+				request.setAttribute("userName", userName);
+				request.setAttribute("userEmail", userDTO.getUserEmail());
+				request.getRequestDispatcher("/user/email.jsp").forward(request, response);
+			}
 
-			request.setAttribute("userName", userName);
-			request.setAttribute("userEmail", userDTO.getUserEmail());
 
 		
-		return null;
-
+			return null;
 	}
 
 }

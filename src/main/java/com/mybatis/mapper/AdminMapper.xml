@@ -6,8 +6,8 @@
 <mapper namespace="admin">
 	
    <insert id = "GoodsRegist" parameterType="AdminDTO">
-         insert into goods(category_num, goods_name,  goods_price,  goods_quantity)
-         value( #{goodsCategory},#{goodsName}, #{goodsPrice}, #{goodsQuantity} )
+         insert into goods(goods_name,  goods_price,  goods_quantity)
+         value( #{goodsName}, #{goodsPrice}, #{goodsQuantity} )
     
    </insert>
    
@@ -42,6 +42,21 @@
 	 	where goods_num = #{goodsNum}
 	 
 	 </delete>
+	 
+ 	  <select id = "GoodsRegistInfo" parameterType="_int" resultType="AdminDTO">
+         select c.category_num, g.goods_name,  g.goods_price,  g.goods_quantity
+         from goods g
+         join category c on g.category_num = c.category_num
+		 where goods_num = #{goodsNum}   
+		  
+   </select> 
+	 
+	 <!-- 
+	 <update id="GoodsInfoUpdate" parameterType="AdminDTO" >
+	 		UPDATE goods set category_name = #{categoryName}, goods_price=#{goodsPrice}, goods_quantity = #{goodsQuantity} 
+	 		where goods_num = #{goodsNum}
+	 	
+	 </update> -->
 	 
    
      

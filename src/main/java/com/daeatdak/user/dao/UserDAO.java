@@ -32,11 +32,10 @@ public class UserDAO {
 		
 		
 		//아이디찾기
-		public String findUserEmailByName(UserDTO userDTO) {
-			
-			String email=sqlSession.selectOne("user.getUserEmailByName", userDTO);
-			System.out.println("========"+email);
-			return email;
+		public List<UserDAO> findUserEmailByName(UserDTO userDTO) {
+		
+			return 	sqlSession.selectList("user.getUserEmailByName");
+
 		}
 		
 	

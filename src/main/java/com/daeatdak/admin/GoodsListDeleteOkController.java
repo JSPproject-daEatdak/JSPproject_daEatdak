@@ -26,13 +26,12 @@ public class GoodsListDeleteOkController implements Execute {
 		
 		
 		
-		
-		request.setAttribute("goodsNum", goodsInfoListVO.getGoodsNum());		
+
+		adminDTO.setGoodsNum((Integer)request.getAttribute("goodsNum"));
 		System.out.println("삭제하기!");
 
-		int goodsNum = Integer.parseInt(request.getParameter("goodsNum"));
 		
-		adminDAO.goodsDelete(goodsNum);
+		adminDAO.goodsDelete(adminDTO.getGoodsNum());
 		
 
 		

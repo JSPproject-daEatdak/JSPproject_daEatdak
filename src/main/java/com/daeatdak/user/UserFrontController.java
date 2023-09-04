@@ -70,17 +70,19 @@ public class UserFrontController extends HttpServlet {
 			new CheckIdOkController().execute(request, response);
 
 		case "/user/findUserEmail.me":
+			new FindUserEmailController().execute(request,response); 
+			request.getRequestDispatcher("/user/email.jsp").forward(request, response);
+
 			System.out.println("이메일찾기");
-			request.getRequestDispatcher("/user/findId.jsp").forward(request, response);
-			System.out.println("===========프론트컨트롤러");
-			result = new FindUserEmailController().execute(request,response); 
+			
 
 
 			break;
 
 		
-		  case "/user/findId.jsp": 
-			  break;
+		case "/user/findUserEmailOk.me":
+			new FindUserEmailController().execute(request,response); 
+
 		 
 		case "/user/findUserPassword.me":
 			result = new FindUserPasswordController().execute(request, response);

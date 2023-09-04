@@ -19,16 +19,13 @@ public class FindUserEmailController implements Execute  {
 		UserDTO userDTO = new UserDTO();
 		UserDAO userDAO = new UserDAO();
 		
-		
 //		request.setAttribute("findUserEmail", userDAO.findUserEmailByName(userDTO));
 
-		System.out.println(userDAO.findUserEmailByName(userDTO)+"ㅇㅇ");
 	
+		request.setAttribute("getUserEmail", userDAO.findUserEmailByName(userDTO));
 		
-		request.setAttribute("findUserEmail", userDAO.findUserEmailByName(userDTO));
-System.out.println("-==========아이디찾기 컨트롤러===");
 		
-		return null;	
+		return null;
 		
 	}
 	

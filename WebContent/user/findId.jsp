@@ -58,7 +58,7 @@
                         <div class="login-back">
                             <button type="button" onclick="location.href='${pageContext.request.contextPath}/member/login.jsp' ">로그인 창으로 돌아가기</button>
                         </div>
-                        <%=request.getAttribute("findUserEmail") %>
+                      
                           
                         </div>
                 </div>

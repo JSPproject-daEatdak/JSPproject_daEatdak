@@ -10,6 +10,8 @@ import javax.servlet.http.HttpSession;
 
 import com.daeatdak.Execute;
 import com.daeatdak.Result;
+import com.daeatdak.goods.dao.GoodsDAO;
+import com.daeatdak.goods.dto.CartDTO;
 import com.daeatdak.user.dao.UserDAO;
 import com.daeatdak.user.dto.UserDTO;
 
@@ -19,19 +21,27 @@ public class LoginController implements Execute{
 	public Result execute(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException, ServerException {
 		System.out.println("컨트롤러 진입");
+		GoodsDAO goodsDAO = new GoodsDAO();
 		UserDAO userDAO = new UserDAO();
 		UserDTO userDTO = new UserDTO();
+		CartDTO cartDTO = new CartDTO();
+		
 		UserDTO result = null;
+		CartDTO myCart = null;
 		
 		userDTO.setUserEmail(request.getParameter("userEmail"));
 		userDTO.setUserPassword(request.getParameter("userPassword"));
 		
 		result = userDAO.login(userDTO);
 		
-		
-		HttpSession session = request.getSession();
-		
+			
 		if(result != null) {
+			myCart = goodsDAO.selectCart(result.getUserNum());
+
+			if(myCart == null) {
+				goodsDAO.createCart(result.getUserNum());
+			}
+			HttpSession session = request.getSession();
 			session.setAttribute("userEmail",result.getUserEmail());
 			session.setAttribute("userNum",result.getUserNum());
 			session.setAttribute("userRoll",result.getUserRoll());

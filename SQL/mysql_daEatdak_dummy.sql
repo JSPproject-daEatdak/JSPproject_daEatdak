@@ -87,11 +87,21 @@ insert into image (goods_num, goods_img, goods_detail_img1, goods_detail_img2, g
 		
 select * from image;
 
-
 select * from goods where category_num = 1;
 
+select * from cart;
 
+INSERT INTO cart_item (cart_num, goods_num)
+SELECT c.cart_num, :goodsNum
+FROM cart c
+LEFT JOIN cart_item ci ON c.cart_num = ci.cart_num AND ci.goods_num = :goodsNum
+WHERE c.user_num = :userNum
+AND ci.cart_item_num IS NULL;
+select * from cart;
+select * from cart_item where cart_num =1;
 
-
-
+SELECT g.*
+FROM cart_item ci
+INNER JOIN goods g ON ci.goods_num = g.goods_num
+WHERE ci.cart_num = 1;
 

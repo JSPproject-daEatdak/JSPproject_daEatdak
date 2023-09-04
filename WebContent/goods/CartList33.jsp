@@ -31,6 +31,8 @@
                         </div>    
                     </div>
                     <div class="cart_main_bottom">
+                    
+                    
                         <div class="cart_mark">
                             <p class="symbols-outlined" >
                                 <span class="material-symbols-outlined">
@@ -40,7 +42,11 @@
                         </div>
                         <div>
                             <p>장바구니에 담긴 상품이 없습니다!</p>
+                            <c:forEach var ="item" items="${itemList }">
+                            	<c:out value ="${item.getGoodsNum()}"/>
+                            </c:forEach>
                         </div>
+                        
                     </div>
                 </div>
             </main>

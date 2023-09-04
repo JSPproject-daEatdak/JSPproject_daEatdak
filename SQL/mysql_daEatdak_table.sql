@@ -117,12 +117,9 @@ CREATE TABLE cart_item (
 	cart_item_num	int	unsigned auto_increment primary key,
 	cart_num	int	unsigned NOT NULL,
 	goods_num	int	unsigned NOT NULL,
-	quantity	int	NOT NULL	DEFAULT 1,
 	foreign key (cart_num) references cart (cart_num),
 	foreign key (goods_num) references goods (goods_num)
 );
-
-
 CREATE TABLE payment (
 	payment_id INT AUTO_INCREMENT PRIMARY key,
 	order_num int	unsigned NOT NULL,

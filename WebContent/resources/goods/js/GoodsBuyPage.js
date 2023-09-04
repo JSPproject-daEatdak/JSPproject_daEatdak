@@ -20,14 +20,7 @@ for(let i=0;i<childs.length;i++){
    }
 
 //장바구니 클릭시 이벤트 발생 js
-let carts=document.querySelector('.cart');
-let modals=document.querySelector('.product-cart-movemodal');
-carts.addEventListener('click',function(){
-    modals.style.display='flex';
-    setTimeout(function() {
-        modals.style.display='none';
-    }, 1000);
-})
+
 
 
 //수량 체크시 증가 감소 
@@ -73,3 +66,7 @@ deteilmores.addEventListener('click',function(){
    }
    
 });
+
+function toController(link){
+	window.location.href=link;
+}

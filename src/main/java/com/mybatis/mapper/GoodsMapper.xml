@@ -13,4 +13,34 @@
   <select id ="selectGoodsNum" resultType="GoodsDTO" parameterType="_int">
   		select * from goods where goods_num = #{goodsNum}
   </select>
+  <select id ="selectCart" resultType="CartDTO" parameterType="int">
+  		select * from cart where user_num =#{userNum}
+  </select>
+  <insert id ="createCart" parameterType="CartDTO">
+  	insert into cart (user_num)
+  				value(#{userNum})
+  </insert>
+  <insert id="cartItemInsert" parameterType="CartItemDTO">
+        INSERT INTO cart_item (cart_num, goods_num)
+        SELECT c.cart_num, #{goodsNum}
+        FROM cart c
+        LEFT JOIN cart_item ci ON c.cart_num = ci.cart_num AND ci.goods_num = #{goodsNum}
+        WHERE c.user_num = #{userNum}
+        AND ci.cart_item_num IS NULL;
+   </insert>
+   
+   <select id ="selectMyCart"  resultType="CartDTO" parameterType="_int">
+   		select * from cart where user_num = #{userNum}
+   </select>
+   
+   <select id = "selectItemByCartNum" resultType="CartItemDTO" parameterType="_int">
+   		select * from cart_item where cart_num = #{cartNum}
+   </select>
+   
+   <select id ="selectCartItems" resultType="GoodsDTO" parameterType="_int">
+   		SELECT g.*
+		FROM cart_item ci
+		INNER JOIN goods g ON ci.goods_num = g.goods_num
+		WHERE ci.cart_num = #{cartNum};
+   </select>
 </mapper>

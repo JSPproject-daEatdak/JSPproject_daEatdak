@@ -19,7 +19,7 @@
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script
-	src="${pageContext.request.contextPath}/resources/member/js/loginJS.js?ver=1"></script>
+	src="${pageContext.request.contextPath}/resources/member/js/loginJS.js"></script>
 
 <meta charset="UTF-8">
 <title>Insert title here</title>

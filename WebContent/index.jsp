@@ -15,7 +15,7 @@
 <script src="${pageContext.request.contextPath}/resources/common/js/index.js?ver=1" defer></script>
 
 
-    <title>다잇닭</title>
+<title>다잇닭</title>
 </head>
 <body>
 

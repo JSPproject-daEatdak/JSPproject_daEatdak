@@ -43,15 +43,15 @@ public class GoodsFrontController extends HttpServlet {
 		      case "/goods/goodsBuy.go":
 		    	  new GoodsBuyController().execute(request, response);
 		         break;
-		         
-		      case "/member/login.me":
-		         break;
-		         
-		      case "/member/loginOk.me":
-		         break;
+		     
+		      case "/goods/toCart.go":
+		    	  System.out.println("장바구니로 물품추가");
+		    	  new AddToCartController().execute(request,response);
+		      
+		      case "/goods/CartList.go":
+		    	  System.out.println("장바구니로 이동");
+		    	  new CartListController().execute(request, response);
 		      }
-		      
-		      
 		      if(result != null) {
 		    	  if(result.isRedirect()) {
 		    		  response.sendRedirect(result.getPath());

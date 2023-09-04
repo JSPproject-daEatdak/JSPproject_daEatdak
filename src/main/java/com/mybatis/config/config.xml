@@ -31,6 +31,9 @@
 			alias="CartDTO" />
 		<typeAlias type="com.daeatdak.goods.dto.CartItemDTO"
 			alias="CartItemDTO" />
+			<typeAlias type="com.daeatdak.admin.vo.GoodsListVO"
+			alias="GoodsListVO" />
+			
 	</typeAliases>
 
 

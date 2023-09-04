@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,154 +29,178 @@
 </head>
 
 <body>
-	<main class="test">
-		<div class="section-container">
-			<!-- 좌측 관리자 메뉴-->
-			<%@ include file="aside.jsp"%>
 
-			<div class="admin_productRegist">
-				<div class="PageName">
-					<h2>상품 등록</h2>
-				</div>
-				<hr style="width: 90%;">
-				<form action="/admin/goodsModifyOk.ad" method="post"  enctype="multipart/form-data">
-				<div class="Rege">
-				
-					<div class="totalProdList">
-						<div class="registerPage">
-						
-							<div style="width: 350px; height: 350px;">
-								<div id=image_container></div>
-								<input type="file" id="image" accept="image/*" accept=".jpg, .jpeg, .png" multiple 
-									onchange="setThumbnail(event);" style="width: 180px;" name="goodsMainImg" value=""/>
-								<button type="button" class="imgDel">삭제</button>
-							</div>
+	
+				<main class="test">
+					<div class="section-container">
+						<!-- 좌측 관리자 메뉴-->
+						<%@ include file="aside.jsp"%>
 
-							<div style="width: 60%; margin-left: 10px;">
-							
-								<div class="productRegist">
-									<div>
-										<span>상품분류</span>&nbsp;&nbsp; 
-										<select name="goodsCategory">
-											<option value="1">닭고기</option>
-											<option value="2">소고기</option>
-											<option value="3">돼지고기</option>
-											<option value="4">간편식</option>
-											
-										</select>
-										<hr>
-									</div>
-								</div>
-								
-								<div class="productRegist">
-									<div>
-										<span>상품명&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp; 
-										<input name="goodsName" value="<%=request.getAttribute("goodsName") %>"
-											class="productRegist-text" type="text"
-											placeholder="상품명을 입력해 주세요.">
-									</div>
-									<hr>
-								</div>
-								<div class="productRegist">
-									<div>
-										<span>상품 가격</span>&nbsp;&nbsp; 
-										<input name="goodsPrice" value="<%=request.getAttribute("goodsPrice")%>"
-											class="productRegist-text" type="number"
-											placeholder="상품 가격을 입력해 주세요.">
-									</div>
-									<hr>
-								</div>
-								<div class="productRegist">
-									<div>
-										<span>상품 재고</span>&nbsp;&nbsp; 
-										<input name="goodsQuantity" value="<%=request.getAttribute("goodsQuantity")%>"
-											class="productRegist-text" type="number"
-											placeholder="상품 재고를 입력해 주세요.">
-									</div>
-									<hr>
-								</div>
+						<div class="admin_productRegist">
+							<div class="PageName">
+								<h2>상품 수정</h2>
 							</div>
+							<hr style="width: 90%;">
+							<form action="/admin/goodsModifyOk.ad" method="post"
+								enctype="multipart/form-data">
+								<div class="Rege">
+
+									<div class="totalProdList">
+										<div class="registerPage">
+
+											<div style="width: 350px; height: 350px;">
+												<div id=image_container></div>
+												<input type="file" id="image" accept="image/*"
+													accept=".jpg, .jpeg, .png" multiple
+													onchange="setThumbnail(event);" style="width: 180px;"
+													name="goodsMainImg" value="" />
+												<button type="button" class="imgDel">삭제</button>
+											</div>
+
+											<div style="width: 60%; margin-left: 10px;">
+
+
+												<div class="productRegist">
+													<div>
+														<span>상품분류</span>&nbsp;&nbsp; 
+														<select name="goodsCategory" >
+															<option
+																value="1" <c:if test="${categoryNum==1}"> selected </c:if>>닭고기</option>
+																
+															<option
+																value="2" <c:if test="${categoryNum==2}"> selected </c:if>>소고기</option>
+															<option
+																value="3" <c:if test="${categoryNum==3}"> selected </c:if>>돼지고기</option>
+															<option
+																value="4" <c:if test="${categoryNum==4}"> selected </c:if>>간편식</option>
+														</select>
+														<hr>
+													</div>
+												</div>
+
+
+												<div class="productRegist">
+													<div>
+														<span>상품명&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;
+														<input name="goodsName"
+															value="<%=request.getAttribute("goodsName")%>"
+															class="productRegist-text" type="text"
+															placeholder="상품명을 입력해 주세요.">
+													</div>
+													<hr>
+												</div>
+												<div class="productRegist">
+													<div>
+														<span>상품 가격</span>&nbsp;&nbsp; <input name="goodsPrice"
+															value="<%=request.getAttribute("goodsPrice")%>"
+															class="productRegist-text" type="number"
+															placeholder="상품 가격을 입력해 주세요.">
+													</div>
+													<hr>
+												</div>
+												<div class="productRegist">
+													<div>
+														<span>상품 재고</span>&nbsp;&nbsp; <input name="goodsQuantity"
+															value="<%=request.getAttribute("goodsQuantity")%>"
+															class="productRegist-text" type="number"
+															placeholder="상품 재고를 입력해 주세요.">
+													</div>
+													<hr>
+												</div>
+
+
+
+											</div>
+										</div>
+									</div>
+
+
+									<div>
+										<div class="img-List">
+
+											<div>
+												<div style="width: 900px; height: 300px;">
+													<div class="imgs_container" id="imgs_container1"></div>
+												</div>
+												<div class="btnLeft">
+													<input type="file" id="images" accept="image/*"
+														name="goodsDetailImg1" onchange="setThumbnail2(event);"
+														style="width: 180px;" />
+													<button class="imgsDel">삭제</button>
+												</div>
+											</div>
+
+											<div>
+												<div style="width: 900px; height: 300px;">
+													<div class="imgs_container" id="imgs_container2"></div>
+												</div>
+												<div class="btnLeft">
+													<input type="file" id="images" accept="image/*"
+														name="goodsDetailImg2" onchange="setThumbnail3(event);"
+														style="width: 180px;" />
+													<button class="imgsDel">삭제</button>
+												</div>
+											</div>
+
+											<div>
+												<div style="width: 900px; height: 300px;">
+													<div class="imgs_container" id="imgs_container3"></div>
+												</div>
+												<div class="btnLeft">
+													<input type="file" id="images" accept="image/*"
+														name="goodsDetailImg3" onchange="setThumbnail4(event);"
+														style="width: 180px;" />
+													<button class="imgsDel">삭제</button>
+												</div>
+											</div>
+
+											<div>
+												<div style="width: 900px; height: 300px;">
+													<div class="imgs_container" id="imgs_container4"></div>
+												</div>
+												<div class="btnLeft">
+													<input type="file" id="images" accept="image/*"
+														name="goodsDetailImg4" onchange="setThumbnail5(event);"
+														style="width: 180px;" />
+													<button class="imgsDel">삭제</button>
+												</div>
+											</div>
+
+											<div>
+												<div style="width: 900px; height: 300px;">
+													<div class="imgs_container" id="imgs_container5"></div>
+												</div>
+												<div class="btnLeft">
+													<input type="file" id="images" accept="image/*"
+														name="goodsDetailImg5" onchange="setThumbnail6(event);"
+														style="width: 180px;" />
+													<button class="imgsDel">삭제</button>
+												</div>
+											</div>
+
+
+
+										</div>
+										<div class="productRegist-btn">
+											<button class="ins" style="width: 80px; height: 40px;"
+												onclick="location.href='/admin/goodsModifyOk.ad'"
+											>수정하기</button>
+										</div>
+
+									</div>
+
+
+
+
+								</div>
+							</form>
+
 						</div>
 					</div>
+				</main>
 
 
-					<div>
-						<div class="img-List">
-						
-							<div>
-								<div style="width: 900px; height: 300px;">
-									<div class="imgs_container" id="imgs_container1"></div>
-								</div>
-								<div class="btnLeft">
-									<input type="file" id="images" accept="image/*" name="goodsDetailImg1"
-										onchange="setThumbnail2(event);" style="width: 180px;" />
-									<button class="imgsDel">삭제</button>
-								</div>
-							</div>
-
-							<div>
-								<div style="width: 900px; height: 300px;">
-									<div class="imgs_container" id="imgs_container2"></div>
-								</div>
-								<div class="btnLeft">
-									<input type="file" id="images" accept="image/*" name="goodsDetailImg2"
-										onchange="setThumbnail3(event);" style="width: 180px;" />
-									<button class="imgsDel">삭제</button>
-								</div>
-							</div>
-
-							<div>
-								<div style="width: 900px; height: 300px;">
-									<div class="imgs_container" id="imgs_container3"></div>
-								</div>
-								<div class="btnLeft">
-									<input type="file" id="images" accept="image/*" name="goodsDetailImg3"
-										onchange="setThumbnail4(event);" style="width: 180px;" />
-									<button class="imgsDel">삭제</button>
-								</div>
-							</div>
-
-							<div>
-								<div style="width: 900px; height: 300px;">
-									<div class="imgs_container" id="imgs_container4"></div>
-								</div>
-								<div class="btnLeft">
-									<input type="file" id="images" accept="image/*" name="goodsDetailImg4"
-										onchange="setThumbnail5(event);" style="width: 180px;" />
-									<button class="imgsDel">삭제</button>
-								</div>
-							</div>
-
-							<div>
-								<div style="width: 900px; height: 300px;">
-									<div class="imgs_container" id="imgs_container5"></div>
-								</div>
-								<div class="btnLeft">
-									<input type="file" id="images" accept="image/*" name="goodsDetailImg5"
-										onchange="setThumbnail6(event);" style="width: 180px;" />
-									<button class="imgsDel">삭제</button>
-								</div>
-							</div>
-
-
-
-						</div>
-						<div class="productRegist-btn">
-							<button class="ins" style="width: 80px; height: 40px;">등록하기</button>
-						</div>
-
-					</div>
-
-
-			
-
-				</div>
-			</form>
-				
-			</div>
-		</div>
-	</main>
-
+	
 </body>
 
 

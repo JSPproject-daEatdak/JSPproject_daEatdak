@@ -50,6 +50,18 @@ public class BoardDAO {
 	public BoardVO privateContent(int boardNum) {
 		return sqlSession.selectOne("board.privateContent", boardNum);
 	}
+	//게시글을 수정 하는 메소드 
+	public void update(BoardVO boardVO) {
+		sqlSession.update("board.update", boardVO);
+	}
+	public BoardVO updateContent(int boardNum) {
+		return sqlSession.selectOne("board.updateContent", boardNum);
+	}
+	// 게시글 삭제하는 메소드 
+	public void delate(int boardNum) {
+		sqlSession.delete("board.delete",boardNum);
+	}
+
 }
 
 

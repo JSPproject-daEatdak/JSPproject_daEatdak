@@ -40,4 +40,21 @@
 		from board b join users u
 		on b.board_num = #{boardNum} and u.user_num=b.user_num	
 	</select>
+	<!-- 게스글을 수정하는 쿼리문  -->
+	<update id="update" parameterType="BoardVO">
+	update board
+	set board_name = #{boardName}, board_content = #{boardContent},board_password = #{boardPassword} ,board_lock =#{boardLock} 
+	where board_num = #{boardNum} 
+	</update>
+	
+	<select id="updateContent" parameterType="_int" resultType="BoardVO">
+		select u.user_num,b.board_num, b.board_name,u.user_name,b.board_date,b.board_count, b.board_content,b.board_password
+		,b.board_lock
+		from board b join users u
+		on b.board_num = #{boardNum} and u.user_num=b.user_num	
+	</select>
+	<!-- 게시물 삭제하는 쿼리 -->
+	<delete id="delete" parameterType="_int">
+		delete from board where board_num = #{boardNum}
+	</delete>
 </mapper>

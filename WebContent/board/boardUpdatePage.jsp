@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,31 +35,26 @@
             <div class="board-title">
                <div class="title-text">문의 수정</div>
             </div>
-            <div class="write-title">
-              <input class="content-title" type="text" value="코딩 너무 재밌다" placeholder="제목을 입력하세요" maxlength="50">
-              <input class="content-password" type="password" placeholder="비밀번호" maxlength="4">
-              <div class="checkbox">
-                <p>비공개 여부</p><input type="checkbox">
-              </div>
-            </div>
-            <div class="board-write">
-              <div class="write-content">
-<textarea>글 내용이 들어갑니다<br>
-글 내용이 들어갑니다<br>
-글 내용이 들어갑니다<br>
-글 내용이 들어갑니다<br>
-글 내용이 들어갑니다<br>
-글 내용이 들어갑니다<br>
-글 내용이 들어갑니다<br>
-글 내용이 들어갑니다
-</textarea>
-              </div>
-              <div class="write-bottom">
-                <a href="${pageContext.request.contextPath}/board/boardList.jsp" class="write-btn list">목록으로</a>
-
-                <a href="${pageContext.request.contextPath}/board/boardList.jsp" class="write-btn write">글 수정</a>
-              </div>
-            </div>
+           <form action="boardUpdate.bo?board=${board.getBoardNum()}" method="post"> 
+	            <div class="write-title">
+	              <input class="content-title" type="text" value="코딩 너무 재밌다" placeholder="제목을 입력하세요" maxlength="50" name="boardName">
+	              <input class="content-password" type="password" placeholder="비밀번호" maxlength="4" name="boardPassword">
+	              <div class="checkbox">
+	                <p>비공개 여부</p><input type="checkbox" name="boardLock">
+	              </div>
+	            </div>
+	            <div class="board-write">
+	              <div class="write-content">
+				<textarea name="boardContent">
+				</textarea>
+	              </div>
+	              <div class="write-bottom">
+	                <a href="${pageContext.request.contextPath}/board/boardListOk.bo" class="write-btn list">목록으로</a>
+					<input type="hidden" name="boardNum" value="${board.getBoardNum()}" />
+	                <button class="write-btn write" type="submit">글 등록</button> 
+	              </div>
+	            </div>
+	      </form>      
         </div>
       </div>
     </main>

@@ -22,6 +22,7 @@
 	</typeAliases>
 
 
+
 	<environments default="mysql">
 		<environment id="mysql">
 			<transactionManager type="JDBC" />
@@ -43,5 +44,6 @@
 		<mapper resource = "com/mybatis/mapper/GoodsMapper.xml"></mapper>
         <mapper resource = "com/mybatis/mapper/BoardMapper.xml"></mapper>
         <mapper resource = "com/mybatis/mapper/CommonMapper.xml"></mapper>
-	</mappers>
+   </mappers>
+
 </configuration>

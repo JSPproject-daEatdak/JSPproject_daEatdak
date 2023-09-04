@@ -38,8 +38,9 @@
             </div>
             <form action="boardWriteOk.bo" method="post"> 
 	            <div class="write-title"> 
-	              <input class="content-title" type="text" placeholder="제목을 입력하세요" maxlength="50" name="boardName">
-	              <input class="content-password" type="password" placeholder="비밀번호" maxlength="4" name="boardPassword">
+	              <input class="content-title" type="text" placeholder="제목을 입력하세요" maxlength="50" name="boardName"/>
+	              <input class="content-password" type="password" placeholder="비밀번호" maxlength="4" name="boardPassword" required/>
+	       
 	              <div class="checkbox">
 	                <p>비공개 여부</p><input type="checkbox" name="boardLock">
 	              </div>
@@ -49,10 +50,9 @@
 	                <textarea name="boardContent"></textarea>
 	              </div>
 	              <div class="write-bottom">
-	                <a href="${pageContext.request.contextPath}/board/boardList.jsp" class="write-btn list">목록으로</a>
+	                <a href="${pageContext.request.contextPath}/board/boardListOk.bo" class="write-btn list">목록으로</a>
 				
 	                <button class="write-btn write" type="submit">글 등록</button>
-	                
 	              </div>
 	            </div>
              </form>

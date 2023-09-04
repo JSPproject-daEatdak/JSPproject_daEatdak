@@ -49,7 +49,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/board/boardList.jsp">
+                        <a href="${pageContext.request.contextPath}/board/boardListOk.bo">
                             <span class="material-symbols-outlined">
                                 support_agent
                             </span>
@@ -86,7 +86,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/QnAboard/html/board_list.html">
+                        <a href="/board/boardListOk.bo">
                             <span class="material-symbols-outlined">
                                 support_agent
                             </span>
@@ -123,7 +123,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/QnAboard/html/board_list.html">
+                        <a href="/board/boardListOk.bo">
                             <span class="material-symbols-outlined">
                                 support_agent
                             </span>

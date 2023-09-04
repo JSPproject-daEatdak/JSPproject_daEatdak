@@ -34,5 +34,11 @@ $(window).scroll(function () {
     
   });
   
- //카테고리 스크립트
+
+function storeCurrentURL() {
+      var currentURL = window.location.href;
+      sessionStorage.setItem("prevURL", currentURL);
+      alert(currentURL);
+    }
+
   

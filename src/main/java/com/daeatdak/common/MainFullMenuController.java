@@ -18,7 +18,7 @@ public class MainFullMenuController {
         // CommonDAO의 selectAll 메서드를 호출하여 상품 목록을 가져옴
         // (CommonVO는 상품 정보를 담는 클래스로 가정)
         List<CommonDTO> goodsList = commonDAO.selectAll();
-   
+        System.out.println("test1");
         
 
         // request에 상품 목록을 속성으로 설정

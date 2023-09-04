@@ -38,7 +38,6 @@ public class UserDAO {
 
 		}
 		
-	
 		
 		//비밀번호 찾기
 		public String findUserPasswordByEmail(UserDTO userDTO) {
@@ -54,6 +53,10 @@ public class UserDAO {
 		public List<UserVO> userInfoList() {
 			
 			return sqlSession.selectList("user.userInfoList");
-			
+		}
+		public UserDTO login(UserDTO userDTO) {
+			UserDTO user = sqlSession.selectOne("user.login",userDTO);
+			return user;
 		}
 }
+

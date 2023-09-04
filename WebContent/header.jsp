@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 
 <meta charset="UTF-8">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/common/css/header.css" rel="stylesheet" type="text/css" />
-<script src="${pageContext.request.contextPath}/resources/common/js/header.js" defer></script>
+<script src="${pageContext.request.contextPath}/resources/common/js/header.js?ver=4" defer></script>
 
 <title>header</title>
 </head>
@@ -27,11 +27,16 @@
                  <p>daEatdak</p> </a>
             </div>
 
-            <!-- 로그인/회원가입 -->
-            <div class="user-container">
+
+
+          <!-- 로그인/회원가입 -->
+          <div class="user-container">
+          <!-- 세션이 비어있을때 -->
+          <c:choose>
+			<c:when test = "${empty sessionScope.userRoll}">
                 <ul>
                     <li>
-                        <a href="${pageContext.request.contextPath}/member/login.jsp">
+                        <a href="${pageContext.request.contextPath}/user/login.me">
                             <span class="material-symbols-outlined">
                                 lock
                             </span>
@@ -64,8 +69,84 @@
                         </a>
                     </li>
                 </ul>
+                </c:when>
+                <%--로그인한 회원이 일반회원일때 --%>
+                <c:when test ="${sessionScope.userRoll == 0}">
+                	<ul>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/user/logoutOk.me">
+                            <span class="material-symbols-outlined">
+							lock_open
+							</span>
+                            <h6>로그아웃</h6>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/user/looutOk.me">
+                            <span class="material-symbols-outlined">
+							person
+							</span>
+                            <h6>마이페이지</h6>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/QnAboard/html/board_list.html">
+                            <span class="material-symbols-outlined">
+                                support_agent
+                            </span>
+                            <h6>문의하기</h6>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/product/html/product_cart_choice.html">
+                            <span class="material-symbols-outlined">
+                                shopping_cart
+                            </span>
+                            <h6>장바구니</h6>
+                        </a>
+                    </li>
+                </ul>
+                </c:when>
+                <%--관리자로 로그인 했을때 --%>
+                <c:when test ="${sessionScope.userRoll == 1}">
+                	<ul>
+                    <li>
+                        <a href="${pageContext.request.contextPath}/user/logoutOk.me">
+                            <span class="material-symbols-outlined">
+							lock_open
+							</span>
+                            <h6>로그아웃</h6>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/login/html/signupselet.html">
+                            <span class="material-symbols-outlined">
+							key
+							</span>
+							<h6>관리자</h6>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/QnAboard/html/board_list.html">
+                            <span class="material-symbols-outlined">
+                                support_agent
+                            </span>
+                            <h6>문의하기</h6>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/product/html/product_cart_choice.html">
+                            <span class="material-symbols-outlined">
+                                shopping_cart
+                            </span>
+                            <h6>장바구니</h6>
+                        </a>
+                    </li>
+                </ul>
+                </c:when>
+               </c:choose>
             </div>
-        </div>
+            </div>
 
 
         <!-- header 메인메뉴 영역 -->
@@ -85,6 +166,8 @@
                     </ul>
                 </nav>
             </div>
+            
+            
             
            
             <!-- 검색 부분 -->

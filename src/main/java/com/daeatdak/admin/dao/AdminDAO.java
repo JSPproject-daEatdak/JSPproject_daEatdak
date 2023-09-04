@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.daeatdak.admin.dto.AdminDTO;
 import com.daeatdak.admin.vo.GoodsInfoListVO;
+import com.daeatdak.admin.vo.GoodsListVO;
 import com.mybatis.config.MyBatisConfig;
 
 public class AdminDAO {
@@ -31,15 +32,17 @@ public class AdminDAO {
 	}
 
 	public void goodsDelete(int goodsNum) {
-		sqlSession.delete("admin.goodsListDelete", goodsNum);
+		sqlSession.delete("admin.GoodsListDelete", goodsNum);
 
 	}
 
-	public void goodsInfoRegist(int goodsNum) {
-		sqlSession.selectList("admin.GoodsRegistInfo", goodsNum);
+	public List<GoodsListVO> goodsInfoRegist(int goodsNum) {
+		return sqlSession.selectList("admin.GoodsRegistInfo", goodsNum);
 	}
-//		  
-//		  public void goodsInfoUpdate(AdminDTO adminDTO) {
-//		  sqlSession.update("admin.goodsInfoUpdate", adminDTO); }
-//		 
+
+	
+	public void goodsInfoUpdate(AdminDTO adminDTO) {
+		sqlSession.update("admin.goodsInfoUpdate", adminDTO);
+	}
+
 }

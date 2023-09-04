@@ -19,7 +19,6 @@
   	<servlet-name>User</servlet-name>
   	<url-pattern>*.me</url-pattern>
   </servlet-mapping>
-
 	<!-- 게시판 -->
   <servlet>
   	<servlet-name>Board</servlet-name>

@@ -74,19 +74,30 @@ public class UserFrontController extends HttpServlet {
 			request.getRequestDispatcher("/user/findId.jsp").forward(request, response);
 			System.out.println("===========프론트컨트롤러");
 			result = new FindUserEmailController().execute(request,response); 
-
-
 			break;
-
 		
-		  case "/user/findId.jsp": 
+		case "/user/findId.jsp": 
 			  break;
 		 
 		case "/user/findUserPassword.me":
 			result = new FindUserPasswordController().execute(request, response);
 			break;
+		
+		case "/user/login.me":
+			request.getRequestDispatcher("/user/login.jsp").forward(request, response);
+			break;
+		
+		case "/user/loginOk.me":
+			System.out.println("loginOk");
+			new LoginController().execute(request,response);
+			
+			break;
+			
+		case "/user/logoutOk.me":
+			System.out.println("logoutOk");
+			new LogoutController().execute(request,response);
+			
 		}
-
 		if (result != null) {
 			if (result.isRedirect()) {
 				response.sendRedirect(result.getPath());

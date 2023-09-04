@@ -8,6 +8,9 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class MyBatisConfig {
+	//sqlSession을 만들기 위해 세션 팩토리가 필요하다 
+	  // sqlSession을 만들기 위한 세션 팩토리가 필요하다.
+
 
 	// sqlSession을 만들기 위한 세션 팩토리가 필요하다.
 	private static SqlSessionFactory sqlSessionFactory;
@@ -35,5 +38,6 @@ public class MyBatisConfig {
 	public static SqlSessionFactory getSqlSessionFactory() {
 		return sqlSessionFactory;
 	}
+
 
 }

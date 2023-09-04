@@ -1,4 +1,4 @@
-function checkPassword(){
+/*function checkPassword(){
     const inputPassword = document.getElementById('inputPassword').value;
     const myPassword ='${board.getBoardPassword}';
 	// 패스워드 조회하여 일치여부로 바꾼다
@@ -9,4 +9,4 @@ function checkPassword(){
     }
     console.log(inputPassword);
     console.log(myPassword);
-}
+}*/

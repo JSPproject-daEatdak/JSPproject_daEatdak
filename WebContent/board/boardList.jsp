@@ -50,7 +50,7 @@
               		<c:when test="${not empty boardList}">
 	              		<c:forEach var="board" items="${boardList}">
 	              			<c:choose>
-	              			 <c:when test="${board.getBoardLock()==0 && empty board.getBoardPassword()}"> 
+	              			 <c:when test="${board.getBoardLock()==0}"> 
 			              			<div class="post">
 			              				<div class="num">
 			              					<c:out value="${board.getBoardNum()}"></c:out>
@@ -71,7 +71,7 @@
 			              				</div>
 		              				</div>
 		              		</c:when>
-		              		<c:when test="${not empty board.getBoardPassword() && board.getBoardLock()==1}">
+		              		<c:when test="${board.getBoardLock()==1}">
 		              				<div class="post">
 			              				<div class="num">
 			              					<c:out value="${board.getBoardNum()}"></c:out>

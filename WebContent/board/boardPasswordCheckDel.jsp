@@ -40,11 +40,15 @@
                 <div class="password-check-box">
                     <div class="password-check-box-inner">
                         <b>비밀번호를 입력하세요.</b>
-                        <input class="content-password" type="password" id="inputPassword" maxlength="4">
+                        <form action= "/board/boardDlePasswordCheckOk.bo?bordNum=${board.getBoardNum()}" method="post">
+                        <input type="hidden" name="boardNum" value="${board.getBoardNum()}" />
+                        <input class="content-password" type="password" id="inputPassword" maxlength="4" name="boardPassword">
                         <div class="inner-btnBox">
-                            <button class="btn cancle" onclick="history.go(-1)">취소</button>
-                            <button class="btn admit" onclick="checkPassword()">확인</button>
+                            <button class="btn cancle" onclick="pagemove()">취소</button>
+                            <button class="btn admit" type="submit">확인</button>
+                            <%--정말로 삭제하시겠습니까후 확인버튼 누르면 삭제 하고 리스트로 이동  --%>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -53,8 +57,25 @@
       </div>
     </main>
     </div>
+     <input type="hidden" value="${warningMessage}" class="warningMessage">
     <div class="footer">
     	<%@ include file ="/footer.jsp" %>
     </div>
   </body>
+   <script type="text/javascript">
+let message = $('.warningMessage').val();
+  
+  if(message){
+	  alert("비밀번호가 일치하지 않습니다.");
+  }
+  
+  function pagemove(){
+	  let cancles =document.querySelector('.cancle');
+	     cancles.addEventListener("click",function(){
+	         window.location.href="http://localhost:8888/board/boardListOk.bo";
+	     })
+	     console.log(cancles);
+	 };
+					
+	</script>
 </html>

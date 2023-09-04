@@ -19,6 +19,8 @@
 
 	
  </head>
+ <%--글 수정시 비밀번호를 확인하는 jsp 
+ 비밀번호 틀리시 현제 페이지로 이동 --%>
   <body>
     <div class="side-banner-container">
       <!-- 사이드 배너 영역 -->
@@ -42,35 +44,30 @@
                 <div class="password-check-box">
                     <div class="password-check-box-inner">
                         <b>비밀번호를 입력하세요.</b>
-                        <form action= "/board/boardPasswordCheckConfigOk.bo" method="post">
+                        <form action= "/board/boardUpdatePasswordCheckOk.bo?boardNum=${board.getBoardNum()}" method="post">
                         	
                         	<input type="hidden" name="boardNum" value="${board.getBoardNum()}" />
 	                        <input class="content-password" type="password" id="inputPassword" maxlength="4" name="boardPassword"/>
 	                        <div class="inner-btnBox">
-
-	                            <button class="btn cancle" onclick="pagemove()" type="button">취소</button>
+	                            <button class="btn cancle" onclick="pagemove()">취소</button>
 	                            <button class="btn admit" type="submit">확인</button>
-				
-						
-		
 	                        </div> 
 	                    </form>     
                     </div>
                 </div>
             </div>
-			
+
         </div>
       </div>
-      <input type="hidden" value="${warningMessage}" class="warningMessage">
     </main>
     </div>
+    <input type="hidden" value="${warningMessage}" class="warningMessage">
     <div class="footer">
     	<%@ include file ="/footer.jsp" %>
     </div>
   </body>
   <script type="text/javascript">
-  
-  let message = $('.warningMessage').val();
+let message = $('.warningMessage').val();
   
   if(message){
 	  alert("비밀번호가 일치하지 않습니다.");
@@ -83,7 +80,6 @@
 	     })
 	     console.log(cancles);
 	 };
-
 					
 	</script>
 </html>

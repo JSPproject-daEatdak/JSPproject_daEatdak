@@ -1,4 +1,4 @@
-function checkPassword(){
+/*function checkPassword(){
     const inputPassword = document.getElementById('inputPassword').value;
     const myPassword = 1111;
 
@@ -14,4 +14,4 @@ function checkPassword(){
     }
     console.log(inputPassword);
     console.log(myPassword);
-}
+}*/

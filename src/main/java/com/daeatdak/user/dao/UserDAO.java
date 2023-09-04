@@ -35,6 +35,9 @@ public class UserDAO {
 		public UserDTO findUserEmailByName(UserDTO userDTO) {
 		
 			 userDTO =sqlSession.selectOne("user.getUserEmailByName", userDTO);
+			 
+			 
+			 
 			 return userDTO;
 		}
 		

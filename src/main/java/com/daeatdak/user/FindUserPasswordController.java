@@ -3,6 +3,7 @@ package com.daeatdak.user;
 import java.io.IOException;
 import java.rmi.ServerException;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -15,7 +16,7 @@ public class FindUserPasswordController implements Execute {
 
 	@Override
 	public Result execute(HttpServletRequest request, HttpServletResponse response)
-			throws IOException, ServerException {
+			throws IOException, ServerException, ServletException {
 		UserDTO userDTO = new UserDTO();
 		UserDAO userDAO = new UserDAO();
 
@@ -33,8 +34,15 @@ public class FindUserPasswordController implements Execute {
 		
 		userDTO=userDAO.findUserPasswordByEmail(userDTO);
 
-		request.setAttribute("userName", userName);
-		request.setAttribute("userPassword", userDTO.getUserPassword());
+
+		
+		if(userDTO == null) {
+			response.sendRedirect("/user/findUserPassword.me");
+		}else {
+			request.setAttribute("userName", userName);
+			request.setAttribute("userPassword", userDTO.getUserPassword());
+			request.getRequestDispatcher("/user/password.jsp").forward(request, response);
+		}
 		
 		return null;
 

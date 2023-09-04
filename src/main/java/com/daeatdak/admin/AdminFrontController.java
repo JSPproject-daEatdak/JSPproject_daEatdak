@@ -52,15 +52,14 @@ public class AdminFrontController extends HttpServlet {
 		Result result = null;
 
 		switch (target) {
-		
+
 		case "/admin/userInfoList.ad":
 			new UserInfoListOkController().execute(request, response);
 			System.out.println("회원리스트");
 			request.getRequestDispatcher("/admin/adminMemberInfo.jsp").forward(request, response);
 
 			break;
-		
-		
+
 		case "/admin/goodsRegist.ad":
 			request.getRequestDispatcher("/admin/adminProductRegist.jsp").forward(request, response);
 			break;
@@ -81,14 +80,13 @@ public class AdminFrontController extends HttpServlet {
 		case "/admin/goodsListDelete.ad":
 			new GoodsListDeleteOkController().execute(request, response);
 			System.out.println("삭제성공!");
-
 			break;
-			
+
 			
 		case "/admin/goodsModify.ad":
-			System.out.println("수정하기 페이지");
-			request.getRequestDispatcher("/admin/adminProductRegist.jsp").forward(request, response);
-
+		
+			new GoodsInfoRegistController().execute(request, response);
+			request.getRequestDispatcher("/admin/adminProductModify.jsp").forward(request, response);
 			break;
 
 		case "/admin/goodsModifyOk.ad":

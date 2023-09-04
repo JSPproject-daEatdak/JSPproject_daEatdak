@@ -36,6 +36,12 @@ public class AdminDAO  {
 	  sqlSession.delete("admin.goodsListDelete", goodsNum); 
 	  
 	  }
-	 
-
+	  
+		
+		  public void goodsInfoRegist(int goodsNum) { 
+			   sqlSession.selectList("admin.GoodsRegistInfo", goodsNum); }
+//		  
+//		  public void goodsInfoUpdate(AdminDTO adminDTO) {
+//		  sqlSession.update("admin.goodsInfoUpdate", adminDTO); }
+//		 
 }

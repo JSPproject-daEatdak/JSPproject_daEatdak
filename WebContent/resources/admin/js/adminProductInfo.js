@@ -90,13 +90,6 @@ function pagination(){
 
 
 function productDel() {
-	
-    $(".del").click(function() {
-        var del = confirm("삭제 하시겠습니까?");
-        if(del){
-            alert("삭제되었습니다")
-        }
-    })
 
   $(".upla").click(function() {
       var up = confirm("등록 하시겠습니까?");

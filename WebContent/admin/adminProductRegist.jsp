@@ -37,32 +37,39 @@
 					<h2>상품 등록</h2>
 				</div>
 				<hr style="width: 90%;">
-
+				<form action="/admin/goodsRegistOk.ad" method="post"  enctype="multipart/form-data">
 				<div class="Rege">
+				
 					<div class="totalProdList">
 						<div class="registerPage">
-
+						
 							<div style="width: 350px; height: 350px;">
 								<div id=image_container></div>
-								<input type="file" id="image" accept="image/*"
-									onchange="setThumbnail(event);" style="width: 180px;" />
-								<button class="imgDel">삭제</button>
+								<input type="file" id="image" accept="image/*" accept=".jpg, .jpeg, .png" multiple 
+									onchange="setThumbnail(event);" style="width: 180px;" name="goodsMainImg"/>
+								<button type="button" class="imgDel">삭제</button>
 							</div>
 
 							<div style="width: 60%; margin-left: 10px;">
+							
 								<div class="productRegist">
 									<div>
-										<span>상품분류</span>&nbsp;&nbsp; <select>
-											<option>닭고기</option>
-											<option>소고기</option>
-											<option>돼지고기</option>
+										<span>상품분류</span>&nbsp;&nbsp; 
+										<select name="goodsCategory">
+											<option value="1">닭고기</option>
+											<option value="2">소고기</option>
+											<option value="3">돼지고기</option>
+											<option value="4">간편식</option>
+											
 										</select>
 										<hr>
 									</div>
 								</div>
+								
 								<div class="productRegist">
 									<div>
-										<span>상품명&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp; <input
+										<span>상품명&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp; 
+										<input name="goodsName"
 											class="productRegist-text" type="text"
 											placeholder="상품명을 입력해 주세요.">
 									</div>
@@ -70,16 +77,18 @@
 								</div>
 								<div class="productRegist">
 									<div>
-										<span>상품 가격</span>&nbsp;&nbsp; <input
-											class="productRegist-text" type="text"
+										<span>상품 가격</span>&nbsp;&nbsp; 
+										<input name="goodsPrice"
+											class="productRegist-text" type="number"
 											placeholder="상품 가격을 입력해 주세요.">
 									</div>
 									<hr>
 								</div>
 								<div class="productRegist">
 									<div>
-										<span>상품 재고</span>&nbsp;&nbsp; <input
-											class="productRegist-text" type="text"
+										<span>상품 재고</span>&nbsp;&nbsp; 
+										<input name="goodsQuantity"
+											class="productRegist-text" type="number"
 											placeholder="상품 재고를 입력해 주세요.">
 									</div>
 									<hr>
@@ -97,7 +106,7 @@
 									<div class="imgs_container" id="imgs_container1"></div>
 								</div>
 								<div class="btnLeft">
-									<input type="file" id="images" accept="image/*"
+									<input type="file" id="images" accept="image/*" name="goodsDetailImg1"
 										onchange="setThumbnail2(event);" style="width: 180px;" />
 									<button class="imgsDel">삭제</button>
 								</div>
@@ -108,7 +117,7 @@
 									<div class="imgs_container" id="imgs_container2"></div>
 								</div>
 								<div class="btnLeft">
-									<input type="file" id="images" accept="image/*"
+									<input type="file" id="images" accept="image/*" name="goodsDetailImg2"
 										onchange="setThumbnail3(event);" style="width: 180px;" />
 									<button class="imgsDel">삭제</button>
 								</div>
@@ -119,7 +128,7 @@
 									<div class="imgs_container" id="imgs_container3"></div>
 								</div>
 								<div class="btnLeft">
-									<input type="file" id="images" accept="image/*"
+									<input type="file" id="images" accept="image/*" name="goodsDetailImg3"
 										onchange="setThumbnail4(event);" style="width: 180px;" />
 									<button class="imgsDel">삭제</button>
 								</div>
@@ -130,7 +139,7 @@
 									<div class="imgs_container" id="imgs_container4"></div>
 								</div>
 								<div class="btnLeft">
-									<input type="file" id="images" accept="image/*"
+									<input type="file" id="images" accept="image/*" name="goodsDetailImg4"
 										onchange="setThumbnail5(event);" style="width: 180px;" />
 									<button class="imgsDel">삭제</button>
 								</div>
@@ -141,7 +150,7 @@
 									<div class="imgs_container" id="imgs_container5"></div>
 								</div>
 								<div class="btnLeft">
-									<input type="file" id="images" accept="image/*"
+									<input type="file" id="images" accept="image/*" name="goodsDetailImg5"
 										onchange="setThumbnail6(event);" style="width: 180px;" />
 									<button class="imgsDel">삭제</button>
 								</div>
@@ -157,9 +166,11 @@
 					</div>
 
 
-
+			
 
 				</div>
+			</form>
+				
 			</div>
 		</div>
 	</main>

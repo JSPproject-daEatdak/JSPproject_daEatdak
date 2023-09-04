@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="admin">
+	
+   <insert id = "GoodsRegist" parameterType="AdminDTO">
+         insert into goods(category_num, goods_name,  goods_price,  goods_quantity)
+         value( #{goodsCategory},#{goodsName}, #{goodsPrice}, #{goodsQuantity} )
+    
+   </insert>
+   
+   <insert id="GoodsImg" parameterType="AdminDTO">
+ 		insert into image(goods_img , goods_detail_img1, goods_detail_img2, goods_detail_img3, goods_detail_img4, goods_detail_img5 )  	
+ 		value (#{goodsImg}, #{goodsDetailImg1}, #{goodsDetailImg2}, #{goodsDetailImg3}, #{goodsDetailImg4}, #{goodsDetailImg5})	
+ 
+   </insert>
+ 
+  
+<select id="getSequence" resultType="_int">
+		select LAST_INSERT_ID()
+</select>
+  
+  
+ <!--  <select id="lastId" resultType="_int">
+  	select last_insert_id()
+  </select>
+	 -->
+	 
+	 <select id="GoodsInfoList" resultType="GoodsInfoListVO">
+	 	SELECT g.goods_num, c.category_name, g.goods_name ,g.goods_price, g.goods_quantity
+		FROM goods g
+		JOIN category c ON g.category_num = c.category_num
+		order by g.goods_num;
+	 
+	 </select>
+	 
+	 <delete id="GoodsListDelete" parameterType="String">
+	 	DELTE goods_num
+	 	from goods
+	 	where goods_num = #{goodsNum}
+	 
+	 </delete>
+	 
+   
+     
+</mapper>

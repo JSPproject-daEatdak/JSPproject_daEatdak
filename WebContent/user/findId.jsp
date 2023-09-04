@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +21,7 @@
 <div class="side-banner-container">
     <!-- 사이드 배너 영역 -->
     <div class="side-banner">
-    	<%@ include file="/slideBanner.jsp" %>  <!--상대경로로 각 페이지마다 맞게 작성 ex) ./slideBanner.jsp or ../ ...-->
+       <%@ include file="/slideBanner.jsp" %>  <!--상대경로로 각 페이지마다 맞게 작성 ex) ./slideBanner.jsp or ../ ...-->
     </div>
 </div>
 
@@ -28,56 +30,58 @@
 <!--해당 관련 css - min-height값은 추후에 완성본에서 조정할 예정이니 일단 넣을 것 -->
 <div class="header-main-container">
 
-		<!--헤더영역-->
+      <!--헤더영역-->
     <div class="header">
-			<%@ include file="/header.jsp" %>  <!--상대경로로 각 페이지마다 맞게 작성-->
-		</div>
+         <%@ include file="/header.jsp" %>  <!--상대경로로 각 페이지마다 맞게 작성-->
+      </div>
 
-		<div class='main'>
-				<main>
-					<!--개인 페이지 작업영역-->
-					<div class="idfind-container">
+      <div class='main'>
+            <main>
+               <!--개인 페이지 작업영역-->
+               <div class="idfind-container">
                 <div class="idfind-area">
                     <div class="idfind-greeting">
                         <strong class="txt">아이디 찾기</strong>
                     </div>
-                    <form id="findid_form" name="findid_form" action="" method="post" >
+                    <form id="findid_form" name="findid_form" action="/user/findUserEmail.me" method="post" >
                         <div class="input-group">
-                        <div class="input-text">
-                            <input type="text" placeholder="이름 입력" maxlength="100" >
-                            <input type="text" placeholder="이메일 입력" maxlength="100" >
-                            </div>                           
+                           <div class="input-text">
+                               <input type="text" placeholder="이름 입력" maxlength="100" name="userName">
+                               <input type="text" placeholder="휴대폰 번호 입력" maxlength="100" name="userPhone">
+                           </div>                           
                         </div>
                         <div class="button-submit">
                             <button>확인</button>                       
                         </div>
+                   </form>
+                        
                         <div class="login-back">
                             <button type="button" onclick="location.href='${pageContext.request.contextPath}/member/login.jsp' ">로그인 창으로 돌아가기</button>
                         </div>
-                        <h2 id="txt">회원 아이디 출력 영역</h2>
+                        <%=request.getAttribute("findUserEmail") %>
+                          
                         </div>
-                    </form>
                 </div>
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-				</main>
-		</div>
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+               
+            </main>
+      </div>
 
 </div> <!--header-main-container 닫기-->
 
 
 <!--푸터 영역-->
 <div class="footer">
-    	<%@ include file="/footer.jsp" %>  <!--상대경로로 각 페이지마다 맞게 작성-->
+       <%@ include file="/footer.jsp" %>  <!--상대경로로 각 페이지마다 맞게 작성-->
 </div>
 
 </body>

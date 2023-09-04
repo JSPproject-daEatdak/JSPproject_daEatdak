@@ -1,32 +1,29 @@
 
+create database jsp_daEatdak;
 
 use jsp_daEatdak;
 
-CREATE TABLE address (
-	address_num	int	unsigned auto_increment primary key,
-	address	varchar(100)	null,
-	road_address	varchar(100)	NULL,
-	detail_address	varchar(100)	NULL
-);
+
 
 -- phone num varchar로 변경
 CREATE TABLE users (
 	user_num	int	unsigned auto_increment primary key,
-	address_num	int unsigned not NULL,
 	user_email	varchar(255)	NOT NULL,
 	user_name	varchar(50)	NOT NULL,
 	user_password	varchar(50)	NOT NULL,
 	user_phone	varchar(20),
-	user_roll	int	DEFAULT 0 not null,
-	foreign key (address_num) references address (address_num)
+	user_roll	int DEFAULT 0
 );
 
-ALTER TABLE users
-MODIFY COLUMN address_num INT unsigned not null;
+CREATE TABLE address (
+	address_num	int	unsigned auto_increment primary key,
+	user_num int unsigned,
+	address	varchar(100)	null,
+	road_address	varchar(100)	NULL,
+	detail_address	varchar(100)	null,
+	foreign key (user_num) references users (user_num)
+);
 
-ALTER TABLE users
-ADD CONSTRAINT FK_users_address
-FOREIGN KEY (address_num) REFERENCES address(address_num);
 
 CREATE TABLE category (
 	category_num	int	unsigned auto_increment primary key,
@@ -120,12 +117,9 @@ CREATE TABLE cart_item (
 	cart_item_num	int	unsigned auto_increment primary key,
 	cart_num	int	unsigned NOT NULL,
 	goods_num	int	unsigned NOT NULL,
-	quantity	int	NOT NULL	DEFAULT 1,
 	foreign key (cart_num) references cart (cart_num),
 	foreign key (goods_num) references goods (goods_num)
 );
-
-
 CREATE TABLE payment (
 	payment_id INT AUTO_INCREMENT PRIMARY key,
 	order_num int	unsigned NOT NULL,

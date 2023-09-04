@@ -1,5 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="com.daeatdak.user.dto.UserDTO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.daeatdak.user.dao.UserDAO"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%
+request.setCharacterEncoding("UTF-8");
+UserDTO userDTO = new UserDTO();
+UserDAO userDAO = new UserDAO();
+List<UserDTO> list = userDAO.userList();
+pageContext.setAttribute("list", list);
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,317 +58,22 @@
                                     <th class="t_head">
                                         <div class="th-div" style="width: 300px;">주소</div>
                                     </th>
+                                    <th class="t_head">
+                                        <div class="th-div" style="width: 300px;">상세주소</div>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody id="table-list">
-                                <tr class="memInfo">
-                                    <td class="memNum">001</td>
-                                    <td class="memName">이중근</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">twins797413@gmail.com</div>
-                                    </td>
-                                    <td class="memTel">010-1234-5678</td>
-                                    <td class="memAddr">
-                                        <div class=""><span>서울특별시 마포구 월드컵북로 396, 15층 ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</span></div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="lightgray" class="memInfo">
-                                    <td class="memNum">002</td>
-                                    <td class="memName">미나토</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">minato00@naver.com</div>
-                                    </td>
-                                    <td class="memTel">010-5825-7412</td>
-                                    <td class="memAddr">
-                                        <div class=""><span>제주특별자치도 제주시 광양9길 10 제주시청</span></div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="#D9E5FF" class="memInfo">
-                                    <td class="memNum">003</td>
-                                    <td class="memName">안창호</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">great1878@daum.net</div>
-                                    </td>
-                                    <td class="memTel">010-1878-1109</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis">평안남도 강서</div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="lightgray" class="memInfo">
-                                    <td class="memNum">004</td>
-                                    <td class="memName">abc</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">minato00@naver.com</div>
-                                    </td>
-                                    <td class="memTel">010-5825-7412</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis"><span>제주특별자치도 제주시 광양9길 10 제주시청</span></div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="lightgray" class="memInfo">
-                                    <td class="memNum">005</td>
-                                    <td class="memName">미나토</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">minato00@naver.com</div>
-                                    </td>
-                                    <td class="memTel">010-5825-7412</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis"><span>제주특별자치도 제주시 광양9길 10 제주시청</span></div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="#D9E5FF" class="memInfo">
-                                    <td class="memNum">006</td>
-                                    <td class="memName">안창호</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">great1878@daum.net</div>
-                                    </td>
-                                    <td class="memTel">010-1878-1109</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis">평안남도 강서</div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="lightgray" class="memInfo">
-                                    <td class="memNum">007</td>
-                                    <td class="memName">abc</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">minato00@naver.com</div>
-                                    </td>
-                                    <td class="memTel">010-5825-7412</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis"><span>제주특별자치도 제주시 광양9길 10 제주시청</span></div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="lightgray" class="memInfo">
-                                    <td class="memNum">008</td>
-                                    <td class="memName">미나토</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">minato00@naver.com</div>
-                                    </td>
-                                    <td class="memTel">010-5825-7412</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis"><span>제주특별자치도 제주시 광양9길 10 제주시청</span></div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="#D9E5FF" class="memInfo">
-                                    <td class="memNum">009</td>
-                                    <td class="memName">안창호</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">great1878@daum.net</div>
-                                    </td>
-                                    <td class="memTel">010-1878-1109</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis">평안남도 강서</div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="lightgray" class="memInfo">
-                                    <td class="memNum">010</td>
-                                    <td class="memName">abc</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">minato00@naver.com</div>
-                                    </td>
-                                    <td class="memTel">010-5825-7412</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis"><span>제주특별자치도 제주시 광양9길 10 제주시청</span></div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="lightgray" class="memInfo">
-                                    <td class="memNum">011</td>
-                                    <td class="memName">미나토</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">minato00@naver.com</div>
-                                    </td>
-                                    <td class="memTel">010-5825-7412</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis"><span>제주특별자치도 제주시 광양9길 10 제주시청</span></div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="#D9E5FF" class="memInfo">
-                                    <td class="memNum">012</td>
-                                    <td class="memName">안창호</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">great1878@daum.net</div>
-                                    </td>
-                                    <td class="memTel">010-1878-1109</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis">평안남도 강서</div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="lightgray" class="memInfo">
-                                    <td class="memNum">013</td>
-                                    <td class="memName">abc</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">minato00@naver.com</div>
-                                    </td>
-                                    <td class="memTel">010-5825-7412</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis"><span>제주특별자치도 제주시 광양9길 10 제주시청</span></div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="lightgray" class="memInfo">
-                                    <td class="memNum">014</td>
-                                    <td class="memName">미나토</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">minato00@naver.com</div>
-                                    </td>
-                                    <td class="memTel">010-5825-7412</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis"><span>제주특별자치도 제주시 광양9길 10 제주시청</span></div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="#D9E5FF" class="memInfo">
-                                    <td class="memNum">015</td>
-                                    <td class="memName">안창호</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">great1878@daum.net</div>
-                                    </td>
-                                    <td class="memTel">010-1878-1109</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis">평안남도 강서</div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="lightgray" class="memInfo">
-                                    <td class="memNum">016</td>
-                                    <td class="memName">abc</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">minato00@naver.com</div>
-                                    </td>
-                                    <td class="memTel">010-5825-7412</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis"><span>제주특별자치도 제주시 광양9길 10 제주시청</span></div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="lightgray" class="memInfo">
-                                    <td class="memNum">017</td>
-                                    <td class="memName">미나토</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">minato00@naver.com</div>
-                                    </td>
-                                    <td class="memTel">010-5825-7412</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis"><span>제주특별자치도 제주시 광양9길 10 제주시청</span></div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="#D9E5FF" class="memInfo">
-                                    <td class="memNum">018</td>
-                                    <td class="memName">안창호</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">great1878@daum.net</div>
-                                    </td>
-                                    <td class="memTel">010-1878-1109</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis">평안남도 강서</div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="lightgray" class="memInfo">
-                                    <td class="memNum">019</td>
-                                    <td class="memName">abc</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">minato00@naver.com</div>
-                                    </td>
-                                    <td class="memTel">010-5825-7412</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis"><span>제주특별자치도 제주시 광양9길 10 제주시청</span></div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="lightgray" class="memInfo">
-                                    <td class="memNum">020</td>
-                                    <td class="memName">미나토</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">minato00@naver.com</div>
-                                    </td>
-                                    <td class="memTel">010-5825-7412</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis"><span>제주특별자치도 제주시 광양9길 10 제주시청</span></div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="#D9E5FF" class="memInfo">
-                                    <td class="memNum">021</td>
-                                    <td class="memName">안창호</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">great1878@daum.net</div>
-                                    </td>
-                                    <td class="memTel">010-1878-1109</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis">평안남도 강서</div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="lightgray" class="memInfo">
-                                    <td class="memNum">022</td>
-                                    <td class="memName">abc</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">minato00@naver.com</div>
-                                    </td>
-                                    <td class="memTel">010-5825-7412</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis"><span>제주특별자치도 제주시 광양9길 10 제주시청</span></div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="#D9E5FF" class="memInfo">
-                                    <td class="memNum">021</td>
-                                    <td class="memName">안창호</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">great1878@daum.net</div>
-                                    </td>
-                                    <td class="memTel">010-1878-1109</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis">평안남도 강서</div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="lightgray" class="memInfo">
-                                    <td class="memNum">022</td>
-                                    <td class="memName">abc</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">minato00@naver.com</div>
-                                    </td>
-                                    <td class="memTel">010-5825-7412</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis"><span>제주특별자치도 제주시 광양9길 10 제주시청</span></div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="#D9E5FF" class="memInfo">
-                                    <td class="memNum">021</td>
-                                    <td class="memName">안창호</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">great1878@daum.net</div>
-                                    </td>
-                                    <td class="memTel">010-1878-1109</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis">평안남도 강서</div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="lightgray" class="memInfo">
-                                    <td class="memNum">022</td>
-                                    <td class="memName">abc</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">minato00@naver.com</div>
-                                    </td>
-                                    <td class="memTel">010-5825-7412</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis"><span>제주특별자치도 제주시 광양9길 10 제주시청</span></div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="#D9E5FF" class="memInfo">
-                                    <td class="memNum">021</td>
-                                    <td class="memName">안창호</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">great1878@daum.net</div>
-                                    </td>
-                                    <td class="memTel">010-1878-1109</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis">평안남도 강서</div>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="lightgray" class="memInfo">
-                                    <td class="memNum">022</td>
-                                    <td class="memName">abc</td>
-                                    <td class="memEmail">
-                                        <div class="mailEllipsis">minato00@naver.com</div>
-                                    </td>
-                                    <td class="memTel">010-5825-7412</td>
-                                    <td class="memAddr">
-                                        <div class="addrEllipsis"><span>제주특별자치도 제주시 광양9길 10 제주시청</span></div>
-                                    </td>
-                                </tr>
+	                            <c:forEach var="i" items="${list }">
+									<tr align="center">
+										<td>${i.userNumber }</td>
+										<td>${i.userName }</td>
+										<td>${i.userEmail }</td>
+										<td>${i.userPhone }</td>
+										<td>${i.userAddress }</td>
+										<td>${i.userDetailAddress }</td>
+									</tr>
+								</c:forEach>
                             </tbody>
                         </table>
                     </div>
@@ -383,6 +100,10 @@
             </div>
         </div>
     </main>
+<<<<<<< HEAD
+    
+ </body>
+</html>
 </body>
 
 </html>

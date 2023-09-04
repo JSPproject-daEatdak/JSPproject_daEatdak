@@ -4,6 +4,7 @@ function loginName() {
 		
 		
 		var name = $("#userName").val();
+		var name = $("#userEmail").val();
 		var password = $("#userPassword").val();
 
 		if(name == "" || name == undefined) {

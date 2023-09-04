@@ -14,12 +14,13 @@
   <servlet>
   	<servlet-name>Member</servlet-name>
   	 <servlet-class>com.daeatdak.member.MemberFrontController</servlet-class>
+  	<servlet-name>User</servlet-name>
+  	<servlet-class>com.daeatdak.user.UserFrontController</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>Member</servlet-name>
+  	<servlet-name>User</servlet-name>
   	<url-pattern>*.me</url-pattern>
   </servlet-mapping>
-
 	<!-- 게시판 -->
   <servlet>
   	<servlet-name>Board</servlet-name>

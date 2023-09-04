@@ -7,6 +7,7 @@
 
 <!--기본적인 공통 css-->
 <!--이외 각자 페이지 css/js는 각자 추가할 것-->
+<<<<<<< HEAD:WebContent/member/login.jsp
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/common/css/common.css"
 	rel="stylesheet" type="text/css" />
@@ -17,6 +18,12 @@
 	href="${pageContext.request.contextPath}/resources/common/img/logoPic.png" />
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+=======
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/common/css/common.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/member/css/findPw.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/common/img/logoPic.png" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+>>>>>>> 121fb62e16f02a5e9cdba46a5078512431374ef3:WebContent/user/findPw.jsp
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script
 	src="${pageContext.request.contextPath}/resources/member/js/loginJS.js"></script>
@@ -45,6 +52,7 @@
 		</div>
 
 		<div class='main'>
+<<<<<<< HEAD:WebContent/member/login.jsp
 			<main>
 				<!--개인 페이지 작업영역-->
 				<div class="login-container">
@@ -106,6 +114,45 @@
 					</div>
 				</div>
 			</main>
+=======
+				<main>
+					<!--개인 페이지 작업영역-->
+					<div class="pwfind-container">
+                <div class="pwfind-area">
+                    <div class="pwfind-greeting">
+                        <strong class="txt">비밀번호 찾기</strong>
+                    </div>
+                    <form id="findpw_form" name="findpw_form" action="" method="post" >
+                        <div class="input-group">
+                        <div class="input-text">
+                            <input type="text" placeholder="이메일 입력" maxlength="100" >
+                            <input type="text" placeholder="이름 입력" maxlength="100" >
+                            <input type="text" placeholder="휴대폰 번호 입력" maxlength="100" >
+                        </div>                           
+                        </div>
+                        <div class="button-submit">
+                            <button>확인</button>                       
+                        </div>
+                        <div class="login-back">
+                            <button type="button" onclick="location.href='${pageContext.request.contextPath}/member/login.jsp' ">로그인 창으로 돌아가기</button>
+                        </div>
+                        <h2 id="txt">회원 비밀번호 출력 영역</h2>
+                            
+                        </div>
+
+                    </form>
+                </div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				</main>
+>>>>>>> 121fb62e16f02a5e9cdba46a5078512431374ef3:WebContent/user/findPw.jsp
 		</div>
 	</div>
 

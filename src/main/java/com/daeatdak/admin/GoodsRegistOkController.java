@@ -60,7 +60,7 @@ public class GoodsRegistOkController implements Execute {
 		/*
 		 * int id = imageDAO.lastId();
 		 */		
-		
+		adminDTO.setCategoryNum(Integer.valueOf( multipartRequest.getParameter("goodsCategory")));
 		adminDTO.setGoodsName(multipartRequest.getParameter("goodsName"));
 		adminDTO.setGoodsQuantity(Integer.valueOf( multipartRequest.getParameter("goodsQuantity")));
 		adminDTO.setGoodsPrice(Integer.valueOf(multipartRequest.getParameter("goodsPrice")));

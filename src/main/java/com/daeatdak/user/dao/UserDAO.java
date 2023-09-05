@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.daeatdak.user.dto.UserDTO;
+import com.daeatdak.user.vo.UserVO;
 import com.mybatis.config.MyBatisConfig;
 
 public class UserDAO {
@@ -21,11 +22,7 @@ public class UserDAO {
 		sqlSession.insert("user.join", userDTO);
 	}
 	
-	public List<UserDTO> userList() {
-		List<UserDTO> list = null;
-		list = sqlSession.selectList("user.userInfoSearch");
-		return list;
-	}
+	
 	
 		//아이디 중복검사 메소드
 		//selectOne의 반환타입은 object 타입이다. 비교를하기 위해서 Integer타입으로 형변환한다.
@@ -35,23 +32,34 @@ public class UserDAO {
 		
 		
 		//아이디찾기
-		public String findUserEmailByName(UserDTO userDTO) {
-			
-			String email=sqlSession.selectOne("user.getUserEmailByName", userDTO);
-			System.out.println("========"+email);
-			return email;
+		public UserDTO findUserEmailByName(UserDTO userDTO) {
+		
+			 userDTO =sqlSession.selectOne("user.getUserEmailByName", userDTO);
+			 
+			 
+			 
+			 return userDTO;
 		}
 		
 		
 		//비밀번호 찾기
-		public String findUserPasswordByEmail(UserDTO userDTO) {
+		public UserDTO findUserPasswordByEmail(UserDTO userDTO) {
 			
-			String userPassword = (String)sqlSession.selectOne("user.getUserPasswordByEmail", userDTO);
-			return userPassword;
+			userDTO=sqlSession.selectOne("user.getUserPasswordByEmail", userDTO);
+			return userDTO;
 		}
 		
+		public int getSequence() {
+			return sqlSession.selectOne("user.getSequence");
+		}
+		
+		public List<UserVO> userInfoList() {
+			
+			return sqlSession.selectList("user.userInfoList");
+		}
 		public UserDTO login(UserDTO userDTO) {
 			UserDTO user = sqlSession.selectOne("user.login",userDTO);
 			return user;
 		}
 }
+

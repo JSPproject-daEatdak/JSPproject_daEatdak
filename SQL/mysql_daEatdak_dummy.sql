@@ -1,3 +1,4 @@
+create database jsp_daEatdak;
 use jsp_daEatdak;
 
 -- 회원 테이블에 10명의 더미 데이터 삽입

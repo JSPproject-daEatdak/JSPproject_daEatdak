@@ -82,7 +82,6 @@
                    							  <span>다있닷</span> 
                   					 	</c:when>
                						 </c:choose>
-
                                 </div>
                                 <div class="list-name-bottom">
                                     ${goods.getGoodsName()}

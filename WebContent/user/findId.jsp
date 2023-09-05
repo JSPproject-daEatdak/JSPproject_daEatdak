@@ -9,7 +9,7 @@
 <!--기본적인 공통 css-->
 <!--이외 각자 페이지 css/js는 각자 추가할 것-->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/common/css/common.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/member/css/findId.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/findId.css" rel="stylesheet" type="text/css" />
 <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/common/img/logoPic.png" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -43,7 +43,7 @@
                     <div class="idfind-greeting">
                         <strong class="txt">아이디 찾기</strong>
                     </div>
-                    <form id="findid_form" name="findid_form" action="/user/findUserEmail.me" method="post" >
+                    <form id="findid_form" name="findid_form" action="/user/findUserEmailOk.me" method="post" >
                         <div class="input-group">
                            <div class="input-text">
                                <input type="text" placeholder="이름 입력" maxlength="100" name="userName">
@@ -56,11 +56,12 @@
                    </form>
                         
                         <div class="login-back">
-                            <button type="button" onclick="location.href='${pageContext.request.contextPath}/member/login.jsp' ">로그인 창으로 돌아가기</button>
+                            <button type="button" onclick="location.href='/user/login.me' ">로그인 창으로 돌아가기</button>
                         </div>
-                        <%=request.getAttribute("findUserEmail") %>
+                      
                           
                         </div>
+                      
                 </div>
                
                

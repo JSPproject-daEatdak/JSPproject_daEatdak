@@ -20,9 +20,14 @@ public class BoardWriteOkController implements Execute{
 			throws IOException, ServletException, ServerException {
 		BoardDTO boardDTO=new BoardDTO();
 		BoardDAO boardDAO=new BoardDAO();
+<<<<<<< HEAD
 		
 		Integer userNum = (Integer)request.getSession().getAttribute("userNum");
 		
+=======
+		Integer userNum = (Integer)request.getSession().getAttribute("userNum");
+	
+>>>>>>> 19d2ef5a476a29e57a79fe72c23655ac0308896c
 		response.setContentType("text/html;charset=UTF-8");
 		boardDTO.setBoardName(request.getParameter("boardName"));
 		System.out.println("-------------Name확인");
@@ -31,6 +36,10 @@ public class BoardWriteOkController implements Execute{
 		boardDTO.setBoardContent(request.getParameter("boardContent"));
 		System.out.println("-------------content확인");
 		String boardLockValue =request.getParameter("boardLock");
+<<<<<<< HEAD
+=======
+		System.out.println(userNum);
+>>>>>>> 19d2ef5a476a29e57a79fe72c23655ac0308896c
 		boardDTO.setUserNum(userNum);
 		// 체크여부를 받아와서 문자열타입으로 저장한다 
 	    if (boardLockValue != null && boardLockValue.equals("on")) {
@@ -42,7 +51,9 @@ public class BoardWriteOkController implements Execute{
 		System.out.println(boardDTO);
 		boardDAO.writeInsert(boardDTO);
 		System.out.println("컨트롤러 실행!");
-		request.getRequestDispatcher("/board/boardListOk.bo").forward(request, response);
+//		request.getRequestDispatcher("/board/boardList.jsp").forward(request, response);
+		
+		response.sendRedirect("/jsp_daEatdak/board/boardListOk.bo");
 	
 		return null;
 	}

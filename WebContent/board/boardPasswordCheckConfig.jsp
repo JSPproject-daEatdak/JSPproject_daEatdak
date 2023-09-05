@@ -42,7 +42,7 @@
                 <div class="password-check-box">
                     <div class="password-check-box-inner">
                         <b>비밀번호를 입력하세요.</b>
-                        <form action= "/board/boardPasswordCheckConfigOk.bo" method="post">
+                        <form action= "${pageContext.request.contextPath}/board/boardPasswordCheckConfigOk.bo" method="post">
                         	
                         	<input type="hidden" name="boardNum" value="${board.getBoardNum()}" />
 	                        <input class="content-password" type="password" id="inputPassword" maxlength="4" name="boardPassword"/>

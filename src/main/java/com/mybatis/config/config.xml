@@ -30,7 +30,7 @@
 			<dataSource type="POOLED">
 				<property name="driver" value="com.mysql.cj.jdbc.Driver" />
 				<property name="url"
-					value="jdbc:mysql://localhost:3306/jsp_daEatdak" />
+					value="jdbc:mysql://localhost:3306/jsp_daeatdak" />
 				<property name="username" value="root" />
 				<property name="password" value="1111" />
 			</dataSource>

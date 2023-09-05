@@ -77,9 +77,20 @@
 			              					<c:out value="${board.getBoardNum()}"></c:out>
 			              				</div>
 			              				<div class="title">
-			              					<a href="${pageContext.request.contextPath}/board/boardPasswordCheckConfig.bo?boardNum=${board.getBoardNum()}">
-			              						비공개 글 입니다.
-			              					</a>
+			              					<c:choose>
+			              					
+			              						<c:when test="${sessionScope.userRoll ==0}">
+			              							<a href="${pageContext.request.contextPath}/board/boardPasswordCheckConfig.bo?boardNum=${board.getBoardNum()}">
+			              								비공개 글 입니다.
+			              							</a>
+			              						</c:when>
+			              						<c:when test="${sessionScope.userRoll==1}">
+			              							<a href="${pageContext.request.contextPath}/board/boardViewOk.bo?boardNum=${board.getBoardNum()}">
+			              							비공개 글 입니다.
+			              						</a>
+			              						</c:when>
+			              					</c:choose>
+			              					
 			              				</div>
 			              				<div class="witer">
 			              					<c:out value="${board.getUserName()}"></c:out>
@@ -125,7 +136,13 @@
                   <a href="#" class="bt last">>></a> -->
                 </div>
                 <div class="bt-container">
-                    <a href="${pageContext.request.contextPath}/board/boardWrite.bo" class="board-write">등록</a>
+                	<c:choose>
+                		<c:when test="${sessionScope.userRoll ==0}">
+                    		<a href="${pageContext.request.contextPath}/board/boardWrite.bo" class="board-write">등록</a>
+                		</c:when>
+                		<c:when test="${sessionScope.userRoll ==1}" > 
+                		</c:when>
+                	</c:choose>	
                 </div>
           </div>
         </div>

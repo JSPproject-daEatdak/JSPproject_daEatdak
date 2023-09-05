@@ -31,6 +31,10 @@
         
    </select>
    
+    <select id ="selectImage" resultType="GoodsImageDTO" parameterType="_int">
+        select * from image
+  </select>
+   
      
      
 </mapper>

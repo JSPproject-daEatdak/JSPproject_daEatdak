@@ -6,6 +6,7 @@
 		<setting name="mapUnderscoreToCamelCase" value="true"/>
 	</settings>
 
+
 	<!-- DTO 추가 -->
 	<typeAliases>
 <!-- 		<typeAlias type="com.daeatdak.admin.dto.AdminDTO" -->
@@ -57,4 +58,11 @@
 	</mappers>
 	
 	
+		<mapper resource="com/mybatis/mapper/MemberMapper.xml"></mapper>
+		<mapper resource="com/mybatis/mapper/AdminMapper.xml"></mapper>
+		<mapper resource="com/mybatis/mapper/FileMapper.xml" ></mapper>
+		<mapper resource = "com/mybatis/mapper/GoodsMapper.xml"></mapper>
+        <mapper resource = "com/mybatis/mapper/BoardMapper.xml"></mapper>
+        <mapper resource = "com/mybatis/mapper/CommonMapper.xml"></mapper>
+   </mappers>
 </configuration>

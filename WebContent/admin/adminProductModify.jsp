@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>다잇닭</title>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/admin/css/adminProductRegist.css">
+	href="${pageContext.request.contextPath}/resources/admin/css/adminProductRegist.css?ver=3">
 <!-- <script src="${pageContext.request.contextPath}/resources/admin/js/adminProductRegist.js"></script> -->
 
 <script src="https://code.jquery.com/jquery-3.7.0.js"

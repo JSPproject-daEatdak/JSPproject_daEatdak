@@ -1,6 +1,14 @@
 package com.daeatdak.admin.dto;
 
 public class AdminDTO {
+	private int categoryNum;
+	public int getCategoryNum() {
+		return categoryNum;
+	}
+
+	public void setCategoryNum(int categoryNum) {
+		this.categoryNum = categoryNum;
+	}
 
 	private int goodsNum;
 	private String goodsName;

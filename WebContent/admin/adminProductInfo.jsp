@@ -23,8 +23,7 @@
 
 function deleteBtn(goodsNum){
 	 	if(confirm("정말 삭제하시겠습니까?")) {
-			location.href="goodsListDelete.ad?goodsNum=" + goodsNum;
-	
+			location.href='/admin/goodsListDelete.ad?goodsNum='+goodsNum
 }  
 };
 
@@ -77,7 +76,7 @@ function deleteBtn(goodsNum){
 												&nbsp;
 												<div style="width: 50%">
 													<span>
-														<button class="btnUpd" type="button" onclick="location.href='/admin/goodsListDelete.ad?goodsNum='+${goodsInfo.getGoodsNum()}" >삭제</button>
+														<button class="btnUpd" type="button" onclick="deleteBtn('${goodsInfo.getGoodsNum()}')" >삭제</button>
 													</span> 
 													
 													<span>

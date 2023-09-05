@@ -6,8 +6,8 @@
 <mapper namespace="admin">
 	
    <insert id = "GoodsRegist" parameterType="AdminDTO">
-         insert into goods(goods_name,  goods_price,  goods_quantity)
-         value( #{goodsName}, #{goodsPrice}, #{goodsQuantity} )
+         insert into goods(category_num, goods_name,  goods_price,  goods_quantity)
+         value(#{categoryNum}, #{goodsName}, #{goodsPrice}, #{goodsQuantity} )
     
    </insert>
    

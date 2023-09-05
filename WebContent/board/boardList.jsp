@@ -79,7 +79,7 @@
 			              				<div class="title">
 			              					<c:choose>
 			              					
-			              						<c:when test="${sessionScope.userRoll ==0}">
+			              						<c:when test="${sessionScope.userRoll ==0 || empty sessionScope.userNum }">
 			              							<a href="${pageContext.request.contextPath}/board/boardPasswordCheckConfig.bo?boardNum=${board.getBoardNum()}">
 			              								비공개 글 입니다.
 			              							</a>
@@ -93,7 +93,14 @@
 			              					
 			              				</div>
 			              				<div class="witer">
+			              				<c:choose>
+			              					<c:when test="${not empty board.getUserName()}">
 			              					<c:out value="${board.getUserName()}"></c:out>
+			              					</c:when>
+			              					<c:otherwise>
+			              					비회원
+			              					</c:otherwise>
+			              				</c:choose>	
 			              				</div>
 			              				<div class="date">
 			              					<c:out value="${board.getBoardDate()}"></c:out>

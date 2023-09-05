@@ -6,6 +6,7 @@ import java.rmi.ServerException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.daeatdak.Execute;
 import com.daeatdak.Result;
@@ -19,6 +20,7 @@ public class BoardWriteOkController implements Execute{
 			throws IOException, ServletException, ServerException {
 		BoardDTO boardDTO=new BoardDTO();
 		BoardDAO boardDAO=new BoardDAO();
+		
 		Integer userNum = (Integer)request.getSession().getAttribute("userNum");
 	
 		response.setContentType("text/html;charset=UTF-8");

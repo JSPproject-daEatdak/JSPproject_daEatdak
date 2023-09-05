@@ -4,11 +4,7 @@
 <mapper namespace="board">
 <!-- 글쓰기 데이터에 입려하는 쿼리문 -->
 	<insert id="write" parameterType="BoardDTO">
-<<<<<<< HEAD
-	insert into board (board_name,board_password,board_lock,board_content,user_num)
-=======
 		insert into board (board_name,board_password,board_lock,board_content,user_num)
->>>>>>> 19d2ef5a476a29e57a79fe72c23655ac0308896c
 		value(#{boardName},#{boardPassword},#{boardLock},#{boardContent},#{userNum})
 	</insert>
 	<!-- 게시판 리스트에 목록 -->

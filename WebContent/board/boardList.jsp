@@ -76,7 +76,7 @@
 			              				<div class="num">
 			              					<c:out value="${board.getBoardNum()}"></c:out>
 			              				</div>
-			              				<div class="title">
+			              				<div class="title">1
 			              					<a href="${pageContext.request.contextPath}/board/boardPasswordCheckConfig.bo?boardNum=${board.getBoardNum()}">
 			              						비공개 글 입니다.
 			              					</a>

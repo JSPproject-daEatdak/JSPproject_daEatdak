@@ -85,7 +85,7 @@
                                 <ul>
                                     <li><a href="http://127.0.0.1:5501/common/html/index.html#">
                                         <div class="goods-zoom-container">
-                                        <img src="./resources/common/img/닭고기/chicken.jpg" alt="닭메뉴1"/>
+                                        <img src="${pageContext.request.contextPath}/resources/common/img/닭고기/chicken.jpg" alt="닭메뉴1"/>
                                         </div>
                                             <h5>다잇닭</h5>
                                             <h6>훈제 닭가슴살 100g</h6>
@@ -95,7 +95,7 @@
                                     <li>
                                         <a href="http://127.0.0.1:5501/common/html/index.html#">
                                             <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/닭고기/닭가슴살 볼 깻잎맛.jpg" alt="닭메뉴2"/>
+                                                <img src="${pageContext.request.contextPath}/resources/common/img/닭고기/닭가슴살 볼 깻잎맛.jpg" alt="닭메뉴2"/>
                                             </div>
                                             <h5>다잇닭</h5>
                                             <h6>닭가슴살 볼 깻잎맛 100g</h6>
@@ -105,7 +105,7 @@
                                     <li>
                                         <a href="http://127.0.0.1:5501/common/html/index.html#">
                                             <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/닭고기/닭가슴살 볼 치즈맛.jpg" alt="닭메뉴3"/>
+                                                <img src="${pageContext.request.contextPath}/resources/common/img/닭고기/닭가슴살 볼 치즈맛.jpg" alt="닭메뉴3"/>
                                             </div>
                                             <h5>다잇닭</h5>
                                             <h6>닭가슴살 볼 치즈맛 100g</h6>
@@ -115,7 +115,7 @@
                                     <li>
   										<a href="http://127.0.0.1:5501/common/html/index.html#">
                                             <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/닭고기/닭가슴살 크림머스타드.jpg" alt="닭메뉴4"/>
+                                                <img src="${pageContext.request.contextPath}/resources/common/img/닭고기/닭가슴살 크림머스타드.jpg" alt="닭메뉴4"/>
                                             </div>
                                             <h5>다잇닭</h5>
                                             <h6>소스 통 닭가슴살 크림맛 100g</h6>
@@ -125,7 +125,7 @@
                                     <li>
                                         <a href="http://127.0.0.1:5501/common/html/index.html#">
                                             <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/닭고기/닭가슴살 짬뽕.jpg" alt="닭메뉴5"/>
+                                                <img src="${pageContext.request.contextPath}/resources/common/img/닭고기/닭가슴살 짬뽕.jpg" alt="닭메뉴5"/>
                                             </div>                                            
                                             <h5>다잇닭</h5>
                                             <h6>소스 통 닭가슴살 짬뽕 100g</h6>
@@ -135,7 +135,7 @@
                                     <li>
                                         <a href="http://127.0.0.1:5501/common/html/index.html#">
                                             <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/닭고기/닭가슴살 오븐구이 퀸즈.jpg" alt="닭메뉴6"/>
+                                                <img src="${pageContext.request.contextPath}/resources/common/img/닭고기/닭가슴살 오븐구이 퀸즈.jpg" alt="닭메뉴6"/>
                                             </div>                                            
                                             <h5>다잇닭</h5>
                                             <h6>닭가슴살 오븐구이 화이트퀸즈</h6>
@@ -145,7 +145,7 @@
                                     <li>
                                         <a href="http://127.0.0.1:5501/common/html/index.html#">
                                             <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/닭고기/닭가슴살 오븐구이 칠리.jpg" alt="닭메뉴7"/>
+                                                <img src="${pageContext.request.contextPath}/resources/common/img/닭고기/닭가슴살 오븐구이 칠리.jpg" alt="닭메뉴7"/>
                                             </div>                                           
                                             <h5>다잇닭</h5>
                                             <h6>닭가슴살 오븐구이 화이트칠리</h6>
@@ -155,7 +155,7 @@
                                     <li>
                                         <a href="http://127.0.0.1:5501/common/html/index.html#">
                                             <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/닭고기/닭가슴살 한끼볼 혼합.jpg" alt="닭메뉴8"/>
+                                                <img src="${pageContext.request.contextPath}/resources/common/img/닭고기/닭가슴살 한끼볼 혼합.jpg" alt="닭메뉴8"/>
                                             </div>
                                             <h5>다잇닭</h5>
                                             <h6>닭가슴살 한끼볼 혼합 100g</h6>
@@ -165,7 +165,7 @@
                                     <li>
                                         <a href="http://127.0.0.1:5501/common/html/index.html#">
                                             <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/닭고기/닭가슴살 블랙소이.jpg" alt="닭메뉴9"/>
+                                                <img src="${pageContext.request.contextPath}/resources/common/img/닭고기/닭가슴살 블랙소이.jpg" alt="닭메뉴9"/>
                                             </div>  
                                             <h5>다잇닭</h5>
                                             <h6>소스통 닭가슴살 블랙소이</h6>
@@ -175,7 +175,7 @@
                                     <li>
                                         <a href="http://127.0.0.1:5501/common/html/index.html#">
                                             <div class="goods-zoom-container">
-                                                <img src="./resources/common/img/닭고기/닭가슴살 큐브 고추맛.jpg" alt="닭메뉴10"/>
+                                                <img src="${pageContext.request.contextPath}/resources/common/img/닭고기/닭가슴살 큐브 고추맛.jpg" alt="닭메뉴10"/>
                                             </div>                                            
                                             <h5>다잇닭</h5>
                                             <h6>닭가슴살 큐브 고추맛 100g</h6>
@@ -399,36 +399,36 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $(document).ready(function () {
-        // 페이지 로드 시 서버에서 데이터를 가져와서 출력
-        $.ajax({
-            url: "getTopSellingGoods", // 실제로 데이터를 가져올 서버 URL을 입력해야 합니다.
-            method: "GET",
-            dataType: "json",
-            success: function (data) {
-                var $topSellingGoodsList = $("#topSellingGoodsList");
+//     $(document).ready(function () {
+//         // 페이지 로드 시 서버에서 데이터를 가져와서 출력
+//         $.ajax({
+//             url: "getTopSellingGoods", // 실제로 데이터를 가져올 서버 URL을 입력해야 합니다.
+//             method: "GET",
+//             dataType: "json",
+//             success: function (data) {
+//                 var $topSellingGoodsList = $("#topSellingGoodsList");
                 
-                // 가져온 데이터를 동적으로 리스트에 추가
-                $.each(data, function (index, goods) {
-                    $topSellingGoodsList.append(
-                    		'<ul>' +
-                        '<li>' +
-                        '<a href="#">' +
-                        '<div class="zoom-container">' +
-                        '<!-- 이미지 없음 -->' +
-                        '</div>' +
-                        '<p><span>다있닭</span> ' + goods.goods_name + '</p>' +
-                        '<p>' + goods.goods_price + '원</p>' +
-                        '</a>' +
-                        '</li>' +
-                        '</ul>'
+//                 // 가져온 데이터를 동적으로 리스트에 추가
+//                 $.each(data, function (index, goods) {
+//                     $topSellingGoodsList.append(
+//                     		'<ul>' +
+//                         '<li>' +
+//                         '<a href="#">' +
+//                         '<div class="zoom-container">' +
+//                         '<!-- 이미지 없음 -->' +
+//                         '</div>' +
+//                         '<p><span>다있닭</span> ' + goods.goods_name + '</p>' +
+//                         '<p>' + goods.goods_price + '원</p>' +
+//                         '</a>' +
+//                         '</li>' +
+//                         '</ul>'
                         
-                    );
-                    content.trigger( "create") ;
-                });
-            }
-        });
-    });
+//                     );
+//                     content.trigger( "create") ;
+//                 });
+//             }
+//         });
+//     });
     
     
     

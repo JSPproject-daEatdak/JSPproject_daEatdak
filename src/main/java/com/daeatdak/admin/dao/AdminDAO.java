@@ -25,11 +25,11 @@ public class AdminDAO  {
 		return sqlSession.selectOne("admin.getSequence");
 	}
 	
-	public List<GoodsInfoListVO> goodsInfoList() {
-		
-		return sqlSession.selectList("admin.GoodsInfoList");
-		
-	}
+//	public List<GoodsInfoListVO> goodsInfoList() {
+//		
+//		return sqlSession.selectList("admin.GoodsInfoList");
+//		
+//	}
 	
 	
 	  public void goodsDelete(int goodsNumber) {

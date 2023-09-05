@@ -79,9 +79,13 @@
 					</div>
 					<div class="side-item">
 						<a
-							href="${pageContext.request.contextPath}/myPage/myPageWishList.jsp">
+							href="${pageContext.request.contextPath}/myPage/myPageWishListOk.mp?userNum='1'">
 							<div class="content-text">찜 목록</div>
 						</a>
+<!-- 						<a onclick="location.href='/myPage/myPageMainOk.mp';" -->
+<%-- 							href="${pageContext.request.contextPath}/myPage/myPageWishList.jsp"> --%>
+<!-- 							<div class="content-text">찜 목록</div> -->
+<!-- 						</a> -->
 					</div>
 				</div>
 				<div class="myPage-main">

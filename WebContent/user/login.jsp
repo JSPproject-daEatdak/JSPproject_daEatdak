@@ -55,14 +55,13 @@
 						</div>
 
 						<form id="login_form" name="login_form"
-							action="${pageContext.request.contextPath}/user/loginOk.me"
-							onsubmit='return aclick();' method="post">
-
+							action="${pageContext.request.contextPath}/user/loginOk.me" method="post">
+<!-- 							onsubmit='return aclick();' -->
 							<div class="input-group">
 								<div class="input-text">
 									<input type="text" id="userEmail" name="userEmail"
-										placeholder="유저명!!" maxlength="100"> <label
-										class="nameNull" style="display: none;">유저명을 입력하세요.</label> <input
+										placeholder="이메일" maxlength="100"> <label
+										class="mailNull" style="display: none;">이메일을 입력하세요.</label> <input
 										type="password" id="userPassword" name="userPassword"
 										placeholder="비밀번호" maxlength="100"> <label
 										class="pwNull" style="display: none">패스워드를 입력하세요.</label>
@@ -94,7 +93,7 @@
 							<button type="button"
 								onclick="location.href='/login/html/kakaologin.html' ">
 								<img
-									src="${pageContext.request.contextPath}/resources/member/img/kakao_login.png"
+									src="${pageContext.request.contextPath}/resources/user/img/kakao_login.png"
 									alt="">
 							</button>
 						</div>

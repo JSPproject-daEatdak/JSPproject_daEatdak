@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myPage">
+
+	<select id="productList" resultType="MyPageDTO">
+		select
+		w.user_num,
+		w.goods_num,
+		g.goods_name,
+		g.goods_price
+		from
+		wishlist w, goods g
+		where w.goods_num = g.goods_num and w.user_num =2 ;
+	</select>
+
+   <update id="revise" parameterType="com.daeatdak.login.dto.UserDTO">
+		UPDATE users
+		SET
+		user_password= #{userPassword},
+		user_phone = #{userPhone},
+		user_email = #{userEmail}
+		WHERE user_name ="User1";
+   </update>
+
+</mapper>

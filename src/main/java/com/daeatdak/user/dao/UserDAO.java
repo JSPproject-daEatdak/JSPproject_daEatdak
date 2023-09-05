@@ -8,7 +8,7 @@ import com.daeatdak.user.dto.UserDTO;
 import com.mybatis.config.MyBatisConfig;
 
 public class UserDAO {
-			private SqlSession sqlSession;
+	public SqlSession sqlSession;
 			
 			
 	public UserDAO() {
@@ -16,6 +16,13 @@ public class UserDAO {
 		
 	}
 	
+	public UserDTO login(UserDTO userDTO) {
+		System.out.println("로그인 dao진입 확인");
+		UserDTO user = sqlSession.selectOne("user.login",userDTO);
+		System.out.println("dao 리턴 전 확인");
+		return user;
+	}
+
 	
 	public void join(UserDTO userDTO) {
 		sqlSession.insert("user.join", userDTO);
@@ -50,8 +57,4 @@ public class UserDAO {
 			return userPassword;
 		}
 		
-		public UserDTO login(UserDTO userDTO) {
-			UserDTO user = sqlSession.selectOne("user.login",userDTO);
-			return user;
-		}
 }

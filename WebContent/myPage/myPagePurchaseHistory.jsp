@@ -58,7 +58,7 @@
 					</div>
 					<div class="side-item">
 						<a
-							href="${pageContext.request.contextPath}/myPage/myPageWishList.jsp">
+							href="${pageContext.request.contextPath}/myPage/myPageWishListOk.mp?userNum='1'">
 							<div class="content-text">찜 목록</div>
 						</a>
 					</div>
@@ -71,44 +71,56 @@
 
 
 					<div class="myPage-main-contents">
-					<% GoodsDTO gDTO = new GoodsDTO(); %>
-						<c:forEach var="gDTO" items="${gDTO }">
-							<div class="product">
-								<div class="product-img-box">
-									<img class="product-img"
-										src="${pageContext.request.contextPath}/resources/myPage/img/product1.jpg">
-								</div>
-								<div class="product-info">
-									<h4><%=gDTO.getGoodsName() %></h4>
-									상품명
-									<p><%=gDTO.getGoodsPrice() %></p>
-									가격
-									<p><%=gDTO.getGoodsQuantity() %></p>
-									수량
-									<p><%=gDTO.getSaleCount() %></p>
-									합계가격
-									<div class="cancle-btn-box">
-										<button class="cancle-btn">구매 취소</button>
-									</div>
+						<%-- 						<c:forEach items="${gDTO }" var="gDTO"> --%>
+						<%-- 												</c:forEach> --%>
+
+						<div class="product">
+							<div class="product-img-box">
+								<img class="product-img"
+									src="${pageContext.request.contextPath}/resources/myPage/img/product1.jpg">
+							</div>
+							<div class="product-info">
+								<h4>맛있닭 엄청맛있는 닭가슴살 소시지 100kg</h4>
+								<p>5000원</p>
+								<p>수량 : 100</p>
+								<p>합계 : 500,000원</p>
+								<div class="cancle-btn-box">
+									<button class="cancle-btn">구매 취소</button>
 								</div>
 							</div>
+						</div>
 
-<!-- 							<div class="product"> -->
-<!-- 								<div class="product-img-box"> -->
-<!-- 									<img class="product-img" -->
-<%-- 										src="${pageContext.request.contextPath}/resources/myPage/img/product2.jpg"> --%>
-<!-- 								</div> -->
-<!-- 								<div class="product-info"> -->
-<!-- 									<h4>맛있닭 엄청맛있는 닭가슴살 소시지 100kg</h4> -->
-<!-- 									<p>5000원</p> -->
-<!-- 									<p>수량 : 100</p> -->
-<!-- 									<p>합계 : 500,000원</p> -->
-<!-- 									<div class="cancle-btn-box"> -->
-<!-- 										<button class="cancle-btn">구매 취소</button> -->
-<!-- 									</div> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
-						</c:forEach>
+						<div class="product">
+							<div class="product-img-box">
+								<img class="product-img"
+									src="${pageContext.request.contextPath}/resources/myPage/img/product2.jpg">
+							</div>
+							<div class="product-info">
+								<h4>맛있닭 엄청맛있는 닭가슴살 소시지 100kg</h4>
+								<p>5000원</p>
+								<p>수량 : 100</p>
+								<p>합계 : 500,000원</p>
+								<div class="cancle-btn-box">
+									<button class="cancle-btn">구매 취소</button>
+								</div>
+							</div>
+						</div>
+						<div class="product">
+							<div class="product-img-box">
+								<img class="product-img"
+									src="${pageContext.request.contextPath}/resources/myPage/img/product1.jpg">
+							</div>
+							<div class="product-info">
+								<h4>맛있닭 엄청맛있는 닭가슴살 소시지 100kg</h4>
+								<p>5000원</p>
+								<p>수량 : 100</p>
+								<p>합계 : 500,000원</p>
+								<div class="cancle-btn-box">
+									<button class="cancle-btn">구매 취소</button>
+								</div>
+							</div>
+						</div>
+
 					</div>
 
 

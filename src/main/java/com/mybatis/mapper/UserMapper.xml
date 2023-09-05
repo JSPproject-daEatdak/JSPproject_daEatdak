@@ -3,18 +3,10 @@
 <mapper namespace="user">
 
   
-   <select id ="login" parameterType="com.daeatdak.login.dto.UserDTO" resultType="com.daeatdak.login.dto.UserDTO">
+   <select id ="login" parameterType="com.daeatdak.user.dto.UserDTO" resultType="com.daeatdak.user.dto.UserDTO">
    		select * from users
-   		where user_name = #{userName} AND user_password = #{userPassword}
+   		where user_email = #{userEmail} AND user_password = #{userPassword}
    		
    </select>
    
-   <update id="revise" parameterType="com.daeatdak.login.dto.UserDTO">
-		UPDATE users
-		SET
-		user_password= #{userPassword},
-		user_phone = #{userPhone},
-		user_email = #{userEmail}
-		WHERE user_name ="User1";
-   </update>
 </mapper>

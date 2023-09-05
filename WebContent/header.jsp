@@ -15,8 +15,6 @@
 <script
 	src="${pageContext.request.contextPath}/resources/common/js/header.js"
 	defer></script>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/common/css/header.css" rel="stylesheet" type="text/css" />
-<script src="${pageContext.request.contextPath}/resources/common/js/header.js?ver=4" defer></script>
 
 <title>header</title>
 </head>
@@ -45,19 +43,19 @@
 					<c:if test="${userRoll != '0' && userRoll != '1' }">
 						<div class="user-container">
 							<ul>
-								<form action="/index.jsp" method="get">
+<!-- 								<form action="/index.jsp" method="get"> -->
 									<%
 									String userName = (String) session.getAttribute("userName");
 									%>
 
-									<li><h6><%=userName%></h6> <a
-										href="${pageContext.request.contextPath}/member/login.jsp">
+									<li> <a
+										href="${pageContext.request.contextPath}/user/login.jsp">
 											<span class="material-symbols-outlined"> lock </span>
 											<h6>로그인</h6>
 									</a></li>
-								</form>
+<!-- 								</form> -->
 								<li><a
-									href="${pageContext.request.contextPath}/member/signupSelect.jsp">
+									href="${pageContext.request.contextPath}/user/signupSelect.jsp">
 										<span class="material-symbols-outlined"> person_add </span>
 										<h6>회원가입</h6>
 								</a></li>
@@ -84,7 +82,7 @@
 						<c:when test="${userRoll == '0' }">
 							<div class="user-container">
 								<ul>
-									<form action="/logout.jsp" method="get">
+<!-- 									<form action="/logout.jsp" method="get"> -->
 										<%
 										// 									UserDTO userDTO = new UserDTO();
 
@@ -104,7 +102,7 @@
 													로그아웃<br>
 												</h6>
 										</a></li>
-									</form>
+<!-- 									</form> -->
 									<li><a
 										href="${pageContext.request.contextPath}/myPage/myPageMain.jsp">
 											<span class="material-symbols-outlined"> person </span>
@@ -130,13 +128,13 @@
 						<c:when test="${userRoll == '1' }">
 							<div class="user-container">
 								<ul>
-									<form action="/logout.jsp" method="get">
+<!-- 									<form action="/logout.jsp" method="get"> -->
 										<li><h6><%="관리자!"%></h6> <a
 											href="${pageContext.request.contextPath}/member/logoutOK.me">
 												<span class="material-symbols-outlined"> lock_open </span>
 												<h6>로그아웃</h6>
 										</a></li>
-									</form>
+<!-- 									</form> -->
 
 									<li><a
 										href="${pageContext.request.contextPath}/admin/adminMemberInfo.jsp">
@@ -171,130 +169,6 @@
 				<div class="nav-container">
 
 
-            <!-- 로고-->
-            <div class="header-logo-container">
-                <a href='${pageContext.request.contextPath}/common/MainFullMenu.co' method="get">
-                    <h4>다잇닭</h4>
-                
-                 <p>daEatdak</p> </a>
-            </div>
-          <!-- 로그인/회원가입 -->
-          <div class="user-container">
-          <!-- 세션이 비어있을때 -->
-          <c:choose>
-			<c:when test = "${empty sessionScope.userRoll}">
-                <ul>
-                    <li>
-                        <a href="${pageContext.request.contextPath}/user/login.me">
-                            <span class="material-symbols-outlined">
-                                lock
-                            </span>
-                            <h6>로그인</h6>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${pageContext.request.contextPath}/member/signupSelect.jsp">
-                            <span class="material-symbols-outlined">
-                                person_add
-                            </span>
-                            <h6>회원가입</h6>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${pageContext.request.contextPath}/board/boardListOk.bo">
-                            <span class="material-symbols-outlined">
-                                support_agent
-                            </span>
-                            <h6>문의하기</h6>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${pageContext.request.contextPath}/user/login.me">
-                            <span class="material-symbols-outlined">
-                                shopping_cart
-                            </span>
-                            <h6>장바구니</h6>
-                        </a>
-                    </li>
-                </ul>
-                </c:when>
-                <%--로그인한 회원이 일반회원일때 --%>
-                <c:when test ="${sessionScope.userRoll == 0}">
-                	<ul>
-                    <li>
-                        <a href="${pageContext.request.contextPath}/user/logoutOk.me">
-                            <span class="material-symbols-outlined">
-							lock_open
-							</span>
-                            <h6>로그아웃</h6>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${pageContext.request.contextPath}/user/Ok.me">
-                            <span class="material-symbols-outlined">
-							person
-							</span>
-                            <h6>마이페이지</h6>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/board/boardListOk.bo">
-                            <span class="material-symbols-outlined">
-                                support_agent
-                            </span>
-                            <h6>문의하기</h6>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="${pageContext.request.contextPath}/goods/CartList.go?userNum=${sessionScope.userNum}">
-                            <span class="material-symbols-outlined">
-                                shopping_cart
-                            </span>
-                            <h6>장바구니</h6>
-                        </a>
-                    </li>
-                </ul>
-                </c:when>
-                <%--관리자로 로그인 했을때 --%>
-                <c:when test ="${sessionScope.userRoll == 1}">
-                	<ul>
-                    <li>
-                        <a href="${pageContext.request.contextPath}/user/logoutOk.me">
-                            <span class="material-symbols-outlined">
-							lock_open
-							</span>
-                            <h6>로그아웃</h6>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/login/html/signupselet.html">
-                            <span class="material-symbols-outlined">
-							key
-							</span>
-							<h6>관리자</h6>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/board/boardListOk.bo">
-                            <span class="material-symbols-outlined">
-                                support_agent
-                            </span>
-                            <h6>문의하기</h6>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/product/html/product_cart_choice.html">
-                            <span class="material-symbols-outlined">
-                                shopping_cart
-                            </span>
-                            <h6>장바구니</h6>
-                        </a>
-                    </li>
-                </ul>
-                </c:when>
-               </c:choose>
-            </div>
-            </div>
 
 
 

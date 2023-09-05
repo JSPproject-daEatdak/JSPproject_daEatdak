@@ -112,18 +112,18 @@ $('.updateBtn').on('click', function(){
 	let userPhone = $("#userPhone").val();
 	let adress = $("#adress").val();
 	
-	alert("확인!!!");
 	if(configPw != configPw2) {
-		alert("비번다를때");
 		$(".pwCheck").css("display","block");
 		$(".pwCheck").css("color","red");	
-
+		return false;
 	} else {
 		if(configPw && configPw2 && email1 && email2 && userPhone && adress){
 			console.log("다 있다!!")
+			alert("수정되었습니다.");
 			$('#myPageForm').submit();
 		} else {
-			alert("입력을 안한 정보가 있습니다.");		
+			alert("입력을 안 한 정보가 있습니다.");
+			return false;
 		}
 
 	}

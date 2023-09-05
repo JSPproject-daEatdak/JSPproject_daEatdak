@@ -20,9 +20,7 @@ public class BoardDAO {
 	
 	// 게시판 리스트에 글 목록이 올수 있도록 저장
 	public List<BoardVO> selectAll(){
-		
-		return sqlSession.selectList("board.selectAll");
-		
+		return sqlSession.selectList("board.selectAll");		
 	}
 	// 글 작성 데이터에 저장하는 메소드
 	public void writeInsert(BoardDTO boardDTO) {

@@ -20,9 +20,9 @@ public class GoodsInfoListOkController implements Execute {
 		Result result = new Result();
 		
 		
-		adminDAO.goodsInfoList();
-		
-		request.setAttribute("GoodsInfoList", adminDAO.goodsInfoList());
+//		adminDAO.goodsInfoList();
+//		
+//		request.setAttribute("GoodsInfoList", adminDAO.goodsInfoList());
 
 		
 		

@@ -12,8 +12,6 @@
   
 	<!-- 회원 -->
   <servlet>
-  	<servlet-name>Member</servlet-name>
-  	 <servlet-class>com.daeatdak.member.MemberFrontController</servlet-class>
   	<servlet-name>User</servlet-name>
   	<servlet-class>com.daeatdak.user.UserFrontController</servlet-class>
   </servlet>
@@ -42,25 +40,34 @@
   </servlet-mapping>
   
   	<!-- 관리자 -->
-  <servlet>
-  	<servlet-name>Admin</servlet-name>
-  	<servlet-class>com.daeatdak.admin.AdminFrontController</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>Admin</servlet-name>
-  	<url-pattern>*.ad</url-pattern>
-  </servlet-mapping>
+<!--   <servlet> -->
+<!--   	<servlet-name>Admin</servlet-name> -->
+<!--   	<servlet-class>com.daeatdak.admin.AdminFrontController</servlet-class> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!--   	<servlet-name>Admin</servlet-name> -->
+<!--   	<url-pattern>*.ad</url-pattern> -->
+<!--   </servlet-mapping> -->
   
     <!-- 메인 -->
-  <servlet>
-  	<servlet-name>Common</servlet-name>
-  	<servlet-class>com.daeatdak.common.CommonFrontController</servlet-class>
+<!--   <servlet> -->
+<!--   	<servlet-name>Common</servlet-name> -->
+<!--   	<servlet-class>com.daeatdak.common.CommonFrontController</servlet-class> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!--   	<servlet-name>Common</servlet-name> -->
+<!--   	<url-pattern>*.co</url-pattern> -->
+<!--   </servlet-mapping> -->
+
+	<!-- 마이페이지 -->
+   <servlet>
+  	<servlet-name>MyPage</servlet-name>
+  	<servlet-class>com.daeatdak.myPage.MyPageFrontController</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>Common</servlet-name>
-  	<url-pattern>*.co</url-pattern>
+  	<servlet-name>MyPage</servlet-name>
+  	<url-pattern>*.mp</url-pattern>
   </servlet-mapping>
-
    
 </web-app>
 

@@ -23,7 +23,7 @@ public class GoodsDAO {
 	      return sqlSession.selectList("goods.selectCategory", categoryNum);
 	   }
 	   
-   
+
 	   public List<GoodsImageDTO> selectImage(){
 		   return sqlSession.selectList("goods.selectImage");
 	   }
@@ -47,7 +47,8 @@ public class GoodsDAO {
 
 	   public CartDTO selectCart(int userNum) {
 		   return sqlSession.selectOne("goods.selectCart",userNum);
-	   
+	   }
+
 	   public void createCart(int userNum) {
 		   sqlSession.insert("goods.createCart",userNum);
 	   }

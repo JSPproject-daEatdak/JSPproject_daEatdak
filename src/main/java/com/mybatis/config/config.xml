@@ -1,54 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+
 	<settings>
 		<setting name="mapUnderscoreToCamelCase" value="true"/>
 	</settings>
-	
+
 	<!-- DTO 추가 -->
-   <typeAliases>
-
-      <typeAlias type="com.daeatdak.login.dto.UserDTO" alias = "UserDTO"/>
-      <typeAlias type="com.daeatdak.goods.dto.GoodsDTO" alias = "GoodsDTO"/>
-      <typeAlias type="com.daeatdak.goods.dto.GoodsImageDTO" alias = "GoodsImageDTO"/>
-
-   </typeAliases>
-
-
-   <environments default="mysql">
-      <environment id="mysql">
-         <transactionManager type="JDBC"/>
-         <dataSource type="POOLED">
-            <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="url" value="jdbc:mysql://localhost:3306/jsp_daEatdak"/>
-            <property name="username" value="root"/>
-            <property name="password" value="1111"/>
-         </dataSource>
-      </environment>
-   </environments>
-   
-   <!-- Mapper 추가 -->
-   <mappers>
-
-         <mapper resource = "com/mybatis/mapper/UserMapper.xml"></mapper>
-
-         <mapper resource = "com/mybatis/mapper/GoodsMapper.xml"></mapper>
 	<typeAliases>
-		<typeAlias type="com.daeatdak.user.dto.UserDTO" alias="UserDTO" />
-		<typeAlias type="com.daeatdak.admin.dto.AdminDTO" alias="AdminDTO" />
-		<typeAlias type="com.daeatdak.admin.dto.FileDTO" alias="FileDTO"/>
-		<typeAlias type="com.daeatdak.admin.vo.GoodsInfoListVO" alias="GoodsInfoListVO"/>
-		<typeAlias type="com.daeatdak.goods.dto.GoodsDTO" alias = "GoodsDTO"/>
-     	<typeAlias type="com.daeatdak.goods.dto.GoodsImageDTO" alias = "GoodsImageDTO"/>
-		<typeAlias type="com.daeatdak.board.dto.BoardDTO" alias = "BoardDTO"/>
-     	<typeAlias type="com.daeatdak.board.vo.BoardVO" alias = "BoardVO"/>
-     	<typeAlias type ="com.daeatdak.common.dto.CommonDTO" alias = "CommonDTO"/>
-     	<typeAlias type ="com.daeatdak.goods.dto.CartDTO" alias = "CartDTO"/>
-     	<typeAlias type ="com.daeatdak.goods.dto.CartItemDTO" alias = "CartItemDTO"/>
+<!-- 		<typeAlias type="com.daeatdak.admin.dto.AdminDTO" -->
+<!-- 			alias="AdminDTO" /> -->
+<!-- 		<typeAlias type="com.daeatdak.admin.dto.FileDTO" -->
+<!-- 			alias="FileDTO" /> -->
+<!-- 		<typeAlias type="com.daeatdak.board.dto.BoardDTO" -->
+<!-- 			alias="BoardDTO" /> -->
+<!-- 		<typeAlias type="com.daeatdak.common.dao.CommonDTO" -->
+<!-- 			alias="CommonDTO" /> -->
+		<typeAlias type="com.daeatdak.goods.dto.GoodsImageDTO"
+			alias="GoodsImageDTO" />
+		<typeAlias type="com.daeatdak.goods.dto.CartDTO"
+			alias="CartDTO" />
+		<typeAlias type="com.daeatdak.goods.dto.CartItemDTO"
+			alias="CartItemDTO" />
+		<typeAlias type="com.daeatdak.goods.dto.GoodsDTO"
+			alias="GoodsDTO" />
+		<typeAlias type="com.daeatdak.user.dto.UserDTO"
+			alias="UserDTO" />
+		<typeAlias type="com.daeatdak.myPage.dto.MyPageDTO"
+			alias="MyPageDTO" />
+			
 	</typeAliases>
-
-
-
+	
 	<environments default="mysql">
 		<environment id="mysql">
 			<transactionManager type="JDBC" />
@@ -61,15 +43,18 @@
 			</dataSource>
 		</environment>
 	</environments>
-
+	
 	<!-- Mapper 추가 -->
 	<mappers>
-		<mapper resource="com/mybatis/mapper/MemberMapper.xml"></mapper>
-		<mapper resource="com/mybatis/mapper/AdminMapper.xml"></mapper>
-		<mapper resource="com/mybatis/mapper/FileMapper.xml" ></mapper>
-		<mapper resource = "com/mybatis/mapper/GoodsMapper.xml"></mapper>
-        <mapper resource = "com/mybatis/mapper/BoardMapper.xml"></mapper>
-        <mapper resource = "com/mybatis/mapper/CommonMapper.xml"></mapper>
-   </mappers>
-
+<!-- 		<mapper resource="com/mybatis/mapper/MemberMapper.xml"></mapper> -->
+<!-- 		<mapper resource="com/mybatis/mapper/AdminMapper.xml"></mapper> -->
+<!-- 		<mapper resource="com/mybatis/mapper/FileMapper.xml"></mapper> -->
+		<mapper resource="com/mybatis/mapper/GoodsMapper.xml"></mapper>
+<!-- 		<mapper resource="com/mybatis/mapper/BoardMapper.xml"></mapper> -->
+<!-- 		<mapper resource="com/mybatis/mapper/CommonMapper.xml"></mapper> -->
+		<mapper resource="com/mybatis/mapper/UserMapper.xml"></mapper>
+		<mapper resource="com/mybatis/mapper/myPageMapper.xml"></mapper>		
+	</mappers>
+	
+	
 </configuration>

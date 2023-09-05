@@ -58,7 +58,7 @@
 					</div>
 					<div class="side-item">
 						<a
-							href="${pageContext.request.contextPath}/myPage/myPageWishList.jsp">
+							href="${pageContext.request.contextPath}/myPage/myPageWishListOk.mp?userNum='1'">
 							<div class="content-text">찜 목록</div>
 						</a>
 					</div>
@@ -71,7 +71,7 @@
 					</div>
 
 
-					<form action="/MyPage" method="get" id="myPageForm">
+					<form action="${pageContext.request.contextPath}/myPage/myPageUserConfigOk.mp" method="post" id="myPageForm">
 						<%
 						String userName = (String) session.getAttribute("userName");
 						String userEmail = (String) session.getAttribute("userEmail");
@@ -89,6 +89,8 @@
 									<p>이름</p>
 									<input type="text" value="<%=userName%>" id="userName"
 										name="<userName" disabled>
+<%-- 									<input type="text" value="<%=userName%>" id="userName" --%>
+<!-- 										name="<userName" disabled> -->
 								</div>
 
 								<div class="box id">
@@ -138,7 +140,8 @@
 								<div class="box address">
 									<div>
 										<p>주소</p>
-										<input type="text" value="<%=addressNum%>" id="adress">
+										<input type="text" value="노원구 상계동" id="adress">
+<%-- 										<input type="text" value="<%=addressNum%>" id="adress"> --%>
 										<button class="address-btn">주소찾기</button>
 									<span id="check" class="adressCheck" style="display: none;">번호를 입력하세요.</span>
 									</div>
@@ -147,7 +150,7 @@
 							</div>
 						</div>
 						<div>
-							<button class="updateBtn" type="button"
+							<button class="updateBtn"
 								style="margin-top: 10px; background-color: rgb(202, 46, 46); color: white; float: right; border-radius: 10%; cursor: pointer;">수정</button>
 						</div>
 					</form>

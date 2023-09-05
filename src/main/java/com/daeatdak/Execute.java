@@ -11,5 +11,8 @@ public interface Execute {
 	
 	public Result execute(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServerException, ServletException;
+
+//	public Result productList(HttpServletRequest request, HttpServletResponse response) 
+//			throws IOException, ServerException, ServletException;
 	
 }

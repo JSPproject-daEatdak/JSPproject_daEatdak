@@ -25,16 +25,15 @@ public class GoodsListDeleteOkController implements Execute {
 		
 		
 		 int goodsNumber = Integer.valueOf( request.getParameter("goodsNum"));
-		  System.out.println(goodsNumber);
 		  
-		  System.out.println("삭제하기!");
+		  System.out.println(goodsNumber + "번 상품 삭제!");
 		 
 		 
 		  adminDAO.goodsDelete(goodsNumber);
 		 
 		
 		
-		response.sendRedirect("/admin/goodsInfoListOk.ad");
+		response.sendRedirect("/admin/goodsListDeleteOk.ad");
 		
 		
 		return null;

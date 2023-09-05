@@ -11,8 +11,25 @@ public class BoardVO {
 	private String boardContent;
 	private int boardLock;
 	private String boardPassword;
-	 
+	private int userRoll;
+	private int userNum;
 	
+
+	public int getUserNum() {
+		return userNum;
+	}
+
+	public void setUserNum(int userNum) {
+		this.userNum = userNum;
+	}
+
+	public int getUserRoll() {
+		return userRoll;
+	}
+
+	public void setUserRoll(int userRoll) {
+		this.userRoll = userRoll;
+	}
 
 	public BoardVO() {
 		
@@ -101,8 +118,12 @@ public class BoardVO {
 	public String toString() {
 		return "BoardVO [boardNum=" + boardNum + ", boardName=" + boardName + ", userName=" + userName + ", boardDate="
 				+ boardDate + ", boardCount=" + boardCount + ", boardContent=" + boardContent + ", boardLock="
-				+ boardLock + ", boardPassword=" + boardPassword + "]";
+				+ boardLock + ", boardPassword=" + boardPassword + ", userRoll=" + userRoll + ", userNum=" + userNum
+				+ "]";
 	}
+
+
+
 
 
 //	public int getBoardLock() {

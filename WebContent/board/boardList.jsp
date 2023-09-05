@@ -77,9 +77,18 @@
 			              					<c:out value="${board.getBoardNum()}"></c:out>
 			              				</div>
 			              				<div class="title">
+			              					<c:choose>
+			              					<c:when test="${board.getUserRoll()==0}">
 			              					<a href="${pageContext.request.contextPath}/board/boardPasswordCheckConfig.bo?boardNum=${board.getBoardNum()}">
 			              						비공개 글 입니다.
 			              					</a>
+			              					</c:when>
+			              					<c:when test="${board.getUserRoll()==1}">
+			              						<a href="${pageContext.request.contextPath}/board/boardView.bo?boardNum=${board.getBoardNum()}">
+			              						비공개 글 입니다.
+			              					</a>
+			              					</c:when>
+			              				</c:choose>	
 			              				</div>
 			              				<div class="witer">
 			              					<c:out value="${board.getUserName()}"></c:out>

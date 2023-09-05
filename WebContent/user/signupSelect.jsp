@@ -7,7 +7,7 @@
 <!--기본적인 공통 css-->
 <!--이외 각자 페이지 css/js는 각자 추가할 것-->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/common/css/common.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/member/css/signupSelect.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/user/css/signupSelect.css" rel="stylesheet" type="text/css" />
 <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/common/img/logoPic.png" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -50,8 +50,8 @@
                             </div>                     
                         </div>
                         <div class="button-kakao">
-                            <a type="button" onclick="location.href='${pageContext.request.contextPath}/member/kakaoLogin.jsp'" >
-                             <img src="${pageContext.request.contextPath}/resources/member/img/kakao_signup.png" alt="">
+                            <a type="button" onclick="location.href='${pageContext.request.contextPath}/user/kakaoLogin.jsp'" >
+                             <img src="${pageContext.request.contextPath}/resources/user/img/kakao_signup.png" alt="">
                             </a> 
                         </div>
                             

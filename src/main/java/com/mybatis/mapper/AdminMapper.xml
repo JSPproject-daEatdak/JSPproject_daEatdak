@@ -7,7 +7,7 @@
 	
    <insert id = "GoodsRegist" parameterType="AdminDTO">
          insert into goods(category_num, goods_name,  goods_price,  goods_quantity)
-         value( #{goodsCategory},#{goodsName}, #{goodsPrice}, #{goodsQuantity} )
+         value(#{categoryNum}, #{goodsName}, #{goodsPrice}, #{goodsQuantity} )
     
    </insert>
    
@@ -36,12 +36,27 @@
 	 
 	 </select>
 	 
-	 <delete id="GoodsListDelete" parameterType="String">
-	 	DELTE goods_num
+	 <delete id="GoodsListDelete" parameterType="_int">
+	 	DELETE
 	 	from goods
 	 	where goods_num = #{goodsNum}
 	 
 	 </delete>
+	 
+ 	  <select id = "GoodsRegistInfo" parameterType="_int" resultType="GoodsListVO">
+         select c.category_num, g.goods_name,  g.goods_price,  g.goods_quantity
+         from goods g
+         join category c on g.category_num = c.category_num
+		 where goods_num = #{goodsNum}   
+		  
+   </select> 
+	 
+	 
+	 <update id="GoodsInfoUpdate" parameterType="GoodsListVO">
+	 		UPDATE goods set category_num = #{categoryNum}, goods_price=#{goodsPrice}, goods_quantity = #{goodsQuantity} 
+	 		where goods_num = #{goodsNum}
+	 	
+	 </update> 
 	 
    
      

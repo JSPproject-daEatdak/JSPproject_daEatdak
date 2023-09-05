@@ -31,9 +31,9 @@
 			</a>
 		</div>
 
-		<a href="/admin/adminMemberInfo.jsp"><div class="admin_menu">회원정보</div></a> <a
+		<a href="/admin/userInfoList.ad"><div class="admin_menu">회원정보</div></a> <a
 			href="/admin/goodsInfoListOk.ad"><div class="admin_menu">상품관리</div></a> <a
-			href="${pageContext.request.contextPath}/board/view/boardList.jsp">
+			href="/board/boardListOk.bo">
 			<div class="admin_menu">문의게시판</div>
 		</a>
 

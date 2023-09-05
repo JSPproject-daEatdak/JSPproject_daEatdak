@@ -1,340 +1,332 @@
 body {
-  background-color: white;
+	background-color: white;
 }
+
 main {
-  max-width: 1200px;
-  height: 100%;
-  margin: 40px auto;
+	max-width: 1200px;
+	height: 100%;
+	margin: 40px auto;
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 ul {
-  list-style-type: none;
-  width: 810px;
+	list-style-type: none;
+	width: 810px;
 }
 
 body {
-  background: #EEE;
-  font-family: 'Roboto', sans-serif;
+	background-color: white;
+	font-family: 'Roboto', sans-serif;
 }
 
 button:hover {
-  background-color: lightgray;
-  cursor: pointer;
+	background-color: lightgray;
+	cursor: pointer;
 }
 
-
-
-
-
 .dropzone {
-  border: 2px solid #3498db !important;
-  border-radius: 10px;
-  -webkit-transition: .2s;
-  transition: .2s;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+	border: 2px solid #3498db !important;
+	border-radius: 10px;
+	-webkit-transition: .2s;
+	transition: .2s;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
 }
 
 .dropzone.dz-drag-hover {
-  border: 2px solid #3498db !important;
+	border: 2px solid #3498db !important;
 }
 
 .dz-message.needsclick img {
-  width: 50px;
-  display: block;
-  margin: auto;
-  opacity: .6;
-  margin-bottom: 15px;
+	width: 50px;
+	display: block;
+	margin: auto;
+	opacity: .6;
+	margin-bottom: 15px;
 }
 
 span.plus {
-  display: none;
+	display: none;
 }
 
 .dropzone.dz-started .dz-message {
-  display: inline-block !important;
-  width: 120px;
-  float: right;
-  border: 1px solid rgba(238, 238, 238, 0.36);
-  border-radius: 30px;
-  margin: 16px;
-  -webkit-transition: .2s;
-  transition: .2s;
+	display: inline-block !important;
+	width: 120px;
+	float: right;
+	border: 1px solid rgba(238, 238, 238, 0.36);
+	border-radius: 30px;
+	margin: 16px;
+	-webkit-transition: .2s;
+	transition: .2s;
 }
 
 .dropzone.dz-started .dz-message span.text {
-  display: none;
+	display: none;
 }
 
 .dropzone.dz-started .dz-message span.plus {
-  display: block;
-  font-size: 70px;
-  color: #AAA;
-  line-height: 110px;
+	display: block;
+	font-size: 70px;
+	color: #AAA;
+	line-height: 110px;
 }
 
 .iup {
-  margin-left: 20px;
-  width: 400px;
-  height: 400px;
+	margin-left: 20px;
+	width: 400px;
+	height: 400px;
 }
 
 form {
-  width: 400px;
-  height: 400px;
-
+	width: 400px;
+	height: 400px;
 }
 
 .uploadImg {
-  width: 200px;
-  height: 250px;
+	width: 200px;
+	height: 250px;
 }
 
 .dz-image img {
-  width: 50px;
-  height: 50px;
+	width: 50px;
+	height: 50px;
 }
 
 #image {
-    margin: 5px auto;
+	margin: 5px auto;
 }
 
-
-
-
 .list-unstyled {
-  width: 300px;
-  height: 100%;
-  margin-left: 20px;
+	width: 300px;
+	height: 100%;
+	margin-left: 20px;
 }
 
 .img-List {
-/*    border: 1px dashed blue;*/
-  width: 900px;
-  height: 400px;
-  margin-left: 20px;
-/*  overflow: auto;*/
-  overflow-x: hidden;
-  border: 2px solid black;
+	/*    border: 1px dashed blue;*/
+	width: 900px;
+	height: 400px;
+	margin-left: 20px;
+	/*  overflow: auto;*/
+	overflow-x: hidden;
+	border: 2px solid black;
 }
 
 .img-List::-webkit-scrollbar {
-  width: 10px;
+	width: 10px;
 }
 
 .img-List::-webkit-scrollbar-thumb {
-  background-color: darkblue;
-  border-radius: 5px;
+	background-color: darkblue;
+	border-radius: 5px;
 }
 
 .img-List::-webkit-scrollbar-track {
-  background-color: grey;
-  border-radius: 5px;
-  box-shadow: inset 0px 0px 10px white;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: inset 0px 0px 10px white;
 }
 
 #image_container img {
-  width: 250px;
-  height: 250px;
-  float: left;
-  margin-left: 1px;
-
+	width: 250px;
+	height: 250px;
+	float: left;
+	margin-left: 1px;
 }
 
 .iup form {
-  width: 250px;
-  height: 250px;
+	width: 250px;
+	height: 250px;
 }
-
 
 .dz-clickable {
-  width: 80px;
-  margin-right: -90px;
-  float: right;
+	width: 80px;
+	margin-right: -90px;
+	float: right;
 }
 
-.pt-1  {
-  position: absolute;
-  margin-top: -100px;
-  margin-left: 150px;
-  display: none;
+.pt-1 {
+	position: absolute;
+	margin-top: -100px;
+	margin-left: 150px;
+	display: none;
 }
 
 .btn-sm {
-  position: absolute;
-  margin-left: 200px ;
-  margin-top: 350px;
-  width: 50px;
-  height: 25px;
-  background-color:rgb(202, 46, 46);
-  color: white;
-  border-radius: 10%;
+	position: absolute;
+	margin-left: 200px;
+	margin-top: 350px;
+	width: 50px;
+	height: 25px;
+	background-color: rgb(202, 46, 46);
+	color: white;
+	border-radius: 10%;
 }
 
-.w-full{
-  float: left;
-  width: 600px;
-  height: 350px;
-  margin-top: 10px;
-  margin-left: 40px;
+.w-full {
+	float: left;
+	width: 600px;
+	height: 350px;
+	margin-top: 10px;
+	margin-left: 40px;
 }
 
-
-p , .pt-1, .dz-default{
-  display: none;
+p, .pt-1, .dz-default {
+	display: none;
 }
+
 .dropzone img {
-  position: absolute;
-  margin-top: -15px;
-  margin-left: -30px;
-  width: 15px; 
-  height: 15px; 
-  cursor: pointer;
+	position: absolute;
+	margin-top: -15px;
+	margin-left: -30px;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
 }
+
 .dropzone img:hover, .dropzone span:hover {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 /* ↑ 이미지 css*/
-
-.section-container{
-  margin: 5px 5px 5px 5px;
-  height: 1000px;
-  display: flex;
-  justify-content: space-between;
+.section-container {
+	margin: 5px 5px 5px 5px;
+	height: 1000px;
+	display: flex;
+	justify-content: space-between;
 }
 
 .aside {
-  min-width: 211px;
-  height: 100%;
-  border: 1px solid rgb(26, 26, 26);
+	min-width: 211px;
+	height: 100%;
+	border: 1px solid rgb(26, 26, 26);
 }
 
 .main_logo {
-    margin: 10px auto;
-    text-align: center;
-    width: 140px;
+	margin: 10px auto;
+	text-align: center;
+	width: 140px;
 }
 
 .admin_menu {
-  padding : 25px;
-  text-align : center;
-  justify-content: center;
-  background-color: white;
-  color: black;
-  margin: 10px 10px auto;
+	padding: 25px;
+	text-align: center;
+	justify-content: center;
+	background-color: white;
+	color: black;
+	margin: 10px 10px auto;
 }
 
 .admin_menu:hover {
-  color: rgb(202, 46, 46);
-  cursor: pointer;
+	color: rgb(202, 46, 46);
+	cursor: pointer;
 }
 
 .admin_productRegist {
-    /* margin: 0px auto;
+	/* margin: 0px auto;
     text-align: center;
     align-items: center;
     height: 100%;
     width: 100%; */
-    display: flex;
-    flex-direction: column;
-    top:12%;
-    left: 31%;
-    width: 1000px;
-    min-height:550px;
-    height:100%;
-    margin-top: 10px;
-    margin-right: 10px;
+	display: flex;
+	flex-direction: column;
+	top: 12%;
+	left: 31%;
+	width: 1000px;
+	min-height: 550px;
+	height: 100%;
+	margin-top: 10px;
+	margin-right: 10px;
 }
 
 .PageName {
-  margin: 0 auto;
+	margin: 0 auto;
 }
 
 .Rege {
-  background-color: bisque;
- }
- 
+	background-color: white;
+}
+
 .totalProdList {
-  padding-top: 10px;
-  margin-top: 10px;
-  width: 900px;
-  height: 350px;
+	padding-top: 10px;
+	margin-top: 10px;
+	width: 900px;
+	height: 350px;
 }
 
 .registerPage {
-  width: 100%;
-  height: 350px;
-  display: flex;
-  text-align: center;
-  justify-content: center;
+	width: 100%;
+	height: 350px;
+	display: flex;
+	text-align: center;
+	justify-content: center;
 }
 
 #image_container {
-  float: left;
-  width: 250px;
-  height: 250px;
-  background-color: white;
-  margin-left: 40px;
-  border: 1px solid lightgrey;
+	float: left;
+	width: 250px;
+	height: 250px;
+	background-color: white;
+	margin-left: 40px;
+	border: 1px solid lightgrey;
 }
 
 .imgs_container {
-  float: left;
-  width: 800px;
-  height: 300px;
-  background-color: white;
-  margin-left: 40px;
-  border: 1px solid lightgrey;
+	float: left;
+	width: 800px;
+	height: 300px;
+	background-color: white;
+	margin-left: 40px;
+	border: 1px solid lightgrey;
 }
 
-.imgs_container img{
-  width: 800px;
-  height: 300px;
-  border: 1px solid lightgrey;
+.imgs_container img {
+	width: 800px;
+	height: 300px;
+	border: 1px solid lightgrey;
 }
 
 .productRegist {
-  padding: 15px;
-  text-align: left;  
+	padding: 15px;
+	text-align: left;
 }
 
 .productRegist-text {
-  width: 300px;
-  height: 30px;
+	width: 300px;
+	height: 30px;
 }
+
 .productRegist-btn {
-  margin: 90px 10px auto;
-  text-align: right;
+	margin: 90px 10px auto;
+	text-align: right;
 }
 
 .ins {
-  width: 44px;
-  height: 25px;
-  background-color:rgb(202, 46, 46);
-  color: white;
-  border-radius: 10%;
+	width: 44px;
+	height: 25px;
+	background-color: rgb(202, 46, 46);
+	color: white;
+	border-radius: 10%;
 }
 
 button {
-  background-color:rgb(202, 46, 46);
-  color: white;
+	background-color: rgb(202, 46, 46);
+	color: white;
 }
 
 .imgDel {
-  background-color:rgb(202, 46, 46);
-  color: white;
+	background-color: rgb(202, 46, 46);
+	color: white;
 }
 
 .imgsDel {
-  background-color:rgb(202, 46, 46);
-  color: white;
-  float: right;
+	background-color: rgb(202, 46, 46);
+	color: white;
+	float: right;
 }
 
 .btnLeft {

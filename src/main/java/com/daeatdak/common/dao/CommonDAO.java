@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.daeatdak.common.dto.CommonDTO;
+import com.daeatdak.goods.dto.GoodsImageDTO;
 import com.mybatis.config.MyBatisConfig;
 
 public class CommonDAO {
@@ -38,5 +39,8 @@ public class CommonDAO {
 		// TODO Auto-generated method stub
 		return sqlSession.selectList("common.selectAll4");
 	}
-
+	
+	public List<GoodsImageDTO> selectImage(){
+        return sqlSession.selectList("goods.selectImage");
+     }
 }

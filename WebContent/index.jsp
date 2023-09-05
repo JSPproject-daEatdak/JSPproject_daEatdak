@@ -69,7 +69,7 @@
                             <h3><span>급찐살?!</span> 저희가 도와드릴게요! 그래서 준비했어요!</h3>
                             <div class="goods-tap-center">
                                 <ul>
-                                    <li><h4><a href="#panel1"  class="on">닭고기</a></h4></li>
+                                    <li><h4><a href="#panel1" class="on">닭고기</a></h4></li>
                                     <li>|</li>
                                     <li><h4><a href="#panel2">돼지고기</a></h4></li>
                                     <li>|</li>
@@ -91,7 +91,11 @@
                         <li>
                             <a href="#">
                                 <div class="zoom-container">
-                                    <img src="${pageContext.request.contextPath}/resources/goods/img/chicken01.png" alt="신상품1"/>
+                                <figure class="img">
+                                <a href="${pageContext.request.contextPath}/goods/goodsBuy.go?goodsNum=${goods.getGoodsNum()}">
+                                    <img src="${goods.getGoodsName()}" alt="신상품1"/>
+                                    </a>
+                                    </figure>
                                 </div>
                                 <h5>다잇닭<h5>
                                 <h6>${goods.getGoodsName()}</h6>
@@ -105,7 +109,7 @@
         </c:choose>
                                
                                 <div class="move-to-menu-button-section">
-                                    <a href="${pageContext.request.contextPath}/goods/ChickenGoodsMain.jsp">
+                                    <a href="${pageContext.request.contextPath}/goods/goodsList.go?categoryNum=1">
                                         <h6>닭고기 전체보기</h6>
                                     </a>
                                 </div>
@@ -122,7 +126,11 @@
                         <li>
                             <a href="#">
                                 <div class="zoom-container">
-                                    <img src="${pageContext.request.contextPath}/resources/goods/img/pig01.png" alt="신상품1"/>
+                                   <figure class="img">
+                                <a href="${pageContext.request.contextPath}/goods/goodsBuy.go?goodsNum=${goods.getGoodsNum()}">
+                                    <img src="${pageContext.request.contextPath}/resources/goods/img/chicken01.png" alt="신상품2"/>
+                                    </a>
+                                    </figure>
                                 </div>
                                 <h5>다잇닭<h5>
                                 <h6>${goods.getGoodsName()}</h6>
@@ -135,7 +143,7 @@
         </c:when>
         </c:choose>
                                 <div class="move-to-menu-button-section">
-                                    <a href="${pageContext.request.contextPath}/goods/PigGoodsMain.jsp">
+                                    <a href="${pageContext.request.contextPath}/goods/goodsList.go?categoryNum=2">
                                         <h6>돼지고기 전체보기</h6>
                                     </a>
                                 </div>
@@ -154,7 +162,11 @@
                         <li>
                             <a href="#">
                                 <div class="zoom-container">
-                                    <img src="${pageContext.request.contextPath}/resources/goods/img/cow01.png" alt="신상품1"/>
+                                    <figure class="img">
+                                <a href="${pageContext.request.contextPath}/goods/goodsBuy.go?goodsNum=${goods.getGoodsNum()}">
+                                    <img src="${pageContext.request.contextPath}/resources/goods/img/chicken01.png" alt="신상품2"/>
+                                    </a>
+                                    </figure>
                                 </div>
                                 <h5>다잇닭<h5>
                                 <h6>${goods.getGoodsName()}</h6>
@@ -167,7 +179,7 @@
         </c:when>
         </c:choose>
                                 <div class="move-to-menu-button-section">
-                                    <a href="${pageContext.request.contextPath}/goods/CowGoodsMain.jsp">
+                                    <a href="${pageContext.request.contextPath}/goods/goodsList.go?categoryNum=3">
                                         <h6>소고기 전체보기</h6>
                                     </a>
                                 </div>
@@ -181,7 +193,11 @@
                         <li>
                             <a href="#">
                                 <div class="zoom-container">
-                                    <img src="${pageContext.request.contextPath}/resources/goods/img/beverage01.png" alt="신상품1"/>
+                                    <figure class="img">
+                                <a href="${pageContext.request.contextPath}/goods/goodsBuy.go?goodsNum=${goods.getGoodsNum()}">
+                                    <img src="${pageContext.request.contextPath}/resources/goods/img/chicken01.png" alt="신상품2"/>
+                                    </a>
+                                    </figure>
                                 </div>
                                 <h5>다잇닭<h5>
                                 <h6>${goods.getGoodsName()}</h6>
@@ -194,7 +210,7 @@
         </c:when>
         </c:choose>
                                 <div class="move-to-menu-button-section">
-                                    <a href="${pageContext.request.contextPath}/goods/CFGoodsMain.jsp">
+                                    <a href="${pageContext.request.contextPath}/goods/goodsList.go?categoryNum=4">
                                         <h6>간편식 전체보기</h6>
                                     </a>
                                 </div>
@@ -220,7 +236,7 @@
                 <c:forEach items="${goodsList}" var="goods" varStatus="loop">
                     <c:if test="${loop.index < 10}">          
                         <li>
-                            <a href="#">
+                            <a href="${pageContext.request.contextPath}/goods/goodsBuy.go?goodsNum=${goods.getGoodsNum()}">
                                 <div class="zoom-container">
                                     <img src="${pageContext.request.contextPath}/resources/goods/img/beverage01.png" alt="신상품1"/>
                                 </div>

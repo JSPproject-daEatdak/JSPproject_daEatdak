@@ -28,6 +28,8 @@ public class MainFullMenuController {
         request.setAttribute("category3", commonDAO.selectAll3());
         request.setAttribute("category4", commonDAO.selectAll4());
         
+        request.setAttribute("goodsImages", commonDAO.selectImage());
+        
         // index.jsp로 포워딩
         request.getRequestDispatcher("/index.jsp").forward(request, response);
     }

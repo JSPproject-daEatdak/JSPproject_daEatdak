@@ -7,23 +7,26 @@
 
 <!--기본적인 공통 css-->
 <!--이외 각자 페이지 css/js는 각자 추가할 것-->
+<<<<<<< HEAD
 <<<<<<< HEAD:WebContent/member/login.jsp
+=======
+>>>>>>> 50f8a63762d93fbd1f4c22cef3344b070c012878
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/resources/common/css/common.css"
-	rel="stylesheet" type="text/css" />
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resources/member/css/login.css"
 	rel="stylesheet" type="text/css" />
 <link rel="shortcut icon" type="image/x-icon"
 	href="${pageContext.request.contextPath}/resources/common/img/logoPic.png" />
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<<<<<<< HEAD
 =======
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/common/css/common.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/member/css/findPw.css" rel="stylesheet" type="text/css" />
 <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/resources/common/img/logoPic.png" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 >>>>>>> 121fb62e16f02a5e9cdba46a5078512431374ef3:WebContent/user/findPw.jsp
+=======
+>>>>>>> 50f8a63762d93fbd1f4c22cef3344b070c012878
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script
 	src="${pageContext.request.contextPath}/resources/member/js/loginJS.js"></script>
@@ -48,6 +51,7 @@
 		<!--헤더영역-->
 		<div class="header">
 			<%@ include file="/header.jsp"%>
+<<<<<<< HEAD
 
 		</div>
 
@@ -155,6 +159,55 @@
 >>>>>>> 121fb62e16f02a5e9cdba46a5078512431374ef3:WebContent/user/findPw.jsp
 		</div>
 	</div>
+=======
+			<!--상대경로로 각 페이지마다 맞게 작성-->
+		</div>
+
+		<div class='main'>
+			<main>
+				<!--개인 페이지 작업영역-->
+				<div class="pwfind-container">
+					<div class="pwfind-area">
+						<div class="pwfind-greeting">
+							<strong class="txt">비밀번호 찾기</strong>
+						</div>
+						<form id="findpw_form" name="findpw_form"
+							action="/user/findUserPasswordOk.me" method="post">
+							<div class="input-group">
+								<div class="input-text">
+									<input type="text" placeholder="이메일 입력" name="userEmail" maxlength="100">
+									<input type="text" placeholder="이름 입력" name="userName" maxlength="100">
+									<input type="text" placeholder="휴대폰 번호 입력" name="userPhone" maxlength="100">
+								</div>
+							</div>
+							<div class="button-submit">
+								<button>확인</button>
+							</div>
+							<div class="login-back">
+								<button type="button"
+									onclick="location.href='/user/login.me' ">로그인
+									창으로 돌아가기</button>
+							</div>
+						</form>
+					</div>
+
+
+				</div>
+
+
+
+
+
+
+
+
+
+			</main>
+		</div>
+
+	</div>
+	<!--header-main-container 닫기-->
+>>>>>>> 50f8a63762d93fbd1f4c22cef3344b070c012878
 
 
 	<!--푸터 영역-->

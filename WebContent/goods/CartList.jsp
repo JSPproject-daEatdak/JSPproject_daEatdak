@@ -69,7 +69,7 @@
                             <!-- </div> -->
                         </div>    
                         <div class="cart-input">
-                            <form action="/goods/cartDelete.go" method="post">    
+                            <form action="/goods/cart.go" method="post">    
                                 <ul class="goods">
                                 <c:forEach var ="cart" items="${cartList}">
                                     <li class="cart-goods">

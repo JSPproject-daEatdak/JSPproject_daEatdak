@@ -83,10 +83,10 @@
 						</form>
 						<div class="button-found">
 							<button type="button"
-								onclick="location.href='${pageContext.request.contextPath}/member/findPw.jsp' ">비밀번호
+								onclick="location.href='/user/findUserPassword.me' ">비밀번호
 								찾기</button>
 							<button type="button"
-								onclick="location.href='${pageContext.request.contextPath}/member/findId.jsp'  ">아이디
+								onclick="location.href='/user/findUserEmail.me'  ">아이디
 								찾기</button>
 						</div>
 						<div class="button-kakaologin">
@@ -99,7 +99,7 @@
 						</div>
 						<div class="button-signup">
 							<button type="button"
-								onclick="location.href='${pageContext.request.contextPath}/member/signupSelect.jsp' ">회원가입</button>
+								onclick="location.href='/user/signUpSelect.me'">회원가입</button>
 						</div>
 					</div>
 				</div>

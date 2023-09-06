@@ -18,7 +18,6 @@ $('#email').on('change', function() {
 		success: function(result) {
 			if (result == 0) {
 				$('.sign-btn').attr("disabled", false);
-
 			} else if (result == 1) {
 				$('.checkId-result').text('이미 존재하는 이메일입니다.');
 				$('.sign-btn').attr("disabled", true);

@@ -13,12 +13,16 @@
 			alias="AdminDTO" />
 		<typeAlias type="com.daeatdak.admin.dto.FileDTO"
 			alias="FileDTO" />
-		<typeAlias type="com.daeatdak.board.dto.BoardDTO"
-			alias="BoardDTO" />
-		<typeAlias type="com.daeatdak.common.dto.CommonDTO"
-			alias="CommonDTO" />
+			
+		<typeAlias type="com.daeatdak.admin.vo.GoodsInfoListVO"
+			alias="GoodsInfoListVO" />
 		<typeAlias type="com.daeatdak.goods.dto.GoodsImageDTO"
 			alias="GoodsImageDTO" />
+		<typeAlias type="com.daeatdak.board.dto.BoardDTO"
+			alias="BoardDTO" />
+		<typeAlias type="com.daeatdak.user.vo.UserVO" alias="UserVO" />
+		<typeAlias type="com.daeatdak.common.dto.CommonDTO"
+			alias="CommonDTO" />
 		<typeAlias type="com.daeatdak.goods.dto.CartDTO"
 			alias="CartDTO" />
 		<typeAlias type="com.daeatdak.goods.dto.CartItemDTO"
@@ -32,6 +36,9 @@
 			
 		<typeAlias type="com.daeatdak.board.vo.BoardVO"
 			alias="BoardVO" />
+			<typeAlias type="com.daeatdak.admin.vo.GoodsListVO"
+			alias="GoodsListVO" />
+			
 	</typeAliases>
 	
 	<environments default="mysql">
@@ -40,7 +47,7 @@
 			<dataSource type="POOLED">
 				<property name="driver" value="com.mysql.cj.jdbc.Driver" />
 				<property name="url"
-					value="jdbc:mysql://localhost:3306/jsp_daEatdak" />
+					value="jdbc:mysql://localhost:3306/jsp_daeatdak" />
 				<property name="username" value="root" />
 				<property name="password" value="1111" />
 			</dataSource>
@@ -53,9 +60,11 @@
 		<mapper resource="com/mybatis/mapper/myPageMapper.xml"></mapper>		
 		<mapper resource="com/mybatis/mapper/MemberMapper.xml"></mapper>
 		<mapper resource="com/mybatis/mapper/AdminMapper.xml"></mapper>
+
 		<mapper resource="com/mybatis/mapper/FileMapper.xml" ></mapper>
 		<mapper resource = "com/mybatis/mapper/GoodsMapper.xml"></mapper>
         <mapper resource = "com/mybatis/mapper/BoardMapper.xml"></mapper>
         <mapper resource = "com/mybatis/mapper/CommonMapper.xml"></mapper>
    </mappers>
+
 </configuration>

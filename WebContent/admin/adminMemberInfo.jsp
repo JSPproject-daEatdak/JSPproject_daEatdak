@@ -3,15 +3,9 @@
 <%@page import="com.daeatdak.user.dto.UserDTO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.daeatdak.user.dao.UserDAO"%>
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%
-request.setCharacterEncoding("UTF-8");
-UserDTO userDTO = new UserDTO();
-UserDAO userDAO = new UserDAO();
-List<UserDTO> list = userDAO.userList();
-pageContext.setAttribute("list", list);
-%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +14,6 @@ pageContext.setAttribute("list", list);
     <title>다잇닭</title>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/admin/css/adminMemberInfo.css">
     <script src="${pageContext.request.contextPath}/resources/admin/js/adminMemberInfo.js" defer></script>
-
     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 
 
@@ -64,16 +57,26 @@ pageContext.setAttribute("list", list);
                                 </tr>
                             </thead>
                             <tbody id="table-list">
-	                            <c:forEach var="i" items="${list }">
+                            <c:choose>
+                            	<c:when test="${not empty UserInfoList}">
+	                            <c:forEach var="i" items="${UserInfoList }">
 									<tr align="center">
-										<td>${i.userNumber }</td>
-										<td>${i.userName }</td>
-										<td>${i.userEmail }</td>
-										<td>${i.userPhone }</td>
-										<td>${i.userAddress }</td>
-										<td>${i.userDetailAddress }</td>
+										<td><c:out value="${i.getUserNum() }"/></td>
+										<td><c:out value="${i.getUserName() }"/></td>
+										<td><c:out value="${i.getUserEmail() }"/></td>
+										<td><c:out value="${i.getUserPhone() }"/></td>
+										<td><c:out value="${i.getAddress() }"/></td>
+										<td><c:out value="${i.getDetailAddress() }"/></td>
 									</tr>
+								
 								</c:forEach>
+								</c:when>
+								<c:otherwise>
+									<tr align="center">
+										<td>등록된 회원이 없습니다.</td>
+									</tr>
+								</c:otherwise>
+								</c:choose>
                             </tbody>
                         </table>
                     </div>

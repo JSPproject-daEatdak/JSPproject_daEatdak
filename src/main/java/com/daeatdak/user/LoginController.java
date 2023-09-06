@@ -10,6 +10,8 @@ import javax.servlet.http.HttpSession;
 
 import com.daeatdak.Execute;
 import com.daeatdak.Result;
+import com.daeatdak.board.dao.BoardDAO;
+import com.daeatdak.board.vo.BoardVO;
 import com.daeatdak.goods.dao.GoodsDAO;
 import com.daeatdak.goods.dto.CartDTO;
 import com.daeatdak.user.dao.UserDAO;
@@ -64,10 +66,11 @@ public class LoginController implements Execute{
 		UserDAO userDAO = new UserDAO();
 		UserDTO userDTO = new UserDTO();
 		CartDTO cartDTO = new CartDTO();
-		
+		BoardVO boardVO =new BoardVO();
 		UserDTO result = null;
 		CartDTO myCart = null;
-		
+		BoardVO myboard=null;
+		BoardDAO boardDAO= new BoardDAO();
 		userDTO.setUserEmail(request.getParameter("userEmail"));
 		userDTO.setUserPassword(request.getParameter("userPassword"));
 		
@@ -76,7 +79,7 @@ public class LoginController implements Execute{
 			
 		if(result != null) {
 			myCart = goodsDAO.selectCart(result.getUserNum());
-
+			myboard = boardDAO.selectMyInfo(result.getUserNum());
 			if(myCart == null) {
 				goodsDAO.createCart(result.getUserNum());
 			}

@@ -91,7 +91,6 @@ $('.decrease').on('click', function(){
 function updateTotalPrice() {
     var total = 0;
 
-    // 각 선택된 항목들의 가격 합 구하기
     $(".cart-goods").each(function () {
         var isChecked = $(this).find(".term").is(":checked");
         if (isChecked) {

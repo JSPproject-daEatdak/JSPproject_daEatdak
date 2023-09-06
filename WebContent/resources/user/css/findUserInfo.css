@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+.userInfo-container {
+    width: 1024px;
+    margin: 60px auto;
+display: flex;
+justify-content: center;}
+
+.userInfo-container h2 span {
+      font-family: 'Gamja Flower', cursive;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-family: 'Single Day', cursive; 
+    font-size: 33px;
+    color: rgb(202, 46, 46);
+    margin-right: 12px;
+
+}
+
+.find-user-Info {
+    width: 300px;
+   text-align: start;
+    height: 200px;
+}
+
+.find-user-Info dt {
+    margin-bottom: 30px;
+}
+.find-user-Info dl dd {
+    margin-left: 10px;
+
+    margin-bottom: 15px;
+}
+
+.user-info-result-btn button {
+    width: 300px;
+    height: 30px;
+    background-color: rgb(202, 46, 46);
+    cursor: pointer;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 5px;
+
+}

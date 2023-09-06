@@ -1,6 +1,14 @@
 package com.daeatdak.admin.dto;
 
 public class AdminDTO {
+	private int categoryNum;
+	public int getCategoryNum() {
+		return categoryNum;
+	}
+
+	public void setCategoryNum(int categoryNum) {
+		this.categoryNum = categoryNum;
+	}
 
 	private int goodsNum;
 	private String goodsName;
@@ -14,11 +22,11 @@ public class AdminDTO {
 		;
 	}
 
-	public int getGoodsNumber() {
+	public int getGoodsNum() {
 		return goodsNum;
 	}
 
-	public void setGoodsNumber(int goodsNum) {
+	public void setGoodsNum(int goodsNum) {
 		this.goodsNum = goodsNum;
 	}
 
@@ -72,7 +80,7 @@ public class AdminDTO {
 
 	@Override
 	public String toString() {
-		return "AdminDTO [goodsNumber=" + goodsNum + ", goodsName=" + goodsName + ", goodsQuantity=" + goodsQuantity
+		return "AdminDTO [goodsNum=" + goodsNum + ", goodsName=" + goodsName + ", goodsQuantity=" + goodsQuantity
 				+ ", goodsCategory=" + goodsCategory + ", goodsPrice=" + goodsPrice + ", saleCount=" + saleCount
 				+ ", imageNum=" + imageNum + "]";
 	}

@@ -48,10 +48,10 @@
 									String userName = (String) session.getAttribute("userName");
 									%>
 
-									<li> <a
+									<li> <h6><%=userName %></h6><a
 										href="${pageContext.request.contextPath}/user/login.jsp">
 											<span class="material-symbols-outlined"> lock </span>
-											<h6>로그인</h6>
+											<h6>로그인!</h6>
 									</a></li>
 <!-- 								</form> -->
 								<li><a

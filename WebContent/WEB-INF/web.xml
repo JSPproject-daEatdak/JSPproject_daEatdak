@@ -50,14 +50,14 @@
 <!--   </servlet-mapping> -->
   
     <!-- 메인 -->
-<!--   <servlet> -->
-<!--   	<servlet-name>Common</servlet-name> -->
-<!--   	<servlet-class>com.daeatdak.common.CommonFrontController</servlet-class> -->
-<!--   </servlet> -->
-<!--   <servlet-mapping> -->
-<!--   	<servlet-name>Common</servlet-name> -->
-<!--   	<url-pattern>*.co</url-pattern> -->
-<!--   </servlet-mapping> -->
+  <servlet>
+  	<servlet-name>Common</servlet-name>
+  	<servlet-class>com.daeatdak.common.CommonFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Common</servlet-name>
+  	<url-pattern>*.co</url-pattern>
+  </servlet-mapping>
 
 	<!-- 마이페이지 -->
    <servlet>

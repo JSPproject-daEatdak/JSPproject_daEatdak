@@ -9,12 +9,12 @@ public class FileDAO {
 	SqlSession sqlSession;
 	
 	
-	public FileDAO() {
-		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
-	}
-	public void insert(FileDTO fileDTO) {
-		sqlSession.insert("file.insert", fileDTO);
-	}
+//	public FileDAO() {
+//		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
+//	}
+//	public void insert(FileDTO fileDTO) {
+//		sqlSession.insert("file.insert", fileDTO);
+//	}
 	
 	
 	

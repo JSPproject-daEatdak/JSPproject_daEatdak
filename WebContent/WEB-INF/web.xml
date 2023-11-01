@@ -40,15 +40,15 @@
   </servlet-mapping>
   
   	<!-- 관리자 -->
-<!--   <servlet> -->
-<!--   	<servlet-name>Admin</servlet-name> -->
-<!--   	<servlet-class>com.daeatdak.admin.AdminFrontController</servlet-class> -->
-<!--   </servlet> -->
-<!--   <servlet-mapping> -->
-<!--   	<servlet-name>Admin</servlet-name> -->
-<!--   	<url-pattern>*.ad</url-pattern> -->
-<!--   </servlet-mapping> -->
-  
+   <servlet>
+  	<servlet-name>Admin</servlet-name>
+  	<servlet-class>com.daeatdak.admin.AdminFrontController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Admin</servlet-name>
+  	<url-pattern>*.ad</url-pattern>
+  </servlet-mapping>
+
     <!-- 메인 -->
   <servlet>
   	<servlet-name>Common</servlet-name>

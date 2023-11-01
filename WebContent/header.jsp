@@ -32,7 +32,9 @@
           <c:choose>
 			<c:when test = "${empty sessionScope.userRoll}">
                 <ul>
+                <% String userName = (String)session.getAttribute("userName"); %>
                     <li>
+	                    <h6><%=userName %></h6>
                         <a href="${pageContext.request.contextPath}/user/login.me">
                             <span class="material-symbols-outlined">
                                 lock
@@ -70,6 +72,8 @@
                 <c:when test ="${sessionScope.userRoll == 0}">
                 	<ul>
                     <li>
+	                <% String userName = (String)session.getAttribute("userName"); %>
+	                <%=userName %>
                         <a href="${pageContext.request.contextPath}/user/logoutOk.me">
                             <span class="material-symbols-outlined">
 							lock_open
@@ -78,7 +82,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/user/Ok.me">
+<%--                         <a href="${pageContext.request.contextPath}/user/Ok.me"> --%>
+                        <a href="${pageContext.request.contextPath}/myPage/myPageMain.jsp">
                             <span class="material-symbols-outlined">
 							person
 							</span>
@@ -107,6 +112,8 @@
                 <c:when test ="${sessionScope.userRoll == 1}">
                 	<ul>
                     <li>
+		                <% String userName = (String)session.getAttribute("userName"); %>
+		                <%=userName %>
                         <a href="${pageContext.request.contextPath}/user/logoutOk.me">
                             <span class="material-symbols-outlined">
 							lock_open

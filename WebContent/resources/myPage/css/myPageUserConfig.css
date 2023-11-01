@@ -208,3 +208,16 @@ a{
     border-radius: 10%;
     background-color: rgb(202, 46, 46);
 }
+
+.updateBtn {
+    margin-top: 10px;
+    height: 28px;
+    color: white;
+    border: none;
+    padding: 0 3px;
+    cursor: pointer;
+    border-radius: 10%;
+    background-color: rgb(202, 46, 46);
+    float: right;
+	
+}

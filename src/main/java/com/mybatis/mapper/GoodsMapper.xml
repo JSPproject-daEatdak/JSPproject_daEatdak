@@ -13,6 +13,9 @@
   <select id ="selectGoodsNum" resultType="GoodsDTO" parameterType="_int">
   		select * from goods where goods_num = #{goodsNum}
   </select>
+  <select id="selectPurchase" resultType="GoodsDTO">
+  		select * from goods where category_num = 1;
+  </select>
   <select id ="selectCart" resultType="CartDTO" parameterType="int">
   		select * from cart where user_num =#{userNum}
   </select>

@@ -28,13 +28,13 @@
   </select>
 	 -->
 	 
-	 <select id="GoodsInfoList" resultType="GoodsInfoListVO">
-	 	SELECT g.goods_num, c.category_name, g.goods_name ,g.goods_price, g.goods_quantity
-		FROM goods g
-		JOIN category c ON g.category_num = c.category_num
-		order by g.goods_num;
-	 
-	 </select>
+<!-- 	 <select id="GoodsInfoList" resultType="GoodsInfoListVO"> -->
+<!-- 	 	SELECT g.goods_num, c.category_name, g.goods_name ,g.goods_price, g.goods_quantity -->
+<!-- 		FROM goods g -->
+<!-- 		JOIN category c ON g.category_num = c.category_num -->
+<!-- 		order by g.goods_num; -->
+
+<!-- 	 </select> -->
 	 
 	 <delete id="GoodsListDelete" parameterType="_int">
 	 	DELETE

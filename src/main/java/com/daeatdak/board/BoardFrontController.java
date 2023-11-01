@@ -17,9 +17,6 @@ import com.daeatdak.board.vo.BoardVO;
 public class BoardFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public BoardFrontController() {
         super();
         // TODO Auto-generated constructor stub

@@ -16,31 +16,17 @@ import com.daeatdak.Result;
 public class UserFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public UserFrontController() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doProcess(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 		doProcess(request, response);
 
@@ -49,11 +35,12 @@ public class UserFrontController extends HttpServlet {
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		System.out.println(request.getContextPath());
+		System.out.println("ContextPath : " + request.getContextPath());
 		String target = request.getRequestURI().substring(request.getContextPath().length());
 		System.out.println(target);
 		Result result = null;
 
+		System.out.println("프론트 진입");
 		switch (target) {
 		
 		case "/user/signUpSelect.me":
@@ -113,10 +100,16 @@ public class UserFrontController extends HttpServlet {
 		
 		case "/user/loginOk.me":
 			System.out.println("loginOk");
+			new LoginController().execute(request, response);
+			
+			break;
+
+		case "/user/loginAndCartOk.me":
+			System.out.println("login&Cart");
 			new LoginController().execute(request,response);
 			
 			break;
-			
+
 		case "/user/logoutOk.me":
 			System.out.println("logoutOk");
 			new LogoutController().execute(request,response);
